@@ -1,0 +1,61 @@
+{
+  "$id": "36",
+  "AutoRefresh": true,
+  "AutoRefreshRemotes": true,
+  "CommitTextLinks": null,
+  "DraftCommitMsg": "",
+  "IncomingSavedCount": 0,
+  "LastCheckedRemotes": "2024-01-12T02:16:20.3129838+02:00",
+  "LastUsedView": 1,
+  "LogBranchFilterIndex": 0,
+  "OutgoingSavedCount": 0,
+  "SidebarExpandedItems": [
+    "Branches",
+    "Tags",
+    "Remotes"
+  ],
+  "SidebarWidth": 210.0,
+  "SubtreeLinks": [],
+  "NeedsLargeFilesPull": false,
+  "RemoteProjectLinks": [
+    {
+      "$id": "37",
+      "BaseUrl": "https://www.github.com",
+      "Identifier": "Daldart/fixawy_provider_app",
+      "RemoteName": "fixawy_provider_app",
+      "Type": 0,
+      "Username": "HusseinMohammedDev",
+      "CloneUrl": null,
+      "ProjectUrl": null,
+      "AccountId": null,
+      "AvatarUrl": null,
+      "DisplayName": "fixawy_provider_app: https://www.github.com"
+    },
+    {
+      "$id": "38",
+      "BaseUrl": "https://www.github.com",
+      "Identifier": "Daldart/fixawy_provider_app",
+      "RemoteName": "fixawy_provider_app",
+      "Type": 0,
+      "Username": "HusseinMohammedDev",
+      "CloneUrl": null,
+      "ProjectUrl": null,
+      "AccountId": null,
+      "AvatarUrl": null,
+      "DisplayName": "fixawy_provider_app: https://www.github.com"
+    },
+    {
+      "$id": "39",
+      "BaseUrl": "https://www.github.com",
+      "Identifier": "Daldart/fixawy_provider_app",
+      "RemoteName": "fixawy_provider_app",
+      "Type": 0,
+      "Username": "HusseinMohammedDev",
+      "CloneUrl": null,
+      "ProjectUrl": null,
+      "AccountId": null,
+      "AvatarUrl": null,
+      "DisplayName": "fixawy_provider_app: https://www.github.com"
+    }
+  ]
+}
