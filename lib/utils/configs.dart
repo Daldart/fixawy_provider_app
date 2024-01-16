@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 const APP_NAME = 'Handyman Services';
 const DEFAULT_LANGUAGE = 'en';
 
-const primaryColor = Color(0xFF5F60B9);
+const primaryColor = Color(0xFFFFCC10);
 
-const DOMAIN_URL = ''; // Don't add slash at the end of
+const DOMAIN_URL = 'http://fixawy.daldart.com'; // Don't add slash at the end of
 const BASE_URL = "$DOMAIN_URL/api/";
 
 /// You can specify in Admin Panel, These will be used if you don't specify in Admin Panel

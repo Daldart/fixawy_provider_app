@@ -31,13 +31,13 @@ class _SignInScreenState extends State<SignInScreen> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   /// Text Field Controller
-  // TextEditingController emailCont = TextEditingController();
-  TextEditingController phoneCont = TextEditingController();
+  TextEditingController emailCont = TextEditingController();
+  // TextEditingController phoneCont = TextEditingController();
   TextEditingController passwordCont = TextEditingController();
 
   /// FocusNodes
-  // FocusNode emailFocus = FocusNode();
-  FocusNode phoneFocus = FocusNode();
+  FocusNode emailFocus = FocusNode();
+  // FocusNode phoneFocus = FocusNode();
   FocusNode passwordFocus = FocusNode();
 
   bool isRemember = true;
@@ -51,13 +51,13 @@ class _SignInScreenState extends State<SignInScreen> {
   void init() async {
     isRemember = getBoolAsync(IS_REMEMBERED, defaultValue: true);
     if (isRemember) {
-      // emailCont.text = getStringAsync(USER_EMAIL);
-      phoneCont.text = getStringAsync(USER_PHONE);
+      emailCont.text = getStringAsync(USER_EMAIL);
+      // phoneCont.text = getStringAsync(USER_PHONE);
       passwordCont.text = getStringAsync(USER_PASSWORD);
     }
     if (widget.isRegeneratingToken) {
-      // emailCont.text = appStore.userEmail;
-      phoneCont.text = appStore.userPhone;
+      emailCont.text = appStore.userEmail;
+      // phoneCont.text = appStore.userPhone;
       passwordCont.text = getStringAsync(USER_PASSWORD);
 
       _handleLogin(isDirectLogin: true);
@@ -88,8 +88,8 @@ class _SignInScreenState extends State<SignInScreen> {
         children: [
           AppTextField(
             textFieldType: TextFieldType.PHONE,
-            controller: phoneCont,
-            focus: phoneFocus,
+            controller: emailCont,
+            focus: emailFocus,
             nextFocus: passwordFocus,
             errorThisFieldRequired: languages.hintRequired,
             decoration: inputDecoration(context, hint: languages.hintPhoneTxt),
@@ -177,7 +177,7 @@ class _SignInScreenState extends State<SignInScreen> {
           },
         ),
         16.height,
-        Row(
+        /*Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(languages.doNotHaveAccount, style: secondaryTextStyle()),
@@ -195,7 +195,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
             )
           ],
-        ),
+        ),*/
       ],
     );
   }
@@ -218,8 +218,8 @@ class _SignInScreenState extends State<SignInScreen> {
   void _handleLoginUsers() async {
     hideKeyboard(context);
     Map<String, dynamic> request = {
-      // 'email': emailCont.text.trim(),
-      'phone': phoneCont.text.trim(),
+      'email': emailCont.text.trim(),
+      // 'phone': phoneCont.text.trim(),
       'password': passwordCont.text.trim(),
       'player_id': getStringAsync(PLAYERID),
     };
@@ -228,8 +228,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
     await loginCurrentUsers(context, req: request).then((value) async {
       if (isRemember) {
-        // setValue(USER_EMAIL, emailCont.text);
-        setValue(USER_PHONE, phoneCont.text);
+        setValue(USER_EMAIL, emailCont.text);
+        // setValue(USER_PHONE, phoneCont.text);
         setValue(USER_PASSWORD, passwordCont.text);
         setValue(IS_REMEMBERED, isRemember);
       }
@@ -303,12 +303,13 @@ class _SignInScreenState extends State<SignInScreen> {
                         onSuccess: (data) {
                           if (data) {
                             return UserDemoModeScreen(
-                              onChanged: (phone, password) {
-                                if (phone.isNotEmpty && password.isNotEmpty) {
-                                  phoneCont.text = phone;
+                              onChanged: (email, password) {
+                                if (email.isNotEmpty && password.isNotEmpty) {
+                                  // phoneCont.text = phone;
+                                  emailCont.text = email;
                                   passwordCont.text = password;
                                 } else {
-                                  phoneCont.clear();
+                                  emailCont.clear();
                                   passwordCont.clear();
                                 }
                               },
