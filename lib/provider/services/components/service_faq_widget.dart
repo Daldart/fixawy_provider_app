@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/models/service_detail_response.dart';
+import 'package:fixawy_provider/models/service_detail_response.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ServiceFaqWidget extends StatelessWidget {

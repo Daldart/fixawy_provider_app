@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:handyman_provider_flutter/utils/configs.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
-import 'package:handyman_provider_flutter/utils/images.dart';
+import 'package:fixawy_provider/utils/configs.dart';
+import 'package:fixawy_provider/utils/constant.dart';
+import 'package:fixawy_provider/utils/images.dart';
 import 'package:http/http.dart';
 import 'package:nb_utils/nb_utils.dart';
 

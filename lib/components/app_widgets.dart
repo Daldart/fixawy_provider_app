@@ -1,10 +1,10 @@
 import 'package:android_intent_plus/android_intent.dart';
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/components/spin_kit_chasing_dots.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/booking_list_response.dart';
-import 'package:handyman_provider_flutter/utils/configs.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
+import 'package:fixawy_provider/components/spin_kit_chasing_dots.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/booking_list_response.dart';
+import 'package:fixawy_provider/utils/configs.dart';
+import 'package:fixawy_provider/utils/constant.dart';
 import 'package:intl/intl.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:url_launcher/url_launcher.dart';

@@ -1,5 +1,5 @@
-import 'package:handyman_provider_flutter/models/pagination_model.dart';
-import 'package:handyman_provider_flutter/screens/cash_management/cash_constant.dart';
+import 'package:fixawy_provider/models/pagination_model.dart';
+import 'package:fixawy_provider/screens/cash_management/cash_constant.dart';
 
 class PaymentHistoryModel {
   Pagination? pagination;

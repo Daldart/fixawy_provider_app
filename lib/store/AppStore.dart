@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:handyman_provider_flutter/locale/applocalizations.dart';
-import 'package:handyman_provider_flutter/locale/base_language.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/service_model.dart';
-import 'package:handyman_provider_flutter/utils/colors.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
-import 'package:handyman_provider_flutter/utils/configs.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
+import 'package:fixawy_provider/locale/applocalizations.dart';
+import 'package:fixawy_provider/locale/base_language.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/service_model.dart';
+import 'package:fixawy_provider/utils/colors.dart';
+import 'package:fixawy_provider/utils/common.dart';
+import 'package:fixawy_provider/utils/configs.dart';
+import 'package:fixawy_provider/utils/constant.dart';
 import 'package:mobx/mobx.dart';
 import 'package:nb_utils/nb_utils.dart';
 

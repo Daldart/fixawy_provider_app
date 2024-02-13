@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/chat_message_model.dart';
-import 'package:handyman_provider_flutter/models/contact_model.dart';
-import 'package:handyman_provider_flutter/models/user_data.dart';
-import 'package:handyman_provider_flutter/networks/firebase_services/base_services.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/chat_message_model.dart';
+import 'package:fixawy_provider/models/contact_model.dart';
+import 'package:fixawy_provider/models/user_data.dart';
+import 'package:fixawy_provider/networks/firebase_services/base_services.dart';
+import 'package:fixawy_provider/utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 FirebaseFirestore fireStore = FirebaseFirestore.instance;

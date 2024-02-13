@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/components/app_widgets.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/utils/colors.dart';
+import 'package:fixawy_provider/components/app_widgets.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/utils/colors.dart';
 
 import '../constant.dart';
 

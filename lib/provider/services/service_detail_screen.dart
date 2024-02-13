@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/components/review_list_view_component.dart';
-import 'package:handyman_provider_flutter/components/view_all_label_component.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/booking_detail_response.dart';
-import 'package:handyman_provider_flutter/models/service_detail_response.dart';
-import 'package:handyman_provider_flutter/models/service_model.dart';
-import 'package:handyman_provider_flutter/networks/rest_apis.dart';
-import 'package:handyman_provider_flutter/provider/packages/components/package_component.dart';
-import 'package:handyman_provider_flutter/provider/services/components/service_detail_header_component.dart';
-import 'package:handyman_provider_flutter/provider/services/components/service_faq_widget.dart';
-import 'package:handyman_provider_flutter/provider/services/shimmer/service_detail_shimmer.dart';
-import 'package:handyman_provider_flutter/screens/rating_view_all_screen.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
+import 'package:fixawy_provider/components/review_list_view_component.dart';
+import 'package:fixawy_provider/components/view_all_label_component.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/booking_detail_response.dart';
+import 'package:fixawy_provider/models/service_detail_response.dart';
+import 'package:fixawy_provider/models/service_model.dart';
+import 'package:fixawy_provider/networks/rest_apis.dart';
+import 'package:fixawy_provider/provider/packages/components/package_component.dart';
+import 'package:fixawy_provider/provider/services/components/service_detail_header_component.dart';
+import 'package:fixawy_provider/provider/services/components/service_faq_widget.dart';
+import 'package:fixawy_provider/provider/services/shimmer/service_detail_shimmer.dart';
+import 'package:fixawy_provider/screens/rating_view_all_screen.dart';
+import 'package:fixawy_provider/utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ServiceDetailScreen extends StatefulWidget {

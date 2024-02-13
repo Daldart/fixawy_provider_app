@@ -1,11 +1,11 @@
-import 'package:handyman_provider_flutter/models/Package_response.dart';
-import 'package:handyman_provider_flutter/models/attachment_model.dart';
-import 'package:handyman_provider_flutter/models/booking_detail_response.dart';
-import 'package:handyman_provider_flutter/models/extra_charges_model.dart';
-import 'package:handyman_provider_flutter/models/pagination_model.dart';
-import 'package:handyman_provider_flutter/models/tax_list_response.dart';
-import 'package:handyman_provider_flutter/models/user_data.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
+import 'package:fixawy_provider/models/Package_response.dart';
+import 'package:fixawy_provider/models/attachment_model.dart';
+import 'package:fixawy_provider/models/booking_detail_response.dart';
+import 'package:fixawy_provider/models/extra_charges_model.dart';
+import 'package:fixawy_provider/models/pagination_model.dart';
+import 'package:fixawy_provider/models/tax_list_response.dart';
+import 'package:fixawy_provider/models/user_data.dart';
+import 'package:fixawy_provider/utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../utils/model_keys.dart';

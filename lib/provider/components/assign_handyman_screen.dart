@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:handyman_provider_flutter/components/app_widgets.dart';
-import 'package:handyman_provider_flutter/components/cached_image_widget.dart';
-import 'package:handyman_provider_flutter/components/handyman_name_widget.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/user_data.dart';
-import 'package:handyman_provider_flutter/networks/rest_apis.dart';
-import 'package:handyman_provider_flutter/utils/configs.dart';
-import 'package:handyman_provider_flutter/utils/model_keys.dart';
+import 'package:fixawy_provider/components/app_widgets.dart';
+import 'package:fixawy_provider/components/cached_image_widget.dart';
+import 'package:fixawy_provider/components/handyman_name_widget.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/user_data.dart';
+import 'package:fixawy_provider/networks/rest_apis.dart';
+import 'package:fixawy_provider/utils/configs.dart';
+import 'package:fixawy_provider/utils/model_keys.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../components/base_scaffold_widget.dart';

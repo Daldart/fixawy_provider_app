@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/provider/blog/blog_repository.dart';
-import 'package:handyman_provider_flutter/provider/blog/component/blog_detail_header_component.dart';
-import 'package:handyman_provider_flutter/provider/blog/model/blog_detail_response.dart';
-import 'package:handyman_provider_flutter/provider/blog/shimmer/blog_detail_shimmer.dart';
-import 'package:handyman_provider_flutter/utils/model_keys.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/provider/blog/blog_repository.dart';
+import 'package:fixawy_provider/provider/blog/component/blog_detail_header_component.dart';
+import 'package:fixawy_provider/provider/blog/model/blog_detail_response.dart';
+import 'package:fixawy_provider/provider/blog/shimmer/blog_detail_shimmer.dart';
+import 'package:fixawy_provider/utils/model_keys.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../../utils/common.dart';

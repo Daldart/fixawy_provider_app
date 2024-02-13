@@ -1,4 +1,4 @@
-import 'package:handyman_provider_flutter/screens/cash_management/model/payment_history_model.dart';
+import 'package:fixawy_provider/screens/cash_management/model/payment_history_model.dart';
 
 class CashHistoryModel {
   num? totalCash;

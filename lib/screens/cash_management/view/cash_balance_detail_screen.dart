@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/components/app_widgets.dart';
-import 'package:handyman_provider_flutter/components/base_scaffold_widget.dart';
-import 'package:handyman_provider_flutter/components/empty_error_state_widget.dart';
-import 'package:handyman_provider_flutter/components/price_widget.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/screens/cash_management/cash_repository.dart';
-import 'package:handyman_provider_flutter/screens/cash_management/component/cash_info_widget.dart';
-import 'package:handyman_provider_flutter/screens/cash_management/component/cash_list_widget.dart';
-import 'package:handyman_provider_flutter/screens/cash_management/component/status_widget.dart';
-import 'package:handyman_provider_flutter/screens/cash_management/model/cash_filter_model.dart';
-import 'package:handyman_provider_flutter/screens/cash_management/model/payment_history_model.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
-import 'package:handyman_provider_flutter/utils/configs.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
+import 'package:fixawy_provider/components/app_widgets.dart';
+import 'package:fixawy_provider/components/base_scaffold_widget.dart';
+import 'package:fixawy_provider/components/empty_error_state_widget.dart';
+import 'package:fixawy_provider/components/price_widget.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/screens/cash_management/cash_repository.dart';
+import 'package:fixawy_provider/screens/cash_management/component/cash_info_widget.dart';
+import 'package:fixawy_provider/screens/cash_management/component/cash_list_widget.dart';
+import 'package:fixawy_provider/screens/cash_management/component/status_widget.dart';
+import 'package:fixawy_provider/screens/cash_management/model/cash_filter_model.dart';
+import 'package:fixawy_provider/screens/cash_management/model/payment_history_model.dart';
+import 'package:fixawy_provider/utils/common.dart';
+import 'package:fixawy_provider/utils/configs.dart';
+import 'package:fixawy_provider/utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class CashBalanceDetailScreen extends StatefulWidget {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/components/back_widget.dart';
-import 'package:handyman_provider_flutter/components/cached_image_widget.dart';
-import 'package:handyman_provider_flutter/components/gallery_component.dart';
-import 'package:handyman_provider_flutter/provider/blog/model/blog_response_model.dart';
-import 'package:handyman_provider_flutter/screens/gallery_List_Screen.dart';
+import 'package:fixawy_provider/components/back_widget.dart';
+import 'package:fixawy_provider/components/cached_image_widget.dart';
+import 'package:fixawy_provider/components/gallery_component.dart';
+import 'package:fixawy_provider/provider/blog/model/blog_response_model.dart';
+import 'package:fixawy_provider/screens/gallery_List_Screen.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class BlogDetailHeaderComponent extends StatefulWidget {

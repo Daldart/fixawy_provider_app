@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/components/view_all_label_component.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/provider/jobRequest/job_list_screen.dart';
+import 'package:fixawy_provider/components/view_all_label_component.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/provider/jobRequest/job_list_screen.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../jobRequest/components/job_item_widget.dart';

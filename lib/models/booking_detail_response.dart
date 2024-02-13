@@ -1,9 +1,9 @@
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/attachment_model.dart';
-import 'package:handyman_provider_flutter/models/booking_list_response.dart';
-import 'package:handyman_provider_flutter/models/service_model.dart';
-import 'package:handyman_provider_flutter/models/tax_list_response.dart';
-import 'package:handyman_provider_flutter/models/user_data.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/attachment_model.dart';
+import 'package:fixawy_provider/models/booking_list_response.dart';
+import 'package:fixawy_provider/models/service_model.dart';
+import 'package:fixawy_provider/models/tax_list_response.dart';
+import 'package:fixawy_provider/models/user_data.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../provider/jobRequest/models/post_job_data.dart';

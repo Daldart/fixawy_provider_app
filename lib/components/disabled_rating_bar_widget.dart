@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
+import 'package:fixawy_provider/utils/common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class DisabledRatingBarWidget extends StatelessWidget {

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/dashboard_response.dart';
-import 'package:handyman_provider_flutter/provider/components/total_widget.dart';
-import 'package:handyman_provider_flutter/provider/handyman_list_screen.dart';
-import 'package:handyman_provider_flutter/provider/services/service_list_screen.dart';
-import 'package:handyman_provider_flutter/provider/wallet/wallet_history_screen.dart';
-import 'package:handyman_provider_flutter/screens/total_earning_screen.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
-import 'package:handyman_provider_flutter/utils/images.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/dashboard_response.dart';
+import 'package:fixawy_provider/provider/components/total_widget.dart';
+import 'package:fixawy_provider/provider/handyman_list_screen.dart';
+import 'package:fixawy_provider/provider/services/service_list_screen.dart';
+import 'package:fixawy_provider/provider/wallet/wallet_history_screen.dart';
+import 'package:fixawy_provider/screens/total_earning_screen.dart';
+import 'package:fixawy_provider/utils/common.dart';
+import 'package:fixawy_provider/utils/constant.dart';
+import 'package:fixawy_provider/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class TotalComponent extends StatelessWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:handyman_provider_flutter/components/app_widgets.dart';
-import 'package:handyman_provider_flutter/components/total_earning_widget.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/total_earning_response.dart';
-import 'package:handyman_provider_flutter/networks/rest_apis.dart';
+import 'package:fixawy_provider/components/app_widgets.dart';
+import 'package:fixawy_provider/components/total_earning_widget.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/total_earning_response.dart';
+import 'package:fixawy_provider/networks/rest_apis.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../components/base_scaffold_widget.dart';

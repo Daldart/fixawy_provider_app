@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/caregory_response.dart';
-import 'package:handyman_provider_flutter/networks/rest_apis.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/caregory_response.dart';
+import 'package:fixawy_provider/networks/rest_apis.dart';
+import 'package:fixawy_provider/utils/common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class CategorySubCatDropDown extends StatefulWidget {

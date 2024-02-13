@@ -1,13 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/base_response.dart';
-import 'package:handyman_provider_flutter/networks/network_utils.dart';
-import 'package:handyman_provider_flutter/networks/rest_apis.dart';
-import 'package:handyman_provider_flutter/provider/blog/model/blog_detail_response.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
-import 'package:handyman_provider_flutter/utils/model_keys.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/base_response.dart';
+import 'package:fixawy_provider/networks/network_utils.dart';
+import 'package:fixawy_provider/networks/rest_apis.dart';
+import 'package:fixawy_provider/provider/blog/model/blog_detail_response.dart';
+import 'package:fixawy_provider/utils/constant.dart';
+import 'package:fixawy_provider/utils/model_keys.dart';
 import 'package:http/http.dart';
 import 'package:nb_utils/nb_utils.dart';
 

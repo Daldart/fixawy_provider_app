@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:handyman_provider_flutter/components/app_widgets.dart';
-import 'package:handyman_provider_flutter/components/back_widget.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/service_model.dart';
-import 'package:handyman_provider_flutter/networks/rest_apis.dart';
-import 'package:handyman_provider_flutter/provider/components/service_widget.dart';
-import 'package:handyman_provider_flutter/provider/services/add_services.dart';
-import 'package:handyman_provider_flutter/provider/services/service_detail_screen.dart';
-import 'package:handyman_provider_flutter/provider/services/shimmer/service_list_shimmer.dart';
-import 'package:handyman_provider_flutter/utils/colors.dart';
-import 'package:handyman_provider_flutter/utils/images.dart';
+import 'package:fixawy_provider/components/app_widgets.dart';
+import 'package:fixawy_provider/components/back_widget.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/service_model.dart';
+import 'package:fixawy_provider/networks/rest_apis.dart';
+import 'package:fixawy_provider/provider/components/service_widget.dart';
+import 'package:fixawy_provider/provider/services/add_services.dart';
+import 'package:fixawy_provider/provider/services/service_detail_screen.dart';
+import 'package:fixawy_provider/provider/services/shimmer/service_list_shimmer.dart';
+import 'package:fixawy_provider/utils/colors.dart';
+import 'package:fixawy_provider/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../components/empty_error_state_widget.dart';

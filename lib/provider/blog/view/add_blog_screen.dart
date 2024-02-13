@@ -2,16 +2,16 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:handyman_provider_flutter/components/app_widgets.dart';
-import 'package:handyman_provider_flutter/components/back_widget.dart';
-import 'package:handyman_provider_flutter/components/custom_image_picker.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/attachment_model.dart';
-import 'package:handyman_provider_flutter/networks/rest_apis.dart';
-import 'package:handyman_provider_flutter/provider/blog/blog_repository.dart';
-import 'package:handyman_provider_flutter/provider/blog/model/blog_response_model.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
-import 'package:handyman_provider_flutter/utils/model_keys.dart';
+import 'package:fixawy_provider/components/app_widgets.dart';
+import 'package:fixawy_provider/components/back_widget.dart';
+import 'package:fixawy_provider/components/custom_image_picker.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/attachment_model.dart';
+import 'package:fixawy_provider/networks/rest_apis.dart';
+import 'package:fixawy_provider/provider/blog/blog_repository.dart';
+import 'package:fixawy_provider/provider/blog/model/blog_response_model.dart';
+import 'package:fixawy_provider/utils/common.dart';
+import 'package:fixawy_provider/utils/model_keys.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../../models/static_data_model.dart';

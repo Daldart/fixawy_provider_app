@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/handyman/component/handyman_total_widget.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/handyman_dashboard_response.dart';
-import 'package:handyman_provider_flutter/screens/total_earning_screen.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
-import 'package:handyman_provider_flutter/utils/extensions/num_extenstions.dart';
-import 'package:handyman_provider_flutter/utils/images.dart';
-import 'package:handyman_provider_flutter/utils/model_keys.dart';
+import 'package:fixawy_provider/handyman/component/handyman_total_widget.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/handyman_dashboard_response.dart';
+import 'package:fixawy_provider/screens/total_earning_screen.dart';
+import 'package:fixawy_provider/utils/constant.dart';
+import 'package:fixawy_provider/utils/extensions/num_extenstions.dart';
+import 'package:fixawy_provider/utils/images.dart';
+import 'package:fixawy_provider/utils/model_keys.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class HandymanTotalComponent extends StatelessWidget {

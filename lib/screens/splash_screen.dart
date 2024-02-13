@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/auth/sign_in_screen.dart';
-import 'package:handyman_provider_flutter/handyman/handyman_dashboard_screen.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/provider/provider_dashboard_screen.dart';
-import 'package:handyman_provider_flutter/screens/maintenance_mode_screen.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
-import 'package:handyman_provider_flutter/utils/configs.dart';
-import 'package:handyman_provider_flutter/utils/images.dart';
+import 'package:fixawy_provider/auth/sign_in_screen.dart';
+import 'package:fixawy_provider/handyman/handyman_dashboard_screen.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/provider/provider_dashboard_screen.dart';
+import 'package:fixawy_provider/screens/maintenance_mode_screen.dart';
+import 'package:fixawy_provider/utils/common.dart';
+import 'package:fixawy_provider/utils/configs.dart';
+import 'package:fixawy_provider/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../utils/constant.dart';

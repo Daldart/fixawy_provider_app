@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/service_address_response.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/service_address_response.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../../utils/common.dart';

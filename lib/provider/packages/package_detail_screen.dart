@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/components/back_widget.dart';
-import 'package:handyman_provider_flutter/components/cached_image_widget.dart';
-import 'package:handyman_provider_flutter/components/gallery_component.dart';
-import 'package:handyman_provider_flutter/components/price_widget.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/Package_response.dart';
-import 'package:handyman_provider_flutter/models/service_model.dart';
-import 'package:handyman_provider_flutter/screens/gallery_List_Screen.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
+import 'package:fixawy_provider/components/back_widget.dart';
+import 'package:fixawy_provider/components/cached_image_widget.dart';
+import 'package:fixawy_provider/components/gallery_component.dart';
+import 'package:fixawy_provider/components/price_widget.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/Package_response.dart';
+import 'package:fixawy_provider/models/service_model.dart';
+import 'package:fixawy_provider/screens/gallery_List_Screen.dart';
+import 'package:fixawy_provider/utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../components/empty_error_state_widget.dart';

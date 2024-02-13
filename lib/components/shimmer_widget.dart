@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/utils/shimmer/shimmer.dart';
+import 'package:fixawy_provider/utils/shimmer/shimmer.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ShimmerWidget extends StatelessWidget {

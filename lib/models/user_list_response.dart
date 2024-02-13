@@ -1,5 +1,5 @@
-import 'package:handyman_provider_flutter/models/pagination_model.dart';
-import 'package:handyman_provider_flutter/models/user_data.dart';
+import 'package:fixawy_provider/models/pagination_model.dart';
+import 'package:fixawy_provider/models/user_data.dart';
 
 class UserListResponse {
   Pagination? pagination;

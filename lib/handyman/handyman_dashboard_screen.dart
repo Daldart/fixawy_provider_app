@@ -2,19 +2,19 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:handyman_provider_flutter/components/my_provider_widget.dart';
-import 'package:handyman_provider_flutter/fragments/booking_fragment.dart';
-import 'package:handyman_provider_flutter/fragments/notification_fragment.dart';
-import 'package:handyman_provider_flutter/handyman/screen/fragments/handyman_fragment.dart';
-import 'package:handyman_provider_flutter/handyman/screen/fragments/handyman_profile_fragment.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/screens/chat/user_chat_list_screen.dart';
-import 'package:handyman_provider_flutter/utils/colors.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
-import 'package:handyman_provider_flutter/utils/configs.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
-import 'package:handyman_provider_flutter/utils/extensions/string_extension.dart';
-import 'package:handyman_provider_flutter/utils/images.dart';
+import 'package:fixawy_provider/components/my_provider_widget.dart';
+import 'package:fixawy_provider/fragments/booking_fragment.dart';
+import 'package:fixawy_provider/fragments/notification_fragment.dart';
+import 'package:fixawy_provider/handyman/screen/fragments/handyman_fragment.dart';
+import 'package:fixawy_provider/handyman/screen/fragments/handyman_profile_fragment.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/screens/chat/user_chat_list_screen.dart';
+import 'package:fixawy_provider/utils/colors.dart';
+import 'package:fixawy_provider/utils/common.dart';
+import 'package:fixawy_provider/utils/configs.dart';
+import 'package:fixawy_provider/utils/constant.dart';
+import 'package:fixawy_provider/utils/extensions/string_extension.dart';
+import 'package:fixawy_provider/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class HandymanDashboardScreen extends StatefulWidget {

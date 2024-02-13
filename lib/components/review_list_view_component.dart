@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/models/booking_detail_response.dart';
-import 'package:handyman_provider_flutter/provider/services/components/review_widget.dart';
+import 'package:fixawy_provider/models/booking_detail_response.dart';
+import 'package:fixawy_provider/provider/services/components/review_widget.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ReviewListViewComponent extends StatelessWidget {

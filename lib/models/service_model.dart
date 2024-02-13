@@ -1,9 +1,9 @@
-import 'package:handyman_provider_flutter/models/Package_response.dart';
-import 'package:handyman_provider_flutter/models/attachment_model.dart';
-import 'package:handyman_provider_flutter/models/booking_detail_response.dart';
-import 'package:handyman_provider_flutter/models/service_detail_response.dart';
-import 'package:handyman_provider_flutter/provider/timeSlots/models/slot_data.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
+import 'package:fixawy_provider/models/Package_response.dart';
+import 'package:fixawy_provider/models/attachment_model.dart';
+import 'package:fixawy_provider/models/booking_detail_response.dart';
+import 'package:fixawy_provider/models/service_detail_response.dart';
+import 'package:fixawy_provider/provider/timeSlots/models/slot_data.dart';
+import 'package:fixawy_provider/utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../utils/model_keys.dart';

@@ -1,5 +1,5 @@
-import 'package:handyman_provider_flutter/models/pagination_model.dart';
-import 'package:handyman_provider_flutter/models/provider_subscription_model.dart';
+import 'package:fixawy_provider/models/pagination_model.dart';
+import 'package:fixawy_provider/models/provider_subscription_model.dart';
 
 class SubscriptionHistoryResponse {
   Pagination? pagination;

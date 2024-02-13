@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/components/image_border_component.dart';
-import 'package:handyman_provider_flutter/models/notification_list_response.dart';
-import 'package:handyman_provider_flutter/utils/images.dart';
+import 'package:fixawy_provider/components/image_border_component.dart';
+import 'package:fixawy_provider/models/notification_list_response.dart';
+import 'package:fixawy_provider/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class NotificationWidget extends StatelessWidget {

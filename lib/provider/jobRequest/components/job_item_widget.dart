@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
-import 'package:handyman_provider_flutter/utils/extensions/color_extension.dart';
-import 'package:handyman_provider_flutter/utils/extensions/string_extension.dart';
+import 'package:fixawy_provider/utils/common.dart';
+import 'package:fixawy_provider/utils/extensions/color_extension.dart';
+import 'package:fixawy_provider/utils/extensions/string_extension.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../../components/cached_image_widget.dart';

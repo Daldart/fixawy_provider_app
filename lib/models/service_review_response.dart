@@ -1,4 +1,4 @@
-import 'package:handyman_provider_flutter/models/booking_detail_response.dart';
+import 'package:fixawy_provider/models/booking_detail_response.dart';
 
 class ServiceReviewResponse {
   List<RatingData>? data;

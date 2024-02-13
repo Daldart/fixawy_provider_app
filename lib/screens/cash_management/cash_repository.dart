@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/base_response.dart';
-import 'package:handyman_provider_flutter/models/user_bank_model.dart';
-import 'package:handyman_provider_flutter/networks/network_utils.dart';
-import 'package:handyman_provider_flutter/screens/cash_management/model/cash_detail_model.dart';
-import 'package:handyman_provider_flutter/screens/cash_management/model/payment_history_model.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/base_response.dart';
+import 'package:fixawy_provider/models/user_bank_model.dart';
+import 'package:fixawy_provider/networks/network_utils.dart';
+import 'package:fixawy_provider/screens/cash_management/model/cash_detail_model.dart';
+import 'package:fixawy_provider/screens/cash_management/model/payment_history_model.dart';
+import 'package:fixawy_provider/utils/common.dart';
+import 'package:fixawy_provider/utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 Future<List<PaymentHistoryData>> getPaymentHistory({required String bookingId}) async {

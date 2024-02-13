@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/revenue_chart_data.dart';
-import 'package:handyman_provider_flutter/utils/configs.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/revenue_chart_data.dart';
+import 'package:fixawy_provider/utils/configs.dart';
 import 'package:intl/intl.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';

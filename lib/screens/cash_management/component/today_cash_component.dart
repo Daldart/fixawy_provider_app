@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/components/price_widget.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/screens/cash_management/view/cash_balance_detail_screen.dart';
-import 'package:handyman_provider_flutter/utils/images.dart';
+import 'package:fixawy_provider/components/price_widget.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/screens/cash_management/view/cash_balance_detail_screen.dart';
+import 'package:fixawy_provider/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class TodayCashComponent extends StatelessWidget {

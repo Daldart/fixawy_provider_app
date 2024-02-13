@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:handyman_provider_flutter/auth/auth_user_services.dart';
-import 'package:handyman_provider_flutter/auth/component/user_demo_mode_screen.dart';
-import 'package:handyman_provider_flutter/auth/forgot_password_dialog.dart';
-import 'package:handyman_provider_flutter/auth/sign_up_screen.dart';
-import 'package:handyman_provider_flutter/components/app_widgets.dart';
-import 'package:handyman_provider_flutter/components/selected_item_widget.dart';
-import 'package:handyman_provider_flutter/handyman/handyman_dashboard_screen.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/user_data.dart';
-import 'package:handyman_provider_flutter/provider/provider_dashboard_screen.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
-import 'package:handyman_provider_flutter/utils/configs.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
-import 'package:handyman_provider_flutter/utils/extensions/string_extension.dart';
-import 'package:handyman_provider_flutter/utils/images.dart';
+import 'package:fixawy_provider/auth/auth_user_services.dart';
+import 'package:fixawy_provider/auth/component/user_demo_mode_screen.dart';
+import 'package:fixawy_provider/auth/forgot_password_dialog.dart';
+// import 'package:fixawy_provider/auth/sign_up_screen.dart';
+import 'package:fixawy_provider/components/app_widgets.dart';
+import 'package:fixawy_provider/components/selected_item_widget.dart';
+import 'package:fixawy_provider/handyman/handyman_dashboard_screen.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/user_data.dart';
+import 'package:fixawy_provider/provider/provider_dashboard_screen.dart';
+import 'package:fixawy_provider/utils/common.dart';
+import 'package:fixawy_provider/utils/configs.dart';
+import 'package:fixawy_provider/utils/constant.dart';
+import 'package:fixawy_provider/utils/extensions/string_extension.dart';
+import 'package:fixawy_provider/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class SignInScreen extends StatefulWidget {

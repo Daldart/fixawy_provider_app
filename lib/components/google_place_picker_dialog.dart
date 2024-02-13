@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
-import 'package:handyman_provider_flutter/components/app_widgets.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/google_places_model.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
+import 'package:fixawy_provider/components/app_widgets.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/google_places_model.dart';
+import 'package:fixawy_provider/utils/common.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../networks/rest_apis.dart';

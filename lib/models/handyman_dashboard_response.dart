@@ -1,7 +1,7 @@
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/booking_detail_response.dart';
-import 'package:handyman_provider_flutter/models/booking_list_response.dart';
-import 'package:handyman_provider_flutter/models/revenue_chart_data.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/booking_detail_response.dart';
+import 'package:fixawy_provider/models/booking_list_response.dart';
+import 'package:fixawy_provider/models/revenue_chart_data.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import 'dashboard_response.dart';

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/components/view_all_label_component.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/service_model.dart';
-import 'package:handyman_provider_flutter/provider/components/service_widget.dart';
-import 'package:handyman_provider_flutter/provider/services/service_detail_screen.dart';
-import 'package:handyman_provider_flutter/provider/services/service_list_screen.dart';
+import 'package:fixawy_provider/components/view_all_label_component.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/service_model.dart';
+import 'package:fixawy_provider/provider/components/service_widget.dart';
+import 'package:fixawy_provider/provider/services/service_detail_screen.dart';
+import 'package:fixawy_provider/provider/services/service_list_screen.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class ServiceListComponent extends StatelessWidget {

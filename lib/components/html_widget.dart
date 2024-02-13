@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:handyman_provider_flutter/components/back_widget.dart';
+import 'package:fixawy_provider/components/back_widget.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class HtmlWidget extends StatelessWidget {

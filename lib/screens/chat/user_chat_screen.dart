@@ -4,17 +4,17 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_pagination/firebase_pagination.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:handyman_provider_flutter/components/app_widgets.dart';
-import 'package:handyman_provider_flutter/components/back_widget.dart';
-import 'package:handyman_provider_flutter/components/empty_error_state_widget.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/chat_message_model.dart';
-import 'package:handyman_provider_flutter/models/user_data.dart';
-import 'package:handyman_provider_flutter/networks/firebase_services/notification_service.dart';
-import 'package:handyman_provider_flutter/screens/chat/components/chat_item_widget.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
-import 'package:handyman_provider_flutter/utils/configs.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
+import 'package:fixawy_provider/components/app_widgets.dart';
+import 'package:fixawy_provider/components/back_widget.dart';
+import 'package:fixawy_provider/components/empty_error_state_widget.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/chat_message_model.dart';
+import 'package:fixawy_provider/models/user_data.dart';
+import 'package:fixawy_provider/networks/firebase_services/notification_service.dart';
+import 'package:fixawy_provider/screens/chat/components/chat_item_widget.dart';
+import 'package:fixawy_provider/utils/common.dart';
+import 'package:fixawy_provider/utils/configs.dart';
+import 'package:fixawy_provider/utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class UserChatScreen extends StatefulWidget {

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:handyman_provider_flutter/components/app_widgets.dart';
-import 'package:handyman_provider_flutter/components/back_widget.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/provider/blog/blog_repository.dart';
-import 'package:handyman_provider_flutter/provider/blog/component/blog_item_component.dart';
-import 'package:handyman_provider_flutter/provider/blog/model/blog_response_model.dart';
-import 'package:handyman_provider_flutter/provider/blog/shimmer/blog_shimmer.dart';
-import 'package:handyman_provider_flutter/provider/blog/view/add_blog_screen.dart';
+import 'package:fixawy_provider/components/app_widgets.dart';
+import 'package:fixawy_provider/components/back_widget.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/provider/blog/blog_repository.dart';
+import 'package:fixawy_provider/provider/blog/component/blog_item_component.dart';
+import 'package:fixawy_provider/provider/blog/model/blog_response_model.dart';
+import 'package:fixawy_provider/provider/blog/shimmer/blog_shimmer.dart';
+import 'package:fixawy_provider/provider/blog/view/add_blog_screen.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../../components/empty_error_state_widget.dart';

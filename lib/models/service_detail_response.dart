@@ -1,5 +1,5 @@
-import 'package:handyman_provider_flutter/models/booking_detail_response.dart';
-import 'package:handyman_provider_flutter/models/service_model.dart';
+import 'package:fixawy_provider/models/booking_detail_response.dart';
+import 'package:fixawy_provider/models/service_model.dart';
 
 class ServiceDetailResponse {
   Provider? provider;

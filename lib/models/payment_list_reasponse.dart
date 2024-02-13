@@ -1,6 +1,6 @@
-import 'package:handyman_provider_flutter/models/booking_detail_response.dart';
-import 'package:handyman_provider_flutter/models/pagination_model.dart';
-import 'package:handyman_provider_flutter/models/tax_list_response.dart';
+import 'package:fixawy_provider/models/booking_detail_response.dart';
+import 'package:fixawy_provider/models/pagination_model.dart';
+import 'package:fixawy_provider/models/tax_list_response.dart';
 
 import 'Package_response.dart';
 import 'extra_charges_model.dart';

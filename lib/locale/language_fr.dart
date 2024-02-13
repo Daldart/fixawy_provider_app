@@ -1,4 +1,4 @@
-import 'package:handyman_provider_flutter/locale/base_language.dart';
+import 'package:fixawy_provider/locale/base_language.dart';
 // class LanguageFr extends Languages{}
 
 class LanguageFr extends Languages {

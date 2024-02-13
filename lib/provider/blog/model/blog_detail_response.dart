@@ -1,4 +1,4 @@
-import 'package:handyman_provider_flutter/provider/blog/model/blog_response_model.dart';
+import 'package:fixawy_provider/provider/blog/model/blog_response_model.dart';
 
 class BlogDetailResponse {
   BlogData? blogDetail;

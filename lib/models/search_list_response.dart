@@ -1,5 +1,5 @@
-import 'package:handyman_provider_flutter/models/pagination_model.dart';
-import 'package:handyman_provider_flutter/models/service_model.dart';
+import 'package:fixawy_provider/models/pagination_model.dart';
+import 'package:fixawy_provider/models/service_model.dart';
 
 class SearchListResponse {
   List<ServiceData>? data;

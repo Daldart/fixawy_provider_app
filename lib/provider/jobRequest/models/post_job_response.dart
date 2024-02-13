@@ -1,5 +1,5 @@
-import 'package:handyman_provider_flutter/models/pagination_model.dart';
-import 'package:handyman_provider_flutter/provider/jobRequest/models/post_job_data.dart';
+import 'package:fixawy_provider/models/pagination_model.dart';
+import 'package:fixawy_provider/provider/jobRequest/models/post_job_data.dart';
 
 class PostJobResponse {
   Pagination? pagination;

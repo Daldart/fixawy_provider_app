@@ -1,4 +1,4 @@
-import 'package:handyman_provider_flutter/models/user_data.dart';
+import 'package:fixawy_provider/models/user_data.dart';
 
 class LoginResponse {
   UserData? data;

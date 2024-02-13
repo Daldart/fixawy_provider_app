@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/screens/cash_management/model/cash_filter_model.dart';
+import 'package:fixawy_provider/screens/cash_management/model/cash_filter_model.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class StatusWidget extends StatelessWidget {

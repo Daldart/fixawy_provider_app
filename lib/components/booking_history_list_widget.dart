@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/models/booking_detail_response.dart';
-import 'package:handyman_provider_flutter/utils/common.dart';
-import 'package:handyman_provider_flutter/utils/constant.dart';
-import 'package:handyman_provider_flutter/utils/dashed_rect.dart';
-import 'package:handyman_provider_flutter/utils/extensions/color_extension.dart';
+import 'package:fixawy_provider/models/booking_detail_response.dart';
+import 'package:fixawy_provider/utils/common.dart';
+import 'package:fixawy_provider/utils/constant.dart';
+import 'package:fixawy_provider/utils/dashed_rect.dart';
+import 'package:fixawy_provider/utils/extensions/color_extension.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 class BookingHistoryListWidget extends StatelessWidget {

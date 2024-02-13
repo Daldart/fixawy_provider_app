@@ -1,4 +1,4 @@
-import 'package:handyman_provider_flutter/models/service_model.dart';
+import 'package:fixawy_provider/models/service_model.dart';
 
 import 'pagination_model.dart';
 

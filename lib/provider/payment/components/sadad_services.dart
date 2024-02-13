@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/provider_subscription_model.dart';
-import 'package:handyman_provider_flutter/networks/rest_apis.dart';
-import 'package:handyman_provider_flutter/provider/payment/components/payment_webview_screen.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/provider_subscription_model.dart';
+import 'package:fixawy_provider/networks/rest_apis.dart';
+import 'package:fixawy_provider/provider/payment/components/payment_webview_screen.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../../utils/constant.dart';

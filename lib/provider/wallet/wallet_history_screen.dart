@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:handyman_provider_flutter/components/base_scaffold_widget.dart';
-import 'package:handyman_provider_flutter/main.dart';
-import 'package:handyman_provider_flutter/models/wallet_history_list_response.dart';
-import 'package:handyman_provider_flutter/networks/rest_apis.dart';
-import 'package:handyman_provider_flutter/provider/wallet/shimmer/wallet_history_shimmer.dart';
+import 'package:fixawy_provider/components/base_scaffold_widget.dart';
+import 'package:fixawy_provider/main.dart';
+import 'package:fixawy_provider/models/wallet_history_list_response.dart';
+import 'package:fixawy_provider/networks/rest_apis.dart';
+import 'package:fixawy_provider/provider/wallet/shimmer/wallet_history_shimmer.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../../components/empty_error_state_widget.dart';

@@ -1,5 +1,5 @@
-import 'package:handyman_provider_flutter/models/user_data.dart';
-import 'package:handyman_provider_flutter/provider/jobRequest/models/post_job_data.dart';
+import 'package:fixawy_provider/models/user_data.dart';
+import 'package:fixawy_provider/provider/jobRequest/models/post_job_data.dart';
 
 class BidderData {
   num? id;
