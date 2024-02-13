@@ -635,6 +635,69 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
     return Offstage();
   }
 
+
+  //region Done Service
+  void _handleDoneClick({required BookingDetailResponse status}) {
+    bool isAnyServiceAddonUnCompleted = status.bookingDetail!.serviceaddon.validate().any((element) => element.status.getBoolInt() == false);
+    showConfirmDialogCustom(
+      context,
+      negativeText: languages.lblNo,
+      dialogType: DialogType.CONFIRMATION,
+      primaryColor: context.primaryColor,
+      title: isAnyServiceAddonUnCompleted ? "Confirmation" : "End Services Message",
+      subTitle: isAnyServiceAddonUnCompleted ? "Please Note That All Service Marked Completed" : null,
+      positiveText: "Yes",
+      onAccept: (c) async {
+        String endDateTime = DateFormat(BOOKING_SAVE_FORMAT).format(DateTime.now());
+
+        log('STATUS.BOOKINGDETAIL!.STARTAT: ${status.bookingDetail!.startAt}');
+        num durationDiff = DateTime.parse(endDateTime.validate()).difference(DateTime.parse(status.bookingDetail!.startAt.validate())).inSeconds;
+
+        Map request = {
+          CommonKeys.id: status.bookingDetail!.id.validate(),
+          BookingUpdateKeys.startAt: status.bookingDetail!.startAt.validate(),
+          BookingUpdateKeys.endAt: endDateTime,
+          BookingUpdateKeys.durationDiff: durationDiff,
+          BookingUpdateKeys.reason:  BookingStatusKeys.complete,
+          UserKeys.status: BookingStatusKeys.complete,
+          BookingUpdateKeys.paymentStatus: status.bookingDetail!.isAdvancePaymentDone ? SERVICE_PAYMENT_STATUS_ADVANCE_PAID : status.bookingDetail!.paymentStatus.validate(),
+        };
+
+        appStore.setLoading(true);
+
+        log('RES: ${jsonEncode(request)}');
+        await updateBooking(status, '', BookingStatusKeys.complete).then((res) async {
+          appStore.setLoading(false);
+          init();
+          setState(() {});
+        }).catchError((e) {
+          appStore.setLoading(false);
+          toast(e.toString(), print: true);
+        });
+      },
+    );
+  }
+
+
+  //region Start Service
+  void startClick({required BookingDetailResponse status}) async {
+    appStore.setLoading(true);
+
+    await updateBooking(status, '', BookingStatusKeys.inProgress).then((res) async {
+      init();
+      setState(() {});
+    }).catchError((e) {
+      toast(e.toString(), print: true);
+    });
+
+    appStore.setLoading(false);
+  }
+
+
+  void _handleStartClick({required BookingDetailResponse status}) {
+    startClick(status: status);
+  }
+
   Widget handleHandyman({required BookingDetailResponse res}) {
     if (res.bookingDetail!.status == BookingStatusKeys.accept) {
       showBottomActionBar = true;
@@ -730,8 +793,15 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
       );
     } else if (res.bookingDetail!.status == BookingStatusKeys.onGoing) {
       showBottomActionBar = true;
-
-      return Text(languages.lblWaitingForResponse, style: boldTextStyle()).center();
+       return AppButton(
+        text: "Start",
+        textColor: Colors.white,
+        color: Colors.green,
+        onTap: () {
+          _handleStartClick(status: res);
+        },
+      );
+      // return Text(languages.lblWaitingForResponse, style: boldTextStyle()).center();
     } else if (res.bookingDetail!.status == BookingStatusKeys.complete) {
       if (res.bookingDetail!.paymentMethod == PAYMENT_METHOD_COD && res.bookingDetail!.paymentStatus == PENDING) {
         showBottomActionBar = true;
@@ -757,7 +827,16 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
     } else if (res.bookingDetail!.status == BookingStatusKeys.inProgress) {
       showBottomActionBar = true;
 
-      return Text(res.bookingDetail!.statusLabel.validate(), style: boldTextStyle()).center();
+      // return Text(res.bookingDetail!.statusLabel.validate(), style: boldTextStyle()).center();
+
+     return AppButton(
+        text: "Done",
+        textColor: Colors.white,
+        color: primaryColor,
+        onTap: () {
+          _handleDoneClick(status: res);
+        },
+      );
     }
     return Offstage();
   }
