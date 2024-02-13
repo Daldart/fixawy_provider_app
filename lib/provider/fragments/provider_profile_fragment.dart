@@ -211,14 +211,14 @@ class ProviderProfileFragmentState extends State<ProviderProfileFragment> {
                       ),
                     if (appStore.userType != USER_TYPE_HANDYMAN) Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
                     if (appStore.userType != USER_TYPE_HANDYMAN)
-                      SettingItemWidget(
+                      /*SettingItemWidget(
                         leading: Image.asset(ic_blog, height: 16, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
                         title: languages.blogs,
                         trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
                         onTap: () {
                           BlogListScreen().launch(context);
                         },
-                      ),
+                      ),*/
                     Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
                     SettingItemWidget(
                       leading: Image.asset(handyman, height: 16, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
@@ -265,14 +265,14 @@ class ProviderProfileFragmentState extends State<ProviderProfileFragment> {
                       },
                     ),
                     Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
-                    SettingItemWidget(
+                    /*SettingItemWidget(
                       leading: Image.asset(ic_tax, height: 18, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
                       title: languages.lblTaxes,
                       trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
                       onTap: () {
                         TaxesScreen().launch(context);
                       },
-                    ),
+                    ),*/
                     if (appStore.earningTypeCommission)
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
