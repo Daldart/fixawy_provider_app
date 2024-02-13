@@ -50,7 +50,7 @@ NotificationService notificationService = NotificationService();
 //endregion
 
 //region Global Variables
-Languages languages = LanguageEn();
+Languages languages = LanguageAr();
 List<RevenueChartData> chartData = [];
 RemoteConfigDataModel remoteConfigDataModel = RemoteConfigDataModel();
 List<ExtraChargesModel> chargesList = [];
