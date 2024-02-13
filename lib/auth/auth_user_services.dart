@@ -116,7 +116,7 @@ Future<void> updatePlayerId({required String playerId}) async {
 Future<void> setUserInFirebaseIfNotRegistered(BuildContext context) async {
   appStore.setLoading(true);
 
-  UserData tempUserData = UserData()
+/*   UserData tempUserData = UserData()
     ..contactNumber = appStore.userContactNumber.validate()
     ..email = appStore.userEmail.validate()
     ..firstName = appStore.userFirstName.validate()
@@ -124,7 +124,7 @@ Future<void> setUserInFirebaseIfNotRegistered(BuildContext context) async {
     ..profileImage = appStore.userProfileImage.validate()
     ..userType = appStore.userType.validate()
     ..playerId = getStringAsync(PLAYERID)
-    ..username = appStore.userName;
+    ..username = appStore.userName; */
 
   // await registerUserInFirebase(context, user: tempUserData).then((value) {
   //   appStore.setUId(value);
