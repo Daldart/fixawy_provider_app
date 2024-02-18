@@ -13,8 +13,6 @@ import '../../components/empty_error_state_widget.dart';
 import '../../models/configuration_response.dart';
 import '../../networks/rest_apis.dart';
 import 'components/cinet_pay_services_new.dart';
-import 'components/flutter_wave_service_new.dart';
-import 'components/paypal_service.dart';
 import 'components/razorpay_service_new.dart';
 import 'components/sadad_services_new.dart';
 import 'components/stripe_service_new.dart';
@@ -84,7 +82,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
       );
       razorPayServiceNew.razorPayCheckout();
     } else if (selectedPaymentSetting!.type == PAYMENT_METHOD_FLUTTER_WAVE) {
-      FlutterWaveServiceNew flutterWaveServiceNew = FlutterWaveServiceNew();
+      // FlutterWaveServiceNew flutterWaveServiceNew = FlutterWaveServiceNew();
 
 /*      flutterWaveServiceNew.checkout(
         paymentSetting: selectedPaymentSetting!,

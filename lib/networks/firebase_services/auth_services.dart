@@ -1,9 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:fixawy_provider/main.dart';
 import 'package:fixawy_provider/models/user_data.dart';
-import 'package:fixawy_provider/utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 // final FirebaseAuth _auth = FirebaseAuth.instance;

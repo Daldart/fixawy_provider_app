@@ -1,13 +1,5 @@
 // import 'package:flutterwave_standard/flutterwave.dart';
-import 'package:nb_utils/nb_utils.dart';
-import 'package:uuid/uuid.dart';
 
-import '../../../main.dart';
-import '../../../models/configuration_response.dart';
-import '../../../networks/rest_apis.dart';
-import '../../../utils/configs.dart';
-import '../../../utils/constant.dart';
-import '../../../utils/images.dart';
 
 class FlutterWaveServiceNew {
   /*final Customer customer = Customer(

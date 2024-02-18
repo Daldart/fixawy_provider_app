@@ -1,11 +1,5 @@
-import 'package:flutter/material.dart';
 // import 'package:flutter_paypal_checkout/flutter_paypal_checkout.dart';
-import 'package:nb_utils/nb_utils.dart';
 
-import '../../../main.dart';
-import '../../../models/configuration_response.dart';
-import '../../../utils/common.dart';
-import '../../../utils/configs.dart';
 
 
 class PayPalService {

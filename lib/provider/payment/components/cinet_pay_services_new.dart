@@ -2,7 +2,6 @@ import 'dart:math';
 
 // import 'package:cinetpay/cinetpay.dart';
 import 'package:flutter/material.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 import '../../../models/configuration_response.dart';

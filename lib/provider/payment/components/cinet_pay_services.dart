@@ -4,9 +4,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:fixawy_provider/main.dart';
 import 'package:fixawy_provider/models/provider_subscription_model.dart';
-import 'package:fixawy_provider/networks/rest_apis.dart';
-import 'package:fixawy_provider/utils/constant.dart';
-import 'package:nb_utils/nb_utils.dart';
 
 class CinetPayServices {
   String cinetPayApiKey;

@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 // import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:http/http.dart' as http;
@@ -7,7 +6,6 @@ import 'package:nb_utils/nb_utils.dart';
 
 import '../../../main.dart';
 import '../../../models/configuration_response.dart';
-import '../../../models/stripe_pay_model.dart';
 import '../../../networks/network_utils.dart';
 import '../../../utils/common.dart';
 import '../../../utils/configs.dart';
@@ -32,16 +30,13 @@ class StripeServiceNew {
   Future<dynamic> stripePay() async {
     String stripePaymentKey = '';
     String stripeURL = '';
-    String stripePaymentPublishKey = '';
 
     if (paymentSetting.isTest == 1) {
       stripePaymentKey = paymentSetting.testValue!.stripeKey!;
       stripeURL = paymentSetting.testValue!.stripeUrl!;
-      stripePaymentPublishKey = paymentSetting.testValue!.stripePublickey!;
     } else {
       stripePaymentKey = paymentSetting.liveValue!.stripeKey!;
       stripeURL = paymentSetting.liveValue!.stripeUrl!;
-      stripePaymentPublishKey = paymentSetting.liveValue!.stripePublickey!;
     }
 
     // Stripe.merchantIdentifier = 'merchant.flutter.stripe.test';

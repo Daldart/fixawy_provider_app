@@ -1,18 +1,13 @@
 // import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_pagination/firebase_pagination.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:fixawy_provider/components/app_widgets.dart';
 import 'package:fixawy_provider/components/back_widget.dart';
 import 'package:fixawy_provider/main.dart';
-import 'package:fixawy_provider/models/user_data.dart';
-import 'package:fixawy_provider/screens/chat/components/user_item_widget.dart';
 import 'package:fixawy_provider/utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import '../../auth/sign_in_screen.dart';
 import '../../components/base_scaffold_body.dart';
-import '../../components/empty_error_state_widget.dart';
 
 class ChatListScreen extends StatefulWidget {
   @override

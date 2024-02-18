@@ -9,7 +9,6 @@ import 'package:fixawy_provider/utils/common.dart';
 import 'package:fixawy_provider/utils/configs.dart';
 import 'package:http/http.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../utils/constant.dart';
 
