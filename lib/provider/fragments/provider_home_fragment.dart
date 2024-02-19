@@ -126,7 +126,7 @@ class _ProviderHomeFragmentState extends State<ProviderHomeFragment> {
                     _buildHeaderWidget(snap.data!),
                     TodayCashComponent(todayCashAmount: snap.data!.todayCashAmount.validate()),
                     TotalComponent(snap: snap.data!),
-                    ChartComponent(),
+                    // ChartComponent(),
                     HandymanRecentlyOnlineComponent(images: snap.data!.onlineHandyman.validate()),
                     HandymanListComponent(list: snap.data!.handyman.validate()),
                     UpcomingBookingComponent(bookingData: snap.data!.upcomingBookings.validate()),
