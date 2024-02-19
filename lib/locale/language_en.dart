@@ -11,16 +11,16 @@ class LanguageEn extends Languages {
   String get provider => 'Provider';
 
   @override
-  String get lblShowingOnly4Handyman => 'Showing Only 4 Handyman';
+  String get lblShowingOnly4Handyman => 'Showing Only 4 Fixawy';
 
   @override
-  String get lblRecentlyOnlineHandyman => 'Recently Online Handyman';
+  String get lblRecentlyOnlineHandyman => 'Recently Online Fixawy';
 
   @override
   String get lblStartDrive => 'Start Drive';
 
   @override
-  String get handyman => 'Handyman';
+  String get handyman => 'Fixawy';
 
   @override
   String get signIn => 'Sign In';
@@ -182,7 +182,7 @@ class LanguageEn extends Languages {
   String get lblReason => 'Reason';
 
   @override
-  String get lblSelectHandyman => 'Please Select Handyman';
+  String get lblSelectHandyman => 'Please Select Fixawy';
 
   @override
   String get lblAssign => 'Assign';
@@ -191,7 +191,7 @@ class LanguageEn extends Languages {
   String get lblCall => 'Call';
 
   @override
-  String get lblAssignHandyman => 'Assign Handyman';
+  String get lblAssignHandyman => 'Assign Fixawy';
 
   @override
   String get lblAssigned => 'Assigned';

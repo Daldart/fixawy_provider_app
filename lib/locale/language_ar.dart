@@ -182,7 +182,7 @@ class LanguageAr extends Languages {
   String get lblReason => 'السبب';
 
   @override
-  String get lblSelectHandyman => 'يرجى اختيار Handyman.';
+  String get lblSelectHandyman => 'يرجى اختيار Fixawy.';
 
   @override
   String get lblAssign => 'تعيين';
@@ -191,7 +191,7 @@ class LanguageAr extends Languages {
   String get lblCall => 'اتصال';
 
   @override
-  String get lblAssignHandyman => 'تعيين Handyman.';
+  String get lblAssignHandyman => 'تعيين Fixawy.';
 
   @override
   String get lblAssigned => 'مكلف';
@@ -206,7 +206,7 @@ class LanguageAr extends Languages {
   String get lblRevenue => 'إيرادات';
 
   @override
-  String get lblAddHandyman => 'أضف Handyman.';
+  String get lblAddHandyman => 'أضف Fixawy.';
 
   @override
   String get lblBooking => 'الحجز';
@@ -641,7 +641,7 @@ class LanguageAr extends Languages {
   String get lblSubscriptionHistory => "تاريخ الاشتراك";
 
   @override
-  String get lblTrashHandyman => "كان Handyman القمامة بنجاح";
+  String get lblTrashHandyman => "كان Fixawy القمامة بنجاح";
 
   @override
   String get lblPlsSelectAddress => "يرجى تحديد العنوان";

@@ -1,7 +1,7 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 
-const APP_NAME = 'Handyman Services';
+const APP_NAME = 'Fixawy Services';
 const DEFAULT_LANGUAGE = 'ar';
 
 const primaryColor = Color(0xFFFFCC10);
