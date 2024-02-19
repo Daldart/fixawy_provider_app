@@ -300,14 +300,14 @@ class ProviderProfileFragmentState extends State<ProviderProfileFragment> {
                       },
                     ),
                     Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
-                    SettingItemWidget(
+/*                     SettingItemWidget(
                       leading: Image.asset(language, height: 14, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
                       title: languages.language,
                       trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
                       onTap: () {
                         LanguagesScreen().launch(context);
                       },
-                    ),
+                    ), */
                     Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
                     SettingItemWidget(
                       leading: Image.asset(changePassword, height: 18, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
