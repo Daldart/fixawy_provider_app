@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:fixawy_provider/components/notification_widget.dart';
 import 'package:fixawy_provider/main.dart';
@@ -36,8 +38,18 @@ class NotificationScreenState extends State<NotificationFragment> {
       setState(() {});
     });
     init();
+
+    setUpTimedFetch();
   }
 
+  setUpTimedFetch() {
+    Timer.periodic(Duration(seconds: 5), (timer) {
+      setState(() {
+        init();
+      });
+    });
+  }
+  
   Future<void> init({String type = ''}) async {
     future = getNotification(
       {NotificationKey.type: type},
