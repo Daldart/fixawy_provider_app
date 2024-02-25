@@ -45,8 +45,9 @@ import 'shimmer/booking_detail_shimmer.dart';
 
 class BookingDetailScreen extends StatefulWidget {
   final int bookingId;
+  final BookingData? bookingData;
 
-  BookingDetailScreen({required this.bookingId});
+  BookingDetailScreen({required this.bookingId, this.bookingData});
 
   @override
   BookingDetailScreenState createState() => BookingDetailScreenState();
@@ -71,6 +72,28 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
   void initState() {
     init();
     super.initState();
+
+    if (widget.bookingData?.status == BookingStatusKeys.pending) {
+      showBottomActionBar = true;
+      var request = {
+        CommonKeys.id: widget.bookingData?.id.validate(),
+        BookingUpdateKeys.status: BookingStatusKeys.accept,
+        BookingUpdateKeys.paymentStatus:
+            widget.bookingData!.isAdvancePaymentDone
+                ? SERVICE_PAYMENT_STATUS_ADVANCE_PAID
+                : widget.bookingData!.paymentStatus.validate(),
+      };
+      appStore.setLoading(true);
+
+      bookingUpdate(request).then((res) async {
+        appStore.setLoading(false);
+      }).catchError((e) {
+        appStore.setLoading(false);
+        toast(e.toString());
+      });
+      // setState(() {
+      // });
+    }
   }
 
   Future<void> init({bool flag = false}) async {
@@ -570,8 +593,26 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
   }
 
   Widget handleProvider({required BookingDetailResponse res}) {
-    if (res.bookingDetail!.status == BookingStatusKeys.pending) {
+/*  if (res.bookingDetail!.status == BookingStatusKeys.pending) {
       showBottomActionBar = true;
+      setState(() {
+        var request = {
+          CommonKeys.id: res.bookingDetail!.id.validate(),
+          BookingUpdateKeys.status: BookingStatusKeys.accept,
+          BookingUpdateKeys.paymentStatus:
+              res.bookingDetail!.isAdvancePaymentDone
+                  ? SERVICE_PAYMENT_STATUS_ADVANCE_PAID
+                  : res.bookingDetail!.paymentStatus.validate(),
+        };
+        appStore.setLoading(true);
+
+        bookingUpdate(request).then((res) async {
+          appStore.setLoading(false);
+        }).catchError((e) {
+          appStore.setLoading(false);
+          toast(e.toString());
+        });
+      });
       return Row(
         children: [
           AppButton(
@@ -616,7 +657,8 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
           ).expand(),
         ],
       );
-    } else if (res.bookingDetail!.status == BookingStatusKeys.accept) {
+    } else  */
+    if (res.bookingDetail!.status == BookingStatusKeys.accept || res.bookingDetail!.status == BookingStatusKeys.pending) {
       showBottomActionBar = true;
 
       if (res.handymanData.validate().isEmpty) {
@@ -701,6 +743,11 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
   Widget handleHandyman({required BookingDetailResponse res}) {
     if (res.bookingDetail!.status == BookingStatusKeys.accept) {
       showBottomActionBar = true;
+
+     
+     Future.delayed(Duration(minutes: 5), () {
+      updateBooking(res, '', BookingStatusKeys.pending);
+     });
 
       return Container(
         child: Row(

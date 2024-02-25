@@ -302,7 +302,8 @@ class BookingItemComponentState extends State<BookingItemComponent> {
                         ).paddingAll(8),
                       ],
                     ),
-                  if (isUserTypeProvider && widget.bookingData.status == BookingStatusKeys.pending || (isUserTypeHandyman && widget.bookingData.status == BookingStatusKeys.accept))
+                  // if (isUserTypeProvider && widget.bookingData.status == BookingStatusKeys.pending || (isUserTypeHandyman && widget.bookingData.status == BookingStatusKeys.accept))
+                  if (isUserTypeHandyman && widget.bookingData.status == BookingStatusKeys.accept)
                     Row(
                       children: [
                         if (isUserTypeProvider)
@@ -356,7 +357,11 @@ class BookingItemComponentState extends State<BookingItemComponent> {
                         ).expand(),
                       ],
                     ).paddingOnly(bottom: 8, left: 8, right: 8, top: 16),
-                  if (isUserTypeProvider && widget.bookingData.handyman!.isEmpty && widget.bookingData.status == BookingStatusKeys.accept)
+                  if (isUserTypeProvider &&
+                          widget.bookingData.handyman!.isEmpty &&
+                          widget.bookingData.status ==
+                              BookingStatusKeys.accept ||
+                      widget.bookingData.status == BookingStatusKeys.pending)
                     Column(
                       children: [
                         8.height,

@@ -12,6 +12,8 @@ import 'package:nb_utils/nb_utils.dart';
 
 import '../../components/base_scaffold_widget.dart';
 import '../../components/empty_error_state_widget.dart';
+import '../../models/booking_detail_response.dart';
+import '../../utils/constant.dart';
 
 class AssignHandymanScreen extends StatefulWidget {
   final int? bookingId;
@@ -34,6 +36,7 @@ class _AssignHandymanScreenState extends State<AssignHandymanScreen> {
   bool isLastPage = false;
 
   UserData? userListData;
+  BookingDetailResponse? bookingDetailResponse;
 
   @override
   void initState() {
@@ -89,35 +92,49 @@ class _AssignHandymanScreenState extends State<AssignHandymanScreen> {
   Future<void> _handleAssignToMyself() async {
     if (appStore.isLoading) return;
 
-    showConfirmDialogCustom(
-      context,
-      title: languages.lblAreYouSureYouWantToAssignToYourself,
-      primaryColor: context.primaryColor,
-      positiveText: languages.lblYes,
-      negativeText: languages.lblCancel,
-      onAccept: (c) async {
-        var request = {
-          CommonKeys.id: widget.bookingId,
-          CommonKeys.handymanId: [appStore.userId.validate()],
-        };
+    showConfirmDialogCustom(context,
+        title: languages.lblAreYouSureYouWantToAssignToYourself,
+        primaryColor: context.primaryColor,
+        positiveText: languages.lblYes,
+        negativeText: languages.lblCancel, onAccept: (c) async {
+      var request = {
+        CommonKeys.id: widget.bookingId,
+        CommonKeys.handymanId: [appStore.userId.validate()],
+      };
 
-        appStore.setLoading(true);
+      appStore.setLoading(true);
 
-        await assignBooking(request).then((res) async {
-          appStore.setLoading(false);
+      await assignBooking(request).then((res) async {
+        appStore.setLoading(false);
 
-          widget.onUpdate!.call();
+        widget.onUpdate!.call();
 
-          finish(context);
+        finish(context);
 
-          toast(res.message);
-        }).catchError((e) {
-          appStore.setLoading(false);
+        toast(res.message);
+      }).catchError((e) {
+        appStore.setLoading(false);
 
-          toast(e.toString());
-        });
-      },
-    );
+        toast(e.toString());
+      });
+
+      var updateBookingRequest = {
+        CommonKeys.id: bookingDetailResponse?.bookingDetail!.id.validate(),
+        BookingUpdateKeys.status: BookingStatusKeys.accept,
+        BookingUpdateKeys.paymentStatus: bookingDetailResponse!
+                .bookingDetail!.isAdvancePaymentDone
+            ? SERVICE_PAYMENT_STATUS_ADVANCE_PAID
+            : bookingDetailResponse?.bookingDetail!.paymentStatus.validate(),
+      };
+      appStore.setLoading(true);
+
+     await bookingUpdate(updateBookingRequest).then((res) async {
+        appStore.setLoading(false);
+      }).catchError((e) {
+        appStore.setLoading(false);
+        toast(e.toString());
+      });
+    });
   }
 
   Widget buildRadioListTile({required UserData userData}) {
