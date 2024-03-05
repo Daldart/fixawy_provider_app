@@ -15,7 +15,7 @@ class AppLocalizations extends LocalizationsDelegate<Languages> {
       case 'ar':
         return LanguageAr();
       default:
-        return LanguageEn();
+        return LanguageAr();
     }
   }
 
