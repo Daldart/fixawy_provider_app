@@ -228,7 +228,8 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
       BookingUpdateKeys.durationDiff: timeInterval,
       BookingUpdateKeys.reason: updateReason,
       BookingUpdateKeys.status: updatedStatus,
-      BookingUpdateKeys.paymentStatus: paymentStatus
+      BookingUpdateKeys.paymentStatus: paymentStatus,
+      CommonKeys.userId: bookDetail.providerData?.id
     };
 
     await bookingUpdate(request).then((res) async {
