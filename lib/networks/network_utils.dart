@@ -50,7 +50,7 @@ Map<String, String> buildHeaderTokens({
 
 Uri buildBaseUrl(String endPoint) {
   Uri url = Uri.parse(endPoint);
-  if (!endPoint.startsWith('http')) url = Uri.parse('$BASE_URL$endPoint');
+  if (!endPoint.startsWith('http')) url = Uri.parse('$BASE_URL${appStore.selectedLanguageCode + '/'}$endPoint');
 
   log('URL: ${url.toString()}');
 
