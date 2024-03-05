@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 abstract class Languages {
-  static Languages of(BuildContext context) => Localizations.of<Languages>(context, Languages)!;
+  static Languages of(BuildContext context) =>
+      Localizations.of<Languages>(context, Languages)!;
 
   String planAboutToExpire(int days);
 
@@ -444,6 +445,12 @@ abstract class Languages {
   String get lblSelectSubCategory;
 
   String get lblServiceProof;
+
+  String get confirmation;
+
+  String get endServicesMessage;
+
+  String get done;
 
   String get lblTitle;
 
