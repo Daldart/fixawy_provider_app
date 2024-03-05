@@ -1016,7 +1016,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
       // return Text(res.bookingDetail!.statusLabel.validate(), style: boldTextStyle()).center();
 
       return AppButton(
-        text: languages.don,
+        text: languages.done,
         textColor: Colors.white,
         color: primaryColor,
         onTap: () {
