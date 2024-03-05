@@ -1369,13 +1369,13 @@ class LanguageAr extends Languages {
   String get successfullyActivated => 'تم تنشيطه بنجاح';
 
   @override
-  String get providerHome => 'مزود المنزل';
+  String get providerHome => ' الرئيسيه';
 
   @override
   String get handymanHome => 'عامل المنزل';
 
   @override
-  String get home => 'منزل';
+  String get home => 'الرئيسيه';
 
   @override
   String get selectPlanSubTitle => 'اختر خطة مصممة لاحتياجاتك';

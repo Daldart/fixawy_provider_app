@@ -77,7 +77,8 @@ void main() async {
 
   if (!isDesktop) {
     Firebase.initializeApp().then((value) {
-      FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+      FlutterError.onError =
+          FirebaseCrashlytics.instance.recordFlutterFatalError;
 
       setupFirebaseRemoteConfig();
     }).catchError((e) {
@@ -91,7 +92,8 @@ void main() async {
 
   localeLanguageList = languageList();
 
-  appStore.setLanguage(getStringAsync(SELECTED_LANGUAGE_CODE, defaultValue: DEFAULT_LANGUAGE));
+  // appStore.setLanguage(getStringAsync(SELECTED_LANGUAGE_CODE, defaultValue: DEFAULT_LANGUAGE));
+  appStore.setLanguage(DEFAULT_LANGUAGE);
 
   await appStore.setLoggedIn(getBoolAsync(IS_LOGGED_IN));
 
