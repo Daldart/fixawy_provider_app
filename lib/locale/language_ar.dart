@@ -18,7 +18,7 @@ class LanguageAr extends Languages {
   String get lblRecentlyOnlineHandyman => 'العمال المتصلون';
 
   @override
-  String get lblStartDrive => 'ابدأ القيادة';
+  String get lblStartDrive => 'ابدأ العمل';
 
   @override
   String get handyman => 'عامل';
@@ -1372,7 +1372,7 @@ class LanguageAr extends Languages {
   String get providerHome => ' الرئيسيه';
 
   @override
-  String get handymanHome => 'عامل المنزل';
+  String get handymanHome => 'الرئيسيه ';
 
   @override
   String get home => 'الرئيسيه';
