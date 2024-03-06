@@ -94,6 +94,8 @@ abstract class Languages {
 
   String get pending;
 
+  String get bookingStatuesSubmitMessage;
+
   String get darkMode;
 
   String get lightMode;

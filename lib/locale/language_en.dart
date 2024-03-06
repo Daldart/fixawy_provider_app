@@ -136,6 +136,9 @@ class LanguageEn extends Languages {
   String get pending => 'Pending';
 
   @override
+  String get bookingStatuesSubmitMessage => 'Booking has been ';
+
+  @override
   String get darkMode => 'Dark Mode';
 
   @override
