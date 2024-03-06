@@ -588,7 +588,7 @@ class LanguageAr extends Languages {
   String get lblGetDirection => "احصل على اتجاه";
 
   @override
-  String get lblDeleteTitle => "سيتم حذف الحساب";
+  String get lblDeleteTitle => "انت تغادر الان!!";
 
   @override
   String get lblDeleteSubTitle => "هل ترغب بالخروج؟";
