@@ -6,7 +6,8 @@ const DEFAULT_LANGUAGE = 'ar';
 
 const primaryColor = Color(0xFFFFCC10);
 
-const DOMAIN_URL = 'http://fixawy.daldart.com'; // Don't add slash at the end of
+// const DOMAIN_URL = 'http://fixawy.daldart.com'; // Don't add slash at the end of
+const DOMAIN_URL = 'https://fixawy.net'; // Don't add slash at the end of
 const BASE_URL = "$DOMAIN_URL/api/";
 
 /// You can specify in Admin Panel, These will be used if you don't specify in Admin Panel
