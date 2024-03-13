@@ -103,7 +103,7 @@ class _SignInScreenState extends State<SignInScreen> {
             nextFocus: passwordFocus,
             errorThisFieldRequired: languages.hintRequired,
             decoration: inputDecoration(context, hint: languages.hintPhoneTxt),
-            suffix: ic_message.iconImage(size: 10).paddingAll(14),
+            suffix: calling.iconImage(size: 10).paddingAll(14),
             // autoFillHints: [AutofillHints.telephoneNumber],
           ),
           16.height,
