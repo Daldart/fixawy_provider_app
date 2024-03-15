@@ -28,9 +28,8 @@ class BookingFragment extends StatefulWidget {
   BookingFragmentState createState() => BookingFragmentState();
 }
 
-class BookingFragmentState extends State<BookingFragment> with SingleTickerProviderStateMixin {
-  ScrollController scrollController = ScrollController();
-
+class BookingFragmentState extends State<BookingFragment>
+    with SingleTickerProviderStateMixin {
   int page = 1;
   List<BookingData> bookings = [];
 
@@ -39,6 +38,7 @@ class BookingFragmentState extends State<BookingFragment> with SingleTickerProvi
   bool hasError = false;
   bool isApiCalled = false;
 
+  ScrollController scrollController = ScrollController();
   Future<List<BookingData>>? future;
   UniqueKey keyForList = UniqueKey();
 
@@ -79,7 +79,10 @@ class BookingFragmentState extends State<BookingFragment> with SingleTickerProvi
   }
 
   void init({String status = ''}) async {
-    future = getBookingList(page, status: status, searchText: searchCont.text, bookings: bookings, lastPageCallback: (b) {
+    future = getBookingList(page,
+        status: status,
+        searchText: searchCont.text,
+        bookings: bookings, lastPageCallback: (b) {
       isLastPage = b;
     });
     appStore.setLoading(false);
@@ -133,7 +136,8 @@ class BookingFragmentState extends State<BookingFragment> with SingleTickerProvi
                 },
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 16, right: 16, top: 24, bottom: 8),
+                    padding: EdgeInsets.only(
+                        left: 16, right: 16, top: 24, bottom: 8),
                     child: Row(
                       children: [
                         AppTextField(
@@ -161,14 +165,16 @@ class BookingFragmentState extends State<BookingFragment> with SingleTickerProvi
                           },
                           decoration: inputDecoration(context).copyWith(
                             hintText: "Search for booking",
-                            prefixIcon: ic_search.iconImage(size: 8).paddingAll(16),
+                            prefixIcon:
+                                ic_search.iconImage(size: 8).paddingAll(16),
                             hintStyle: secondaryTextStyle(),
                           ),
                         ).expand(),
                         16.width,
                         Container(
                           padding: EdgeInsets.all(10),
-                          decoration: boxDecorationDefault(color: context.primaryColor),
+                          decoration:
+                              boxDecorationDefault(color: context.primaryColor),
                           child: CachedImageWidget(
                             url: ic_filter,
                             height: 26,
@@ -183,7 +189,10 @@ class BookingFragmentState extends State<BookingFragment> with SingleTickerProvi
                               context: context,
                               isScrollControlled: true,
                               isDismissible: true,
-                              shape: RoundedRectangleBorder(borderRadius: radiusOnly(topLeft: defaultRadius, topRight: defaultRadius)),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: radiusOnly(
+                                      topLeft: defaultRadius,
+                                      topRight: defaultRadius)),
                               builder: (_) {
                                 return BookingStatusFilterBottomSheet();
                               },
@@ -197,7 +206,9 @@ class BookingFragmentState extends State<BookingFragment> with SingleTickerProvi
                               init(status: res);
 
                               if (bookings.isNotEmpty) {
-                                scrollController.animateTo(0, duration: 1.seconds, curve: Curves.easeOutQuart);
+                                scrollController.animateTo(0,
+                                    duration: 1.seconds,
+                                    curve: Curves.easeOutQuart);
                               } else {
                                 scrollController = ScrollController();
                                 keyForList = UniqueKey();
@@ -214,7 +225,8 @@ class BookingFragmentState extends State<BookingFragment> with SingleTickerProvi
                     key: keyForList,
                     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     listAnimationType: ListAnimationType.FadeIn,
-                    fadeInConfiguration: FadeInConfiguration(duration: 2.seconds),
+                    fadeInConfiguration:
+                        FadeInConfiguration(duration: 2.seconds),
                     itemCount: list.length,
                     shrinkWrap: true,
                     disposeScrollController: true,
@@ -224,7 +236,8 @@ class BookingFragmentState extends State<BookingFragment> with SingleTickerProvi
                       subTitle: languages.noBookingSubTitle,
                       imageWidget: EmptyStateWidget(),
                     ),
-                    itemBuilder: (_, index) => BookingItemComponent(bookingData: list[index], index: index),
+                    itemBuilder: (_, index) => BookingItemComponent(
+                        bookingData: list[index], index: index),
                   ),
                 ],
               );

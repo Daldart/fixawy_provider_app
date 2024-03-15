@@ -2,18 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:fixawy_provider/components/shimmer_widget.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-class BookingShimmer extends StatelessWidget {
-  const BookingShimmer({Key? key}) : super(key: key);
+class NoSearchBookingShimmer extends StatelessWidget {
+  const NoSearchBookingShimmer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
-          ShimmerWidget(
-            height: 50,
-            width: context.width(),
-          ).paddingSymmetric(vertical: 16, horizontal: 16),
           AnimatedListView(
             physics: NeverScrollableScrollPhysics(),
             padding: EdgeInsets.only(bottom: 16, top: 16, right: 16, left: 16),

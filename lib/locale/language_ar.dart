@@ -1288,7 +1288,7 @@ class LanguageAr extends Languages {
   String get onGoing => 'جاري التنفيذ';
 
   @override
-  String get inProgress => 'قيد العمل الان';
+  String get inProgress => 'قيد العمل';
 
   @override
   String get hold => 'توقف';
