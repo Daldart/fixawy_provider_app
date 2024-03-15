@@ -255,7 +255,6 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
     setState(() {});
 
     hideKeyboard(context);
-
     var request = {
       CommonKeys.id: bookDetail.bookingDetail!.id,
       BookingUpdateKeys.startAt: startDateTime,
@@ -913,6 +912,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
                   positiveText: languages.lblYes,
                   negativeText: languages.lblNo,
                   onAccept: (val) {
+                    toast("${languages.bookingStatuesSubmitMessage}");
                     appStore.setLoading(true);
                     updateBooking(res, '', BookingStatusKeys.pending);
                   },
@@ -1112,6 +1112,8 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
 
   //region Body
   Widget buildBodyWidget(AsyncSnapshot<BookingDetailResponse> res) {
+    log("isBookingStatus_Completed: $isCompleted");
+
     if (res.hasError) {
       return NoDataWidget(
         title: res.error.toString(),
@@ -1241,46 +1243,50 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
                     ).paddingOnly(left: 16, right: 16),
 
                   /// About Customer Card
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      16.height,
-                      // if(res.data!.bookingDetail!.canCustomerContact)
-                      aboutCustomerWidget(
-                          context: context,
-                          bookingDetail: res.data!.bookingDetail),
-                      16.height,
-                      Container(
-                        decoration: boxDecorationWithRoundedCorners(
-                            backgroundColor: context.cardColor,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(16))),
-                        padding: EdgeInsets.all(16),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            BasicInfoComponent(
-                              0,
-                              customerData: res.data!.customer,
-                              service: res.data!.service,
-                              bookingDetail: res.data!.bookingDetail,
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      8.height,
-
-                      ///Add-ons
-                      if (res.data!.bookingDetail!.serviceaddon
+                  if (res.data!.bookingDetail!.status
                           .validate()
-                          .isNotEmpty)
-                        AddonComponent(
-                          serviceAddon:
-                              res.data!.bookingDetail!.serviceaddon.validate(),
+                          .toBookingStatus() !=
+                      languages.completed)
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        16.height,
+                        // if(res.data!.bookingDetail!.canCustomerContact)
+                        aboutCustomerWidget(
+                            context: context,
+                            bookingDetail: res.data!.bookingDetail),
+                        16.height,
+                        Container(
+                          decoration: boxDecorationWithRoundedCorners(
+                              backgroundColor: context.cardColor,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(16))),
+                          padding: EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              BasicInfoComponent(
+                                0,
+                                customerData: res.data!.customer,
+                                service: res.data!.service,
+                                bookingDetail: res.data!.bookingDetail,
+                              ),
+                            ],
+                          ),
                         ),
-                    ],
-                  ).paddingOnly(left: 16, right: 16, bottom: 16),
+
+                        8.height,
+
+                        ///Add-ons
+                        if (res.data!.bookingDetail!.serviceaddon
+                            .validate()
+                            .isNotEmpty)
+                          AddonComponent(
+                            serviceAddon: res.data!.bookingDetail!.serviceaddon
+                                .validate(),
+                          ),
+                      ],
+                    ).paddingOnly(left: 16, right: 16, bottom: 16),
 
                   /// Price Detail Card
                   if (res.data!.bookingDetail != null &&

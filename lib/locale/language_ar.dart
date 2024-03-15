@@ -136,6 +136,9 @@ class LanguageAr extends Languages {
   String get pending => 'قيد الانتظار';
 
   @override
+  String get bookingStatuesSubmitMessage => 'تم تنفيذ الاجراء ';
+
+  @override
   String get darkMode => 'الوضع المظلم';
 
   @override
