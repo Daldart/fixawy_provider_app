@@ -160,8 +160,6 @@ class _HandymanHomeFragmentState extends State<HandymanHomeFragment> {
 
                                             emptyWidget: NoDataWidget(
                                               title: languages.noBookingTitle,
-                                              subTitle:
-                                                  languages.noBookingSubTitle,
                                               imageWidget: EmptyStateWidget(),
                                             ),
                                             itemBuilder: (_, index) =>
@@ -205,8 +203,6 @@ class _HandymanHomeFragmentState extends State<HandymanHomeFragment> {
 
                                             emptyWidget: NoDataWidget(
                                               title: languages.noBookingTitle,
-                                              subTitle:
-                                                  languages.noBookingSubTitle,
                                               imageWidget: EmptyStateWidget(),
                                             ),
                                             itemBuilder: (_, index) =>
@@ -250,8 +246,6 @@ class _HandymanHomeFragmentState extends State<HandymanHomeFragment> {
 
                                             emptyWidget: NoDataWidget(
                                               title: languages.noBookingTitle,
-                                              subTitle:
-                                                  languages.noBookingSubTitle,
                                               imageWidget: EmptyStateWidget(),
                                             ),
                                             itemBuilder: (_, index) =>
