@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:fixawy_provider/utils/widgets/in_app_notification_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:fixawy_provider/components/app_common_dialog.dart';
@@ -34,6 +35,7 @@ import 'package:fixawy_provider/utils/configs.dart';
 import 'package:fixawy_provider/utils/constant.dart';
 import 'package:fixawy_provider/utils/extensions/string_extension.dart';
 import 'package:fixawy_provider/utils/model_keys.dart';
+import 'package:in_app_notification/in_app_notification.dart';
 import 'package:intl/intl.dart';
 import 'package:nb_utils/nb_utils.dart';
 
@@ -63,6 +65,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
   String? endDateTime = '';
   String? timeInterval = '0';
   String? paymentStatus = '';
+  int _duration = 3000;
 
   bool? confirmPaymentBtn = false;
   bool isCompleted = false;
@@ -1446,6 +1449,19 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    future.then((value) => {
+          InAppNotification.show(
+            child: NotificationBody(
+              subject: languages.bookingStatus,
+              body: "${value.bookingDetail?.status}",
+            ),
+            context: context,
+            onTap: () => BookingDetailScreen(
+              bookingId: value.bookingDetail!.id!,
+            ).launch(context),
+            duration: Duration(milliseconds: _duration),
+          )
+        });
     return FutureBuilder<BookingDetailResponse>(
       future: future,
       initialData: initialData(),

@@ -24,6 +24,7 @@ import 'package:fixawy_provider/store/AppStore.dart';
 import 'package:fixawy_provider/utils/common.dart';
 import 'package:fixawy_provider/utils/configs.dart';
 import 'package:fixawy_provider/utils/constant.dart';
+import 'package:in_app_notification/in_app_notification.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import 'app_theme.dart';
@@ -142,22 +143,24 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return RestartAppWidget(
       child: Observer(
-        builder: (_) => MaterialApp(
-          debugShowCheckedModeBanner: false,
-          navigatorKey: navigatorKey,
-          home: SplashScreen(),
-          theme: AppTheme.lightTheme,
-          darkTheme: AppTheme.darkTheme,
-          themeMode: appStore.isDarkMode ? ThemeMode.dark : ThemeMode.light,
-          supportedLocales: LanguageDataModel.languageLocales(),
-          localizationsDelegates: [
-            AppLocalizations(),
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          localeResolutionCallback: (locale, supportedLocales) => locale,
-          locale: Locale(appStore.selectedLanguageCode),
+        builder: (_) => InAppNotification(
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            navigatorKey: navigatorKey,
+            home: SplashScreen(),
+            theme: AppTheme.lightTheme,
+            darkTheme: AppTheme.darkTheme,
+            themeMode: appStore.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+            supportedLocales: LanguageDataModel.languageLocales(),
+            localizationsDelegates: [
+              AppLocalizations(),
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            localeResolutionCallback: (locale, supportedLocales) => locale,
+            locale: Locale(appStore.selectedLanguageCode),
+          ),
         ),
       ),
     );
