@@ -25,7 +25,8 @@ import 'package:nb_utils/nb_utils.dart';
 
 class HandymanProfileFragment extends StatefulWidget {
   @override
-  _HandymanProfileFragmentState createState() => _HandymanProfileFragmentState();
+  _HandymanProfileFragmentState createState() =>
+      _HandymanProfileFragmentState();
 }
 
 class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
@@ -57,7 +58,8 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
             padding: EdgeInsets.only(top: context.statusBarHeight, bottom: 24),
             crossAxisAlignment: CrossAxisAlignment.start,
             listAnimationType: ListAnimationType.FadeIn,
-            fadeInConfiguration: FadeInConfiguration(duration: 200.milliseconds),
+            fadeInConfiguration:
+                FadeInConfiguration(duration: 200.milliseconds),
             children: [
               Stack(
                 clipBehavior: Clip.none,
@@ -75,7 +77,8 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
                             children: [
                               Container(
                                 decoration: boxDecorationDefault(
-                                  border: Border.all(color: primaryColor, width: 2),
+                                  border:
+                                      Border.all(color: primaryColor, width: 2),
                                   shape: BoxShape.circle,
                                 ),
                                 child: Container(
@@ -99,7 +102,8 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
                                     color: primaryColor,
                                     border: Border.all(width: 2, color: white),
                                   ),
-                                  child: Icon(AntDesign.edit, color: white, size: 18),
+                                  child: Icon(AntDesign.edit,
+                                      color: white, size: 18),
                                 ).onTap(() {
                                   EditProfileScreen().launch(context);
                                 }),
@@ -107,9 +111,12 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
                             ],
                           ),
                         24.height,
-                        Text(appStore.userFullName, style: boldTextStyle(color: white)),
+                        Text(appStore.userFullName,
+                            style: boldTextStyle(color: white)),
                         4.height,
-                        Text(appStore.userEmail, style: secondaryTextStyle(color: white.withOpacity(0.8), size: 14)),
+                        Text(appStore.userEmail,
+                            style: secondaryTextStyle(
+                                color: white.withOpacity(0.8), size: 14)),
                       ],
                     ),
                   ),
@@ -119,8 +126,11 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
                     right: 0,
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 28),
-                      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 24),
-                      decoration: boxDecorationWithRoundedCorners(backgroundColor: appStore.isDarkMode ? cardDarkColor : cardColor),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 40, vertical: 24),
+                      decoration: boxDecorationWithRoundedCorners(
+                          backgroundColor:
+                              appStore.isDarkMode ? cardDarkColor : cardColor),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -130,7 +140,8 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
                               Observer(
                                 builder: (context) => Text(
                                   "${appStore.completedBooking.validate().toString()}",
-                                  style: boldTextStyle(color: primaryColor, size: 16),
+                                  style: boldTextStyle(
+                                      color: primaryColor, size: 16),
                                 ),
                               ),
                               8.height,
@@ -141,7 +152,10 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
                               ),
                             ],
                           ),
-                          Container(height: 45, width: 1, color: appTextSecondaryColor.withOpacity(0.4)),
+                          Container(
+                              height: 45,
+                              width: 1,
+                              color: appTextSecondaryColor.withOpacity(0.4)),
                           HandymanExperienceWidget(key: keyForExperienceWidget),
                         ],
                       ),
@@ -156,33 +170,47 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
                     return AnimatedContainer(
                       margin: EdgeInsets.all(16),
                       decoration: boxDecorationWithRoundedCorners(
-                        backgroundColor: (appStore.handymanAvailability == 1 ? Colors.green : Colors.red).withOpacity(0.1),
+                        backgroundColor: (appStore.handymanAvailability == 1
+                                ? Colors.green
+                                : Colors.red)
+                            .withOpacity(0.1),
                         borderRadius: BorderRadius.circular(defaultRadius),
                       ),
                       duration: 300.milliseconds,
                       child: SettingItemWidget(
-                        padding: EdgeInsets.only(top: 8, bottom: 8, left: 16, right: 16),
+                        padding: EdgeInsets.only(
+                            top: 8, bottom: 8, left: 16, right: 16),
                         title: languages.lblAvailableStatus,
-                        subTitle: '${languages.lblYouAre} ${appStore.handymanAvailability == 1 ? ONLINE : OFFLINE}',
-                        subTitleTextColor: appStore.handymanAvailability == 1 ? Colors.green : Colors.red,
+                        subTitle:
+                            '${languages.lblYouAre} ${appStore.handymanAvailability == 1 ? ONLINE : OFFLINE}',
+                        subTitleTextColor: appStore.handymanAvailability == 1
+                            ? Colors.green
+                            : Colors.red,
                         trailing: Transform.scale(
                           scale: 0.8,
                           child: Switch.adaptive(
-                            value: appStore.handymanAvailability == 1 ? true : false,
+                            value: appStore.handymanAvailability == 1
+                                ? true
+                                : false,
                             activeColor: Colors.green,
                             onChanged: (v) {
                               ifNotTester(context, () {
                                 isAvailable = v;
                                 setState(() {});
-                                appStore.setHandymanAvailability(isAvailable ? 1 : 0, isInitializing: true);
+                                appStore.setHandymanAvailability(
+                                    isAvailable ? 1 : 0,
+                                    isInitializing: true);
                                 Map request = {
                                   "is_available": isAvailable ? 1 : 0,
                                   "id": appStore.userId,
                                 };
-                                updateHandymanAvailabilityApi(request: request).then((value) {
+                                updateHandymanAvailabilityApi(request: request)
+                                    .then((value) {
                                   toast(value.message);
                                 }).catchError((e) {
-                                  appStore.setHandymanAvailability(isAvailable ? 0 : 1, isInitializing: true);
+                                  appStore.setHandymanAvailability(
+                                      isAvailable ? 0 : 1,
+                                      isInitializing: true);
                                   toast(e.toString());
                                 });
                               });
@@ -193,27 +221,42 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
                     );
                   },
                 ),
-              if (getStringAsync(DASHBOARD_COMMISSION).validate().isNotEmpty) ...[
+              if (getStringAsync(DASHBOARD_COMMISSION)
+                  .validate()
+                  .isNotEmpty) ...[
                 HandymanCommissionComponent(
-                  commission: Commission.fromJson(jsonDecode(getStringAsync(DASHBOARD_COMMISSION))),
+                  commission: Commission.fromJson(
+                      jsonDecode(getStringAsync(DASHBOARD_COMMISSION))),
                 ),
                 8.height,
               ],
               SettingItemWidget(
-                leading: Image.asset(language, height: 14, width: 14, color: context.iconColor),
+                leading: Image.asset(language,
+                    height: 14, width: 14, color: context.iconColor),
                 title: languages.language,
-                trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
+                trailing: Icon(Icons.chevron_right,
+                    color: appStore.isDarkMode ? white : gray.withOpacity(0.8),
+                    size: 24),
                 onTap: () {
                   LanguagesScreen().launch(context).then((value) {
                     keyForExperienceWidget = UniqueKey();
                   });
                 },
               ),
-              Divider(height: 0, endIndent: 16, indent: 16, color: context.dividerColor),
+              Divider(
+                  height: 0,
+                  endIndent: 16,
+                  indent: 16,
+                  color: context.dividerColor),
               SettingItemWidget(
-                leading: Image.asset(ic_theme, height: 16, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
+                leading: Image.asset(ic_theme,
+                    height: 16,
+                    width: 16,
+                    color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
                 title: languages.appTheme,
-                trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
+                trailing: Icon(Icons.chevron_right,
+                    color: appStore.isDarkMode ? white : gray.withOpacity(0.8),
+                    size: 24),
                 onTap: () async {
                   await showInDialog(
                     context,
@@ -222,27 +265,68 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
                   );
                 },
               ),
-              Divider(height: 0, endIndent: 16, indent: 16, color: context.dividerColor),
+              Divider(
+                  height: 0,
+                  endIndent: 16,
+                  indent: 16,
+                  color: context.dividerColor),
               SettingItemWidget(
-                leading: Image.asset(changePassword, height: 18, width: 18, color: context.iconColor),
+                leading: Image.asset(changePassword,
+                    height: 18, width: 18, color: context.iconColor),
                 title: languages.changePassword,
-                trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
+                trailing: Icon(Icons.chevron_right,
+                    color: appStore.isDarkMode ? white : gray.withOpacity(0.8),
+                    size: 24),
                 onTap: () {
                   ChangePasswordScreen().launch(context);
                 },
               ),
-              Divider(height: 0, indent: 16, endIndent: 16, color: context.dividerColor).visible(appStore.isLoggedIn),
+              Divider(
+                  height: 0,
+                  endIndent: 16,
+                  indent: 16,
+                  color: context.dividerColor),
               SettingItemWidget(
-                leading: Image.asset(about, height: 18, width: 16, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
+                leading: Image.asset(withdrow,
+                    height: 18, width: 18, color: context.iconColor),
+                title: languages.withdrow,
+                trailing: Icon(Icons.chevron_right,
+                    color: appStore.isDarkMode ? white : gray.withOpacity(0.8),
+                    size: 24),
+                onTap: () {
+                  //Todo Nav To withdrow page
+                },
+              ),
+              Divider(
+                      height: 0,
+                      indent: 16,
+                      endIndent: 16,
+                      color: context.dividerColor)
+                  .visible(appStore.isLoggedIn),
+              SettingItemWidget(
+                leading: Image.asset(about,
+                    height: 18,
+                    width: 16,
+                    color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
                 title: languages.lblAbout,
-                trailing: Icon(Icons.chevron_right, color: appStore.isDarkMode ? white : gray.withOpacity(0.8), size: 24),
+                trailing: Icon(Icons.chevron_right,
+                    color: appStore.isDarkMode ? white : gray.withOpacity(0.8),
+                    size: 24),
                 onTap: () {
                   AboutUsScreen().launch(context);
                 },
               ),
-              Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
+              Divider(
+                  height: 0,
+                  thickness: 1,
+                  indent: 15.0,
+                  endIndent: 15.0,
+                  color: context.dividerColor),
               SettingItemWidget(
-                leading: Image.asset(ic_check_update, height: 18, width: 18, color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
+                leading: Image.asset(ic_check_update,
+                    height: 18,
+                    width: 18,
+                    color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
                 title: languages.lblOptionalUpdateNotify,
                 trailing: Transform.scale(
                   scale: 0.8,
@@ -256,8 +340,10 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
                 ),
               ),
               SettingSection(
-                title: Text(languages.lblDangerZone.toUpperCase(), style: boldTextStyle(color: redColor)),
-                headingDecoration: BoxDecoration(color: redColor.withOpacity(0.08)),
+                title: Text(languages.lblDangerZone.toUpperCase(),
+                    style: boldTextStyle(color: redColor)),
+                headingDecoration:
+                    BoxDecoration(color: redColor.withOpacity(0.08)),
                 divider: Offstage(),
                 items: [
                   8.height,
@@ -298,7 +384,8 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
               ),
               20.height,
               TextButton(
-                child: Text(languages.logout, style: boldTextStyle(color: primaryColor)),
+                child: Text(languages.logout,
+                    style: boldTextStyle(color: primaryColor)),
                 onPressed: () {
                   appStore.setLoading(false);
                   logout(context);

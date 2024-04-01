@@ -73,6 +73,7 @@ abstract class Languages {
   String get selectCity;
 
   String get changePassword;
+  String get withdrow;
 
   String get passwordNotMatch;
 

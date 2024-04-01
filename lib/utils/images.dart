@@ -12,6 +12,8 @@ const handyman = 'assets/icons/ic_handyman.png';
 const ic_time_slots = 'assets/icons/ic_time_slots.png';
 const language = 'assets/icons/ic_language.png';
 const changePassword = 'assets/icons/ic_change_password.png';
+const withdrow = 'assets/icons/ic_withdrawal.png';
+
 const rateUs = 'assets/icons/ic_rateUs.png';
 const termCondition = 'assets/icons/ic_term_condition.png';
 const percent_line = 'assets/icons/ic_percent_line.png';

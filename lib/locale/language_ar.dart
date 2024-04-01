@@ -1759,4 +1759,7 @@ class LanguageAr extends Languages {
 
   @override
   String get hintPhoneTxt => 'رقم الهاتف';
+
+  @override
+  String get withdrow => 'سحب مالي';
 }

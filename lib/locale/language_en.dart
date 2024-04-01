@@ -1779,4 +1779,7 @@ class LanguageEn extends Languages {
 
   @override
   String get hintPhoneTxt => 'Phone Number';
+
+  @override
+  String get withdrow => 'Withdrow';
 }
