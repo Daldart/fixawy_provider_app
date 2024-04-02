@@ -1694,7 +1694,7 @@ class LanguageAr extends Languages {
   String get externalWallet => 'محفظة خارجية';
 
   @override
-  String get start => 'يبدأ';
+  String get start => 'بدأ';
 
   @override
   String get digitalService => 'الخدمة الرقمية';
