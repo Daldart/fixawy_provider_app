@@ -979,7 +979,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
     } else if (res.bookingDetail!.status == BookingStatusKeys.onGoing) {
       showBottomActionBar = true;
       return AppButton(
-        text: "Start",
+        text: languages.start,
         textColor: Colors.white,
         color: Colors.green,
         onTap: () {
