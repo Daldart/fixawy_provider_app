@@ -54,21 +54,21 @@ class _HandymanHomeFragmentState extends State<HandymanHomeFragment> {
     future = handymanDashboard();
     inProgressBooking = getBookingList(1,
         perPage: 5,
-        status: 'In Progress',
+        status: 'in_progress',
         searchText: "",
         bookings: inProgressBookingList, lastPageCallback: (b) {
       isLastPage = b;
     });
     pendingBooking = getBookingList(1,
         perPage: 5,
-        status: 'Pending',
+        status: 'pending',
         searchText: "",
         bookings: pendingBookingList, lastPageCallback: (b) {
       isLastPage = b;
     });
     completedBooking = getBookingList(1,
         perPage: 5,
-        status: 'Completed',
+        status: 'completed',
         searchText: "",
         bookings: completedBookingList, lastPageCallback: (b) {
       isLastPage = b;
