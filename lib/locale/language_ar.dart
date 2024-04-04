@@ -1761,5 +1761,23 @@ class LanguageAr extends Languages {
   String get hintPhoneTxt => 'رقم الهاتف';
 
   @override
-  String get withdrow => 'سحب مالي';
+  String get withdraw => 'سحب مالي';
+
+  @override
+  String get alreadyWithdrawn => 'تم السحب';
+
+  @override
+  String get netRevenue => 'اجمالي الربح';
+
+  @override
+  String get pendingWithdraw => 'في انتظار الموافقة';
+
+  @override
+  String get readyToWithdraw => 'جاهز للسحب';
+
+  @override
+  String get withdrawMethods => 'طريقة السحب';
+
+  @override
+  String get submit => 'إرسال';
 }

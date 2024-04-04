@@ -13,7 +13,11 @@ class HandymanDashBoardResponse {
   bool? status;
   num? todayBooking;
   num? totalBooking;
+  num? totalPayments;
+
+  num? totalMonthPayments;
   num? totalRevenue;
+
   num? todayCashAmount;
   List<BookingData>? upcomingBookings;
   List<double>? chartArray;
@@ -57,6 +61,8 @@ class HandymanDashBoardResponse {
   HandymanDashBoardResponse.fromJson(Map<String, dynamic> json) {
     commission = json['commission'] != null ? Commission.fromJson(json['commission']) : null;
     handymanReviews = json['handyman_reviews'] != null ? (json['handyman_reviews'] as List).map((i) => RatingData.fromJson(i)).toList() : null;
+    totalPayments=json['total_payments'];
+    totalMonthPayments=json['"total_month_payments'];
     status = json['status'];
     todayBooking = json['today_booking'];
     todayCashAmount = json['today_cash'];

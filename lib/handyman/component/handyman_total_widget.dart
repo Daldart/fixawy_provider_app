@@ -15,7 +15,7 @@ class HandymanTotalWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-      decoration: boxDecorationDefault(color: context.primaryColor),
+      decoration: boxDecorationDefault(color:color?? context.primaryColor),
       //decoration: cardDecoration(context, showBorder: true,color: context.primaryColor),
       width: context.width() / 2 - 24,
       child: Row(

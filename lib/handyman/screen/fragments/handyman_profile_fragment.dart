@@ -23,6 +23,9 @@ import 'package:fixawy_provider/utils/extensions/string_extension.dart';
 import 'package:fixawy_provider/utils/images.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import '../../../screens/total_earning_screen.dart';
+import '../../../screens/withdrow_screen.dart';
+
 class HandymanProfileFragment extends StatefulWidget {
   @override
   _HandymanProfileFragmentState createState() =>
@@ -289,12 +292,13 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
               SettingItemWidget(
                 leading: Image.asset(withdrow,
                     height: 18, width: 18, color: context.iconColor),
-                title: languages.withdrow,
+                title: languages.withdraw,
                 trailing: Icon(Icons.chevron_right,
                     color: appStore.isDarkMode ? white : gray.withOpacity(0.8),
                     size: 24),
                 onTap: () {
-                  //Todo Nav To withdrow page
+                 Withdrow().launch(context);
+                // TotalEarningScreen().launch(context);
                 },
               ),
               Divider(

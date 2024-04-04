@@ -1781,5 +1781,22 @@ class LanguageEn extends Languages {
   String get hintPhoneTxt => 'Phone Number';
 
   @override
-  String get withdrow => 'Withdrow';
+  String get withdraw => 'Withdraw';
+
+  @override
+  String get alreadyWithdrawn => 'Already withdrawn';
+
+  @override
+  String get netRevenue => 'Net revenue';
+
+  @override
+  String get pendingWithdraw => 'Pending withdraw';
+
+  @override
+  String get readyToWithdraw => 'Ready to withdraw';
+
+  @override
+  String get withdrawMethods => 'Withdraw Method';
+  @override
+  String get submit => 'Submit';
 }

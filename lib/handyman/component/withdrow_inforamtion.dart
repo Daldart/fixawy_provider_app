@@ -9,10 +9,13 @@ import 'package:fixawy_provider/utils/images.dart';
 import 'package:fixawy_provider/utils/model_keys.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-class HandymanTotalComponent extends StatelessWidget {
+
+
+
+class WithdrowCards extends StatelessWidget {
   final HandymanDashBoardResponse snap;
 
-  HandymanTotalComponent({required this.snap});
+  WithdrowCards({required this.snap});
 
   @override
   Widget build(BuildContext context) {
@@ -21,49 +24,49 @@ class HandymanTotalComponent extends StatelessWidget {
       runSpacing: 16,
       children: [
         HandymanTotalWidget(
-          title: languages.monthlyEarnings,
-          total: snap.totalMonthPayments.validate().toPriceFormat(),
+          title: languages.netRevenue,
+          total: snap.totalPayments.validate().toPriceFormat(),
           icon: percent_line,
         ).onTap(
-          () {
+              () {
             TotalEarningScreen().launch(context);
           },
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
         ),
         HandymanTotalWidget(
-          title: languages.lblTotalBooking,
-          total: snap.totalBooking.validate().toString(),
-          icon: total_services,
+          title: languages.alreadyWithdrawn,
+          total: snap.totalPayments.validate().toPriceFormat(),
+          icon: percent_line,
         ).onTap(
-          () {
-            LiveStream().emit(LIVESTREAM_HANDYMAN_ALL_BOOKING, 1);
+              () {
+            TotalEarningScreen().launch(context);
+          },
+          highlightColor: Colors.transparent,
+          splashColor: Colors.transparent,
+        ),     HandymanTotalWidget(
+          title: languages.pendingWithdraw,
+          total: snap.totalPayments.validate().toPriceFormat(),
+          icon: percent_line,
+        ).onTap(
+              () {
+            TotalEarningScreen().launch(context);
           },
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
         ),
         HandymanTotalWidget(
-          title: languages.lblUpcomingServices,
-          total: snap.upcomingBookings!.length.validate().toString(),
-          icon: total_services,
+          title: languages.readyToWithdraw,
+          total: snap.totalPayments.validate().toPriceFormat(),
+          icon: percent_line,
         ).onTap(
-          () {
-            LiveStream().emit(LIVESTREAM_HANDY_BOARD, {"index": 1, "type": BookingStatusKeys.accept});
+              () {
+       //     TotalEarningScreen().launch(context);
           },
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
         ),
-        HandymanTotalWidget(
-          title: languages.lblTodayServices,
-          total: snap.todayBooking.validate().toString(),
-          icon: total_services,
-        ).onTap(
-          () {
-            LiveStream().emit(LIVESTREAM_HANDYMAN_ALL_BOOKING, 1);
-          },
-          highlightColor: Colors.transparent,
-          splashColor: Colors.transparent,
-        ),
+
       ],
     ).paddingAll(16);
   }

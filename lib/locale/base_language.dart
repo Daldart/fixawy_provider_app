@@ -73,7 +73,8 @@ abstract class Languages {
   String get selectCity;
 
   String get changePassword;
-  String get withdrow;
+
+  String get withdraw;
 
   String get passwordNotMatch;
 
@@ -1152,4 +1153,17 @@ abstract class Languages {
   String get addOns;
 
   String get serviceAddOns;
+
+  String get netRevenue;
+
+  String get withdrawMethods;
+
+  String get readyToWithdraw;
+
+  String get alreadyWithdrawn;
+
+  String get pendingWithdraw;
+
+  String get submit;
+
 }
