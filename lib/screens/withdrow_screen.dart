@@ -6,17 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:nb_utils/nb_utils.dart';
-
 import '../components/app_widgets.dart';
 import '../components/back_widget.dart';
 import '../components/empty_error_state_widget.dart';
-import '../handyman/component/handyman_review_component.dart';
 import '../handyman/component/withdrow_inforamtion.dart';
 import '../handyman/shimmer/handyman_dashboard_shimmer.dart';
+import '../models/financial_Data.dart';
 import '../models/handyman_dashboard_response.dart';
+import '../models/request_withdraw.dart';
 import '../networks/rest_apis.dart';
-import '../provider/components/chart_component.dart';
-import '../provider/components/upcoming_booking_component.dart';
+
+import '../utils/common.dart';
 import '../utils/images.dart';
 
 class Withdrow extends StatefulWidget {
@@ -25,7 +25,11 @@ class Withdrow extends StatefulWidget {
 }
 
 class _Withdrow extends State<Withdrow> {
-  late Future<HandymanDashBoardResponse> future;
+  late Future<FinancialDataModel> future;
+
+  late TextEditingController amountCont ;
+
+  late TextEditingController noteCont ;
    String? _selectedMethod;
   @override
   void initState() {
@@ -34,7 +38,13 @@ class _Withdrow extends State<Withdrow> {
   }
 
   void init() async {
-    future = handymanDashboard();
+    appStore.setLoading(true);
+    future = withdrawSummary();
+    amountCont = TextEditingController();
+    noteCont  = TextEditingController();
+
+    appStore.setLoading(false);
+
   }
 
   @override
@@ -49,84 +59,93 @@ class _Withdrow extends State<Withdrow> {
       ),
       body: Stack(
         children: [
-          FutureBuilder<HandymanDashBoardResponse>(
-            initialData: cachedHandymanDashboardResponse,
+          FutureBuilder<FinancialDataModel>(
             future: future,
             builder: (context, snap) {
               if (snap.hasData) {
                 return AnimatedScrollView(
                   physics: AlwaysScrollableScrollPhysics(),
-                  padding: EdgeInsets.only(bottom: 16, top: 16 ),
+                  padding: EdgeInsets.all(16 ),
                   crossAxisAlignment: CrossAxisAlignment.start,
                   listAnimationType: ListAnimationType.FadeIn,
                   fadeInConfiguration:
                       FadeInConfiguration(duration: 500.milliseconds),
                   children: [
                     WithdrowCards(snap: snap.data!),
-                    8.height,
-                    Container(
-                    margin: EdgeInsets.all(16),child:
-                  DropdownButtonFormField<String>(
-
-                      decoration: InputDecoration(
-
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey, width: 2),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-
-                        filled: true,
-                        fillColor: Colors.white,
-                      ),
-
-                      borderRadius:
-                      BorderRadius.all(Radius.circular(10)),
-                      value: _selectedMethod,
-                      hint: Text(languages.withdrawMethods),
-                      items: <String>['محفظة كاش', 'تحويل بنكي', 'انستاباي'].map((String value) {
-                        return  DropdownMenuItem<String>(
-
-                          value: value,
-                          alignment: Alignment.center,
-                          child: Text(value),
-                        );
-                      }).toList(),
-                      onChanged: (value) {
-                        setState(() {
-                          _selectedMethod = value!;
-                        });
-                      },
-                  ))  ,
                     16.height,
+                    AppTextField(
+                      textFieldType: TextFieldType.NUMBER,
+                      controller: amountCont,
+
+                      decoration: inputDecoration(context, hint: languages.amount),
+                    ),
+
+
+                    16.height,
+
+
+              DropdownButtonFormField<String>(
+
+              decoration: inputDecoration(context, hint: languages.withdrawMethods),
+              isExpanded: true,
+              value: _selectedMethod ,
+              dropdownColor: context.cardColor,
+              items: <String>['Cash'].map((String data) {
+              return DropdownMenuItem<String>(
+              value: data,
+              child: Text(data, style: primaryTextStyle()),
+              );
+              }).toList(),
+              onChanged: (value) {
+              setState(() {
+              _selectedMethod = value!;
+              });
+              },
+              ).paddingTop(16),
+                    16.height,
+                    AppTextField(
+                      controller: noteCont,
+                      textFieldType: TextFieldType.MULTILINE,
+                      maxLines: 5,
+                      minLines: 3,
+                      decoration: inputDecoration(context, hint: languages.note),
+                    ).expand(),
+
+
+                       16.height,
                     AppButton(
 
                       text: languages.submit,
                       width: context.width(),
-                      margin: EdgeInsets.all(16),
                       color: primaryColor,
                       textColor: Colors.white,
                       onTap: () async {
-                        if(_selectedMethod ==null)
+                        if(_selectedMethod ==null||amountCont.value.text.isEmpty)
                           {return;}
-                      //  finish(context, true);
+                        WithdrawModel withdrawal = WithdrawModel(
+                          amount:double.parse( amountCont.value.text),
+                          paymentMethod:_selectedMethod! ,
+                          notes: noteCont.value.text,
+                        );
+
                         appStore.setLoading(true);
 
+                        final response = await requestWithdraw(withdrawal);
 
+                       toast(response.message);
+                        appStore.setLoading(false);
+                        init();
                         setState(() {});
 
-                        await 2.seconds.delay;
-                        appStore.setLoading(false);
 
                       },
                     ),
                    ],
                   onSwipeRefresh: () async {
-                    appStore.setLoading(true);
 
                     init();
                     setState(() {});
 
-                    return await 2.seconds.delay;
                   },
                 );
               }

@@ -1797,6 +1797,16 @@ class LanguageEn extends Languages {
 
   @override
   String get withdrawMethods => 'Withdraw Method';
+
   @override
   String get submit => 'Submit';
+
+  @override
+  String get amount => 'Amount';
+
+  @override
+  String get note => 'Note';
+
+  @override
+  String get searchForBooking => 'Search for booking';
 }

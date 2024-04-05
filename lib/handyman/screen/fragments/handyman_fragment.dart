@@ -109,7 +109,7 @@ class _HandymanHomeFragmentState extends State<HandymanHomeFragment> {
                         .paddingLeft(16),
                     16.height,
                     TodayCashComponent(
-                        todayCashAmount: snap.data!.todayCashAmount.validate()),
+                        todayCashAmount: snap.data!.todayTotal.validate()),
                     8.height,
                     HandymanTotalComponent(snap: snap.data!),
                     8.height,

@@ -1780,4 +1780,13 @@ class LanguageAr extends Languages {
 
   @override
   String get submit => 'إرسال';
+
+  @override
+  String get amount => 'القيمة';
+
+  @override
+  String get note => 'ملاحظة';
+
+  @override
+  String get searchForBooking => 'البحث عن حجوزات';
 }

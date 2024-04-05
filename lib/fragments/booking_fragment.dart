@@ -164,7 +164,7 @@ class BookingFragmentState extends State<BookingFragment>
                             setState(() {});
                           },
                           decoration: inputDecoration(context).copyWith(
-                            hintText: "Search for booking",
+                            hintText:languages.searchForBooking,
                             prefixIcon:
                                 ic_search.iconImage(size: 8).paddingAll(16),
                             hintStyle: secondaryTextStyle(),

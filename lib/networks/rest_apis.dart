@@ -58,8 +58,11 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 import '../models/configuration_response.dart';
+import '../models/financial_Data.dart';
 import '../models/google_places_model.dart';
 import '../models/my_bid_response.dart';
+import '../models/request_withdraw.dart';
+import '../models/response_withdraw.dart';
 import '../models/wallet_history_list_response.dart';
 import '../provider/jobRequest/models/bidder_data.dart';
 import '../provider/jobRequest/models/post_job_data.dart';
@@ -444,7 +447,33 @@ Future<CommonResponseModel> deleteProviderDoc(int? id) async {
 }
 //endregion
 
+//region withdraw
+Future<FinancialDataModel> withdrawSummary() async {
+  final completer = Completer<FinancialDataModel>();
+
+  try {
+    final response = await buildHttpResponse('handyman-withdraw-summary',
+        method: HttpMethodType.GET);
+    final data =
+    FinancialDataModel.fromJson(await handleResponse(response));
+
+
+
+    completer.complete(data);
+  } catch (e) {
+    completer.completeError(e);
+  }
+
+  return completer.future;
+}
+Future<WithdrawalResponse> requestWithdraw(WithdrawModel model) async {
+  return WithdrawalResponse.fromJson(await handleResponse(
+      await buildHttpResponse('handyman-withdraw-request',request:model.toJson() ,
+          method: HttpMethodType.POST)));
+}
+////endregion
 //region Handyman API
+
 Future<HandymanDashBoardResponse> handymanDashboard() async {
   final completer = Completer<HandymanDashBoardResponse>();
 
@@ -452,7 +481,7 @@ Future<HandymanDashBoardResponse> handymanDashboard() async {
     final response = await buildHttpResponse('handyman-dashboard',
         method: HttpMethodType.GET);
     final data =
-        HandymanDashBoardResponse.fromJson(await handleResponse(response));
+    HandymanDashBoardResponse.fromJson(await handleResponse(response));
 
     // Perform additional code or post-processing
     _performAdditionalProcessingHandyman(data);
@@ -464,6 +493,7 @@ Future<HandymanDashBoardResponse> handymanDashboard() async {
 
   return completer.future;
 }
+
 
 void _performAdditionalProcessingHandyman(HandymanDashBoardResponse data) {
   cachedHandymanDashboardResponse = data;

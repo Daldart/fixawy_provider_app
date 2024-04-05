@@ -34,7 +34,7 @@ class HandymanDashBoardResponse {
   num? notificationUnreadCount;
   String? inquiryEmail;
   String? helplineNumber;
-
+  num?  todayTotal;
   HandymanDashBoardResponse({
     this.commission,
     this.handymanReviews,
@@ -50,6 +50,8 @@ class HandymanDashBoardResponse {
     this.completedBooking,
     this.languageOption,
     this.configurations,
+    this.todayTotal,
+
     this.privacyPolicy,
     this.termConditions,
     this.appDownload,
@@ -62,9 +64,11 @@ class HandymanDashBoardResponse {
     commission = json['commission'] != null ? Commission.fromJson(json['commission']) : null;
     handymanReviews = json['handyman_reviews'] != null ? (json['handyman_reviews'] as List).map((i) => RatingData.fromJson(i)).toList() : null;
     totalPayments=json['total_payments'];
-    totalMonthPayments=json['"total_month_payments'];
+    totalMonthPayments=json['total_month_payments'];
     status = json['status'];
     todayBooking = json['today_booking'];
+    todayTotal = json['today_total'];
+
     todayCashAmount = json['today_cash'];
     totalBooking = json['total_booking'];
     totalRevenue = json['total_revenue'];

@@ -19,6 +19,8 @@ abstract class Languages {
   String get handyman;
 
   String get signIn;
+  String get searchForBooking;
+  String get amount;
 
   String get signUp;
 
@@ -661,6 +663,7 @@ abstract class Languages {
   String get thisSlotIsNotAvailable;
 
   String get notes;
+  String get note;
 
   String get timeSlotsNotes1;
 
