@@ -184,7 +184,7 @@ class BasicInfoComponentState extends State<BasicInfoComponent> {
                             },
                           ).expand(),
                         if (contactNumber.validate().isNotEmpty) 24.width,
-                        AppButton(
+/*                        AppButton(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -206,6 +206,20 @@ class BasicInfoComponentState extends State<BasicInfoComponent> {
                               Fluttertoast.cancel();
                               toast("${userData.firstName} ${languages.isNotAvailableForChat}");
                             }
+                          },
+                        ).expand(),*/
+                        AppButton(
+                          child: Image.asset(ic_whatsapp, height: 18),
+                          elevation: 0,
+                          color: context.scaffoldBackgroundColor,
+                          onTap: () async {
+                            String phoneNumber = "";
+                            if (widget.handymanData!.contactNumber.validate().contains('+')) {
+                              phoneNumber = "${widget.handymanData!.contactNumber.validate().replaceAll('-', '')}";
+                            } else {
+                              phoneNumber = "+${widget.handymanData!.contactNumber.validate().replaceAll('-', '')}";
+                            }
+                            launchUrl(Uri.parse('${getSocialMediaLink(LinkProvider.WHATSAPP)}$phoneNumber'), mode: LaunchMode.externalApplication);
                           },
                         ).expand(),
                       ],

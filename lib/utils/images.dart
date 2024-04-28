@@ -32,6 +32,7 @@ const delete = 'assets/icons/ic_delete.png';
 const fill_ticket = 'assets/icons/ic_fill_ticket.png';
 const un_fill_wallet = 'assets/icons/ic_un_fill_wallet.png';
 const chat = 'assets/icons/ic_chat.png';
+const ic_whatsapp = "assets/icons/ic_whatsapp.png";
 const purchase = 'assets/icons/ic_purchase.png';
 const about = 'assets/icons/ic_about.png';
 const ic_message = "assets/icons/ic_message.png";
