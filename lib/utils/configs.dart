@@ -13,9 +13,9 @@ const BASE_URL = "$DOMAIN_URL/api/";
 /// You can specify in Admin Panel, These will be used if you don't specify in Admin Panel
 const IOS_LINK_FOR_PARTNER = "https://apps.apple.com/in/app/handyman-provider-app/id1596025324";
 
-const TERMS_CONDITION_URL = 'https://iqonic.design/terms-of-use/';
-const PRIVACY_POLICY_URL = 'https://iqonic.design/privacy-policy/';
-const INQUIRY_SUPPORT_EMAIL = 'hello@iqonic.design';
+const TERMS_CONDITION_URL = 'https://fixawy.net/en/terms-of-use/';
+const PRIVACY_POLICY_URL = 'https://fixawy.net/en/privacy-policy';
+const INQUIRY_SUPPORT_EMAIL = 'hello@fixawy.net';
 
 const GOOGLE_MAPS_API_KEY = 'AIr5tyCHJwjZjGSOBc18-rt6M8tCqDYoV3IO9Q';
 

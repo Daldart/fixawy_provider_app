@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_tabs/flutter_custom_tabs.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:fixawy_provider/auth/change_password_screen.dart';
@@ -344,6 +345,20 @@ class ProviderProfileFragmentState extends State<ProviderProfileFragment> {
                     8.height,
                   ],
                 ),
+              ),
+              Divider(height: 0, thickness: 1, indent: 15.0, endIndent: 15.0, color: context.dividerColor),
+              SettingItemWidget(
+                leading: Image.asset(privacy_policy,
+                    height: 18,
+                    width: 16,
+                    color: appStore.isDarkMode ? white : gray.withOpacity(0.8)),
+                title: languages.lblPrivacyPolicy,
+                trailing: Icon(Icons.chevron_right,
+                    color: appStore.isDarkMode ? white : gray.withOpacity(0.8),
+                    size: 24),
+                onTap: () {
+                  launch(PRIVACY_POLICY_URL);
+                },
               ),
               SettingSection(
                 title: Text(languages.lblDangerZone.toUpperCase(), style: boldTextStyle(color: redColor)),
