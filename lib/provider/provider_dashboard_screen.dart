@@ -103,11 +103,11 @@ class ProviderDashboardScreenState extends State<ProviderDashboardScreen> {
             languages.lblProfile,
           ][currentIndex],
           color: primaryColor,
-          textColor: Colors.white,
+          textColor: black,
           showBack: false,
           actions: [
             IconButton(
-              icon: chat.iconImage(color: white, size: 20),
+              icon: chat.iconImage(color: black, size: 20),
               onPressed: () async {
                 ChatListScreen().launch(context);
               },
@@ -116,7 +116,7 @@ class ProviderDashboardScreenState extends State<ProviderDashboardScreen> {
               icon: Stack(
                 clipBehavior: Clip.none,
                 children: [
-                  ic_notification.iconImage(color: white, size: 20),
+                  ic_notification.iconImage(color: black, size: 20),
                   Positioned(
                     top: -14,
                     right: -6,
