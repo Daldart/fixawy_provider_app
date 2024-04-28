@@ -398,7 +398,7 @@ class LanguageAr extends Languages {
   String get lblMyTax => "الضرائب الخاصة بي";
 
   @override
-  String get lblLoginTitle => "مرحبا مجددا !";
+  String get lblLoginTitle => "مرحبا !";
 
   @override
   String get lblLoginSubtitle => "مرحبا بك مرة أخرى";

@@ -70,12 +70,12 @@ class _SignInScreenState extends State<SignInScreen> {
       children: [
         32.height,
         Text(languages.lblLoginTitle, style: boldTextStyle(size: 18)).center(),
-        16.height,
+/*        16.height,
         Text(
           languages.lblLoginSubtitle,
           style: secondaryTextStyle(size: 14),
           textAlign: TextAlign.center,
-        ).paddingSymmetric(horizontal: 32).center(),
+        ).paddingSymmetric(horizontal: 32).center(),*/
         64.height,
       ],
     );

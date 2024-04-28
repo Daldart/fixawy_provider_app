@@ -401,7 +401,7 @@ class LanguageEn extends Languages {
   String get lblMyTax => "My Tax";
 
   @override
-  String get lblLoginTitle => "Hello Again !";
+  String get lblLoginTitle => "Hello !";
 
   @override
   String get lblLoginSubtitle =>
