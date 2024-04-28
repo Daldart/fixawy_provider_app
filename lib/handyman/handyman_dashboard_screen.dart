@@ -96,18 +96,18 @@ class _HandymanDashboardScreenState extends State<HandymanDashboardScreen> {
         ][currentIndex],
         color: primaryColor,
         elevation: 0.0,
-        textColor: Colors.white,
+        textColor: black,
         showBack: false,
         actions: [
           if (currentIndex == 2)
             IconButton(
-              icon: Icon(Icons.clear_all_rounded, color: white),
+              icon: Icon(Icons.clear_all_rounded, color: black),
               onPressed: () async {
                 LiveStream().emit(LIVESTREAM_UPDATE_NOTIFICATIONS);
               },
             ),
           IconButton(
-            icon: ic_info.iconImage(color: Colors.white),
+            icon: ic_info.iconImage(color: black),
             onPressed: () async {
               showModalBottomSheet(
                 context: context,
@@ -120,7 +120,7 @@ class _HandymanDashboardScreenState extends State<HandymanDashboardScreen> {
             },
           ),
           IconButton(
-            icon: Image.asset(chat, height: 20, width: 20, color: white),
+            icon: Image.asset(chat, height: 20, width: 20, color: black),
             onPressed: () async {
               ChatListScreen().launch(context);
             },

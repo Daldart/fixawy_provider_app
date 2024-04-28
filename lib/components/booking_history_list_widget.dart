@@ -24,7 +24,7 @@ class BookingHistoryListWidget extends StatelessWidget {
             data.datetime.toString().validate().isNotEmpty
                 ? Text(
                     formatDate(data.datetime.toString().validate(), format: DATE_FORMAT_3),
-                    style: secondaryTextStyle(),
+                    style: primaryTextStyle(),
                   ).fit()
                 : SizedBox(),
             8.height,

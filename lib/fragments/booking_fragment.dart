@@ -19,7 +19,7 @@ import '../utils/images.dart';
 
 // ignore: must_be_immutable new screen
 class BookingFragment extends StatefulWidget {
-  String? statusType;
+  final String? statusType;
   final int? bookingId;
 
   BookingFragment({this.statusType, this.bookingId});
