@@ -103,6 +103,7 @@ class BookingItemComponentState extends State<BookingItemComponent> {
 
   @override
   Widget build(BuildContext context) {
+    log("get_booking_address:: ${widget.bookingData.address}");
     return Container(
       padding: EdgeInsets.all(8),
       margin: EdgeInsets.only(bottom: 16),

@@ -540,12 +540,12 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
           children: [
             8.height,
             Text(
-                "${languages.lblBooking.split('s').join(' ')}${languages.hintDescription}",
+                "${languages.hintDescription} ${languages.lblBooking.split('s').join(' ')}",
                 style: boldTextStyle(size: LABEL_TEXT_SIZE)),
             8.height,
             ReadMoreText(
               value.bookingDetail!.description.validate(),
-              style: secondaryTextStyle(),
+              style: primaryTextStyle(size: LABEL_TEXT_SIZE),
               colorClickableText: context.primaryColor,
             ),
             8.height,
@@ -1503,7 +1503,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
                     );
                   },
                   child: Text(languages.lblCheckStatus,
-                      style: boldTextStyle(color: white)),
+                      style: boldTextStyle(color: black)),
                 ).paddingRight(8),
             ],
             body: buildBodyWidget(snap),
