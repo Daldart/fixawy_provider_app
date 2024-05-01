@@ -1227,6 +1227,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
                                 return BasicInfoComponent(1,
                                         handymanData: e,
                                         service: res.data!.service,
+                                        customerData: res.data?.customer,
                                         bookingDetail: res.data!.bookingDetail!)
                                     .paddingOnly(bottom: 24)
                                     .onTap(() {
@@ -1271,6 +1272,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
                             children: [
                               BasicInfoComponent(
                                 0,
+                                isCustomer: true,
                                 customerData: res.data!.customer,
                                 service: res.data!.service,
                                 bookingDetail: res.data!.bookingDetail,
