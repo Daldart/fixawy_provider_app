@@ -29,7 +29,7 @@ class AppScaffold extends StatelessWidget {
       appBar: appBarTitle != null
           ? appBarWidget(
               appBarTitle.validate(),
-              textColor: white,
+              textColor: black,
               textSize: APP_BAR_TEXT_SIZE,
               elevation: 0.0,
               color: context.primaryColor,

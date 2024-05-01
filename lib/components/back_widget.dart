@@ -19,7 +19,7 @@ class BackWidget extends StatelessWidget {
         }
       },
       alignment: Alignment.center,
-      icon: Icon(Icons.arrow_back_ios, color: color ?? Colors.white, size: iconSize ?? 20),
+      icon: Icon(Icons.arrow_back_ios, color: color ?? black, size: iconSize ?? 20),
     );
   }
 }

@@ -179,7 +179,7 @@ class BookingFragmentState extends State<BookingFragment>
                             url: ic_filter,
                             height: 26,
                             width: 26,
-                            color: Colors.white,
+                            color: black,
                           ),
                         ).onTap(
                           () async {
