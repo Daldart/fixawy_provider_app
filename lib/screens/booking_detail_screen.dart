@@ -1459,9 +1459,12 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
               body: "${value.bookingDetail?.status}",
             ),
             context: context,
-            onTap: () => BookingDetailScreen(
-              bookingId: value.bookingDetail!.id!,
-            ).launch(context),
+            onTap: () => Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => BookingDetailScreen(
+                          bookingId: value.bookingDetail!.id!,
+                        ))),
             duration: Duration(milliseconds: _duration),
           )
         });
@@ -1469,6 +1472,9 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
       future: future,
       initialData: initialData(),
       builder: (context, snap) {
+        snap.hasData?
+          log("check_status: ${snap.data?.bookingDetail?.status}") : null;
+
         return RefreshIndicator(
           onRefresh: () async {
             init(flag: true);
