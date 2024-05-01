@@ -169,6 +169,9 @@ class LanguageAr extends Languages {
   String get paymentStatus => 'حالة السداد';
 
   @override
+  String get paymentCash => 'كاش';
+
+  @override
   String get paymentMethod => 'طريقة الدفع او السداد';
 
   @override

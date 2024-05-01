@@ -41,7 +41,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   void init() async {
     paymentList = PaymentSetting.decode(getStringAsync(PAYMENT_LIST));
-    paymentList.removeWhere((element) => element.type == PAYMENT_METHOD_COD);
+    paymentList.removeWhere((element) => element.type == languages.paymentCash);
 
     if (paymentList.isNotEmpty) {
       selectedPaymentSetting = paymentList.first;
@@ -196,7 +196,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 Spacer(),
                 AppButton(
                   onTap: () {
-                    if (selectedPaymentSetting!.type == PAYMENT_METHOD_COD) {
+                    if (selectedPaymentSetting!.type == languages.paymentCash) {
                       showConfirmDialogCustom(
                         context,
                         dialogType: DialogType.CONFIRMATION,

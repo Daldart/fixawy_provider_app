@@ -120,6 +120,8 @@ abstract class Languages {
 
   String get paymentStatus;
 
+  String get paymentCash;
+
   String get paymentMethod;
 
   String get hintAddress;

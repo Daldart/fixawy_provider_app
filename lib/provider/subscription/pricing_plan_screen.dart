@@ -253,7 +253,7 @@ class _PricingPlanScreenState extends State<PricingPlanScreen> {
                       ..identifier = selectedPricingPlan!.identifier
                       ..otherTransactionDetail = ''
                       ..paymentStatus = PAID
-                      ..paymentType = PAYMENT_METHOD_COD
+                      ..paymentType = languages.paymentCash
                       ..planId = selectedPricingPlan!.id
                       ..planLimitation = selectedPricingPlan!.planLimitation
                       ..planType = selectedPricingPlan!.planType

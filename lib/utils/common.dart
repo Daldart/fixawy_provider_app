@@ -345,7 +345,7 @@ String getPaymentStatusText(String? status, String? method) {
     return languages.paid;
   } else if (status == PAYMENT_STATUS_ADVANCE) {
     return languages.advancePaid;
-  } else if (status == PENDING && method == PAYMENT_METHOD_COD) {
+  } else if (status == PENDING && method == languages.paymentCash) {
     return languages.pendingApproval;
   } else if (status == PENDING) {
     return languages.pending;

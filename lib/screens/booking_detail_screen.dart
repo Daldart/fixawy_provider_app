@@ -120,7 +120,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
   Future<void> confirmationRequestDialog(
       BuildContext context, String status, BookingDetailResponse res) async {
     if (status == BookingStatusKeys.complete &&
-        res.bookingDetail!.paymentMethod == PAYMENT_METHOD_COD) {
+        res.bookingDetail!.paymentMethod == languages.paymentCash) {
       showInDialog(
         context,
         contentPadding: EdgeInsets.all(0),
@@ -157,7 +157,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
           appStore.setLoading(true);
           updateBooking(res, '', BookingStatusKeys.rejected);
         } else if (status == BookingStatusKeys.complete) {
-          if (res.bookingDetail!.paymentMethod == PAYMENT_METHOD_COD) {
+          if (res.bookingDetail!.paymentMethod == languages.paymentCash) {
             return;
           }
         }
@@ -216,7 +216,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
           : bookDetail.bookingDetail!.paymentStatus.validate();
     } else if (updatedStatus == BookingStatusKeys.complete) {
       if (bookDetail.bookingDetail!.paymentStatus == PENDING &&
-          bookDetail.bookingDetail!.paymentMethod == PAYMENT_METHOD_COD) {
+          bookDetail.bookingDetail!.paymentMethod == languages.paymentCash) {
         startDateTime = bookDetail.bookingDetail!.startAt.toString();
         endDateTime = bookDetail.bookingDetail!.endAt.toString();
         timeInterval = "0";
@@ -988,7 +988,8 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
       );
       // return Text(languages.lblWaitingForResponse, style: boldTextStyle()).center();
     } else if (res.bookingDetail!.status == BookingStatusKeys.complete) {
-      if (res.bookingDetail!.paymentMethod == PAYMENT_METHOD_COD &&
+      log("paymentMethod: ${res.bookingDetail!.paymentMethod}");
+      if (res.bookingDetail!.paymentMethod == languages.paymentCash &&
           res.bookingDetail!.paymentStatus == PENDING) {
         showBottomActionBar = true;
         return AppButton(

@@ -170,6 +170,9 @@ class LanguageEn extends Languages {
   String get paymentStatus => 'Payment Status';
 
   @override
+  String get paymentCash => 'cash';
+
+  @override
   String get paymentMethod => 'Payment Method ';
 
   @override
