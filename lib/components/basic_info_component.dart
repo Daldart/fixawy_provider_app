@@ -20,6 +20,7 @@ class BasicInfoComponent extends StatefulWidget {
   final UserData? customerData;
   final UserData? providerData;
   final ServiceData? service;
+  final bool isCustomer;
 
   /// flag == 0 = customer
   /// flag == 1 = handyman
@@ -27,7 +28,7 @@ class BasicInfoComponent extends StatefulWidget {
   final int flag;
   final BookingData? bookingDetail;
 
-  BasicInfoComponent(this.flag, {this.customerData, this.handymanData, this.providerData, this.service, this.bookingDetail});
+  BasicInfoComponent(this.flag, {this.customerData, this.handymanData, this.providerData, this.service, this.bookingDetail, this.isCustomer = false});
 
   @override
   BasicInfoComponentState createState() => BasicInfoComponentState();
@@ -100,6 +101,8 @@ class BasicInfoComponentState extends State<BasicInfoComponent> {
 
   @override
   Widget build(BuildContext context) {
+    log("user_phone_number:: ${widget.customerData!.contactNumber}");
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -213,13 +216,26 @@ class BasicInfoComponentState extends State<BasicInfoComponent> {
                           elevation: 0,
                           color: context.scaffoldBackgroundColor,
                           onTap: () async {
-                            String phoneNumber = "";
-                            if (widget.handymanData!.contactNumber.validate().contains('+')) {
-                              phoneNumber = "${widget.handymanData!.contactNumber.validate().replaceAll('-', '')}";
-                            } else {
-                              phoneNumber = "+${widget.handymanData!.contactNumber.validate().replaceAll('-', '')}";
-                            }
-                            launchUrl(Uri.parse('${getSocialMediaLink(LinkProvider.WHATSAPP)}$phoneNumber'), mode: LaunchMode.externalApplication);
+                            setState(() {
+                              String phoneNumber = "";
+                              if (widget.isCustomer) {
+                                if (widget.customerData != null &&
+                                    widget.customerData!.contactNumber.validate().contains('+')) {
+                                  phoneNumber = "${widget.customerData!.contactNumber.validate().replaceAll('-', '')}";
+                                } else {
+                                  phoneNumber = "+${widget.customerData!.contactNumber.validate().replaceAll('-', '')}";
+                                }
+                              } else {
+                                if (widget.handymanData != null &&
+                                    widget.handymanData!.contactNumber.validate().contains('+')) {
+                                  phoneNumber = "${widget.handymanData!.contactNumber.validate().replaceAll('-', '')}";
+                                } else {
+                                  phoneNumber = "+${widget.handymanData!.contactNumber.validate().replaceAll('-', '')}";
+                                }
+                              }
+                              log("phone_number:: ${Uri.parse('${getSocialMediaLink(LinkProvider.WHATSAPP)}$phoneNumber')}");
+                              launchUrl(Uri.parse('${getSocialMediaLink(LinkProvider.WHATSAPP)}$phoneNumber'), mode: LaunchMode.externalApplication);
+                            });
                           },
                         ).expand(),
                       ],
