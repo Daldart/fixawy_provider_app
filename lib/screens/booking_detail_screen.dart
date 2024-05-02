@@ -96,6 +96,23 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
         appStore.setLoading(false);
         toast(e.toString());
       });
+
+      future.then((value) => {
+            InAppNotification.show(
+              child: NotificationBody(
+                subject: languages.bookingStatus,
+                body: "${value.bookingDetail?.statusLabel}",
+              ),
+              context: context,
+              onTap: () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => BookingDetailScreen(
+                            bookingId: value.bookingDetail!.id!,
+                          ))),
+              duration: Duration(milliseconds: _duration),
+            )
+          });
       // setState(() {
       // });
     }
@@ -1457,22 +1474,6 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    future.then((value) => {
-          InAppNotification.show(
-            child: NotificationBody(
-              subject: languages.bookingStatus,
-              body: "${value.bookingDetail?.statusLabel}",
-            ),
-            context: context,
-            onTap: () => Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => BookingDetailScreen(
-                          bookingId: value.bookingDetail!.id!,
-                        ))),
-            duration: Duration(milliseconds: _duration),
-          )
-        });
     return FutureBuilder<BookingDetailResponse>(
       future: future,
       initialData: initialData(),
