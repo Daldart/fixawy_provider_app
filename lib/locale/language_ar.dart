@@ -816,7 +816,7 @@ class LanguageAr extends Languages {
   String get confirmation => "تأكيد";
 
   @override
-  String get endServicesMessage => "هل تريد الغاء العمليه";
+  String get endServicesMessage => "هل تريد انهاء العملية";
 
   @override
   String get lblAddYourCountryCode => "أضف رمز بلدك";
