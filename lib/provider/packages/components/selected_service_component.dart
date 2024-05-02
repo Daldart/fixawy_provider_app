@@ -6,13 +6,16 @@ import 'package:fixawy_provider/models/service_model.dart';
 import 'package:fixawy_provider/utils/extensions/context_ext.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import '../../../utils/common.dart';
+
 class SelectedServiceComponent extends StatefulWidget {
   final Function(ServiceData)? onItemRemove;
 
   SelectedServiceComponent({this.onItemRemove});
 
   @override
-  _SelectedServiceComponentState createState() => _SelectedServiceComponentState();
+  _SelectedServiceComponentState createState() =>
+      _SelectedServiceComponentState();
 }
 
 class _SelectedServiceComponentState extends State<SelectedServiceComponent> {
@@ -50,18 +53,27 @@ class _SelectedServiceComponentState extends State<SelectedServiceComponent> {
             children: [
               Container(
                 width: context.width() * 0.35,
-                decoration: boxDecorationRoundedWithShadow(defaultRadius.toInt(), backgroundColor: context.cardColor),
+                decoration: boxDecorationRoundedWithShadow(
+                    defaultRadius.toInt(),
+                    backgroundColor: context.cardColor),
                 child: Column(
                   children: [
                     CachedImageWidget(
-                      url: data.imageAttachments!.isNotEmpty ? data.imageAttachments!.first.validate() : "",
+                      url: data.imageAttachments!.isNotEmpty
+                          ? data.imageAttachments!.first.validate()
+                          : "",
                       height: 70,
                       width: context.width() * 0.35,
                       fit: BoxFit.cover,
                       radius: defaultRadius,
                     ),
                     16.height,
-                    Marquee(child: Text(data.name.validate(), style: boldTextStyle(size: 14))).paddingSymmetric(horizontal: 8),
+                    Marquee(
+                            textDirection:
+                                isRTL ? TextDirection.rtl : TextDirection.ltr,
+                            child: Text(data.name.validate(),
+                                style: boldTextStyle(size: 14)))
+                        .paddingSymmetric(horizontal: 8),
                     12.height,
                   ],
                 ),

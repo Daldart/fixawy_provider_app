@@ -15,6 +15,7 @@ import 'package:nb_utils/nb_utils.dart';
 
 import '../../components/base_scaffold_widget.dart';
 import '../../components/empty_error_state_widget.dart';
+import '../../utils/common.dart';
 import 'models/bidder_data.dart';
 import 'models/post_job_data.dart';
 
@@ -39,10 +40,15 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
   }
 
   void init() async {
-    future = getPostJobDetail({PostJob.postRequestId: widget.postJobData.id.validate()});
+    future = getPostJobDetail(
+        {PostJob.postRequestId: widget.postJobData.id.validate()});
   }
 
-  Widget titleWidget({required String title, required String detail, bool isReadMore = false, required TextStyle detailTextStyle}) {
+  Widget titleWidget(
+      {required String title,
+      required String detail,
+      bool isReadMore = false,
+      required TextStyle detailTextStyle}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -65,7 +71,9 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
     return Container(
       padding: EdgeInsets.only(left: 16, right: 16, top: 16),
       width: context.width(),
-      decoration: boxDecorationWithRoundedCorners(backgroundColor: context.cardColor, borderRadius: BorderRadius.all(Radius.circular(16))),
+      decoration: boxDecorationWithRoundedCorners(
+          backgroundColor: context.cardColor,
+          borderRadius: BorderRadius.all(Radius.circular(16))),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -94,7 +102,8 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         8.height,
-        Text(languages.lblServices, style: boldTextStyle(size: LABEL_TEXT_SIZE)).paddingOnly(left: 16, right: 16),
+        Text(languages.lblServices, style: boldTextStyle(size: LABEL_TEXT_SIZE))
+            .paddingOnly(left: 16, right: 16),
         AnimatedListView(
           itemCount: serviceList.length,
           padding: EdgeInsets.all(8),
@@ -106,18 +115,26 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
               width: context.width(),
               margin: EdgeInsets.all(8),
               padding: EdgeInsets.all(8),
-              decoration: boxDecorationWithRoundedCorners(backgroundColor: context.cardColor, borderRadius: BorderRadius.all(Radius.circular(16))),
+              decoration: boxDecorationWithRoundedCorners(
+                  backgroundColor: context.cardColor,
+                  borderRadius: BorderRadius.all(Radius.circular(16))),
               child: Row(
                 children: [
                   CachedImageWidget(
-                    url: data.imageAttachments.validate().isNotEmpty ? data.imageAttachments!.first.validate() : "",
+                    url: data.imageAttachments.validate().isNotEmpty
+                        ? data.imageAttachments!.first.validate()
+                        : "",
                     fit: BoxFit.cover,
                     height: 60,
                     width: 60,
                     radius: defaultRadius,
                   ),
                   16.width,
-                  Text(data.name.validate(), style: primaryTextStyle(), maxLines: 2, overflow: TextOverflow.ellipsis).expand(),
+                  Text(data.name.validate(),
+                          style: primaryTextStyle(),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis)
+                      .expand(),
                 ],
               ),
             );
@@ -130,7 +147,8 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
   Widget providerWidget(List<BidderData> bidderList) {
     try {
       if (bidderList.any((element) => element.providerId == appStore.userId)) {
-        BidderData? bidderData = bidderList.firstWhere((element) => element.providerId == appStore.userId);
+        BidderData? bidderData = bidderList
+            .firstWhere((element) => element.providerId == appStore.userId);
         UserData? user = bidderData.provider;
 
         return Column(
@@ -141,7 +159,9 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
             16.height,
             Container(
               padding: EdgeInsets.all(16),
-              decoration: boxDecorationWithRoundedCorners(backgroundColor: context.cardColor, borderRadius: BorderRadius.all(Radius.circular(16))),
+              decoration: boxDecorationWithRoundedCorners(
+                  backgroundColor: context.cardColor,
+                  borderRadius: BorderRadius.all(Radius.circular(16))),
               child: Row(
                 children: [
                   CachedImageWidget(
@@ -156,6 +176,8 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Marquee(
+                        textDirection:
+                            isRTL ? TextDirection.rtl : TextDirection.ltr,
                         directionMarguee: DirectionMarguee.oneDirection,
                         child: Text(
                           user.displayName.validate(),
@@ -187,11 +209,14 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         16.height,
-        Text(languages.lblAboutCustomer, style: boldTextStyle(size: LABEL_TEXT_SIZE)),
+        Text(languages.lblAboutCustomer,
+            style: boldTextStyle(size: LABEL_TEXT_SIZE)),
         16.height,
         Container(
           padding: EdgeInsets.all(16),
-          decoration: boxDecorationWithRoundedCorners(backgroundColor: context.cardColor, borderRadius: BorderRadius.all(Radius.circular(16))),
+          decoration: boxDecorationWithRoundedCorners(
+              backgroundColor: context.cardColor,
+              borderRadius: BorderRadius.all(Radius.circular(16))),
           child: Row(
             children: [
               CachedImageWidget(
@@ -206,6 +231,8 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Marquee(
+                    textDirection:
+                        isRTL ? TextDirection.rtl : TextDirection.ltr,
                     directionMarguee: DirectionMarguee.oneDirection,
                     child: Text(
                       postJobData.customerName.validate(),
@@ -215,7 +242,12 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
                     ),
                   ),
                   4.height,
-                  Text(postJobData.status.validate() == JOB_REQUEST_STATUS_ACCEPTED ? languages.jobPrice : languages.estimatedPrice, style: secondaryTextStyle()),
+                  Text(
+                      postJobData.status.validate() ==
+                              JOB_REQUEST_STATUS_ACCEPTED
+                          ? languages.jobPrice
+                          : languages.estimatedPrice,
+                      style: secondaryTextStyle()),
                   4.height,
                   PriceWidget(price: postJobData.price.validate()),
                 ],
@@ -241,7 +273,12 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
         children: [
           SnapHelperWidget<PostJobDetailResponse>(
             future: future,
-            initialData: cachedPostJobList.firstWhere((element) => element?.$1 == widget.postJobData.id.validate(), orElse: () => null)?.$2,
+            initialData: cachedPostJobList
+                .firstWhere(
+                    (element) =>
+                        element?.$1 == widget.postJobData.id.validate(),
+                    orElse: () => null)
+                ?.$2,
             onSuccess: (data) {
               return Stack(
                 children: [
@@ -249,7 +286,8 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
                     padding: EdgeInsets.only(bottom: 60),
                     physics: AlwaysScrollableScrollPhysics(),
                     listAnimationType: ListAnimationType.FadeIn,
-                    fadeInConfiguration: FadeInConfiguration(duration: 2.seconds),
+                    fadeInConfiguration:
+                        FadeInConfiguration(duration: 2.seconds),
                     onSwipeRefresh: () async {
                       page = 1;
 
@@ -262,10 +300,13 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          postJobDetailWidget(data: data.postRequestDetail!).paddingAll(16),
+                          postJobDetailWidget(data: data.postRequestDetail!)
+                              .paddingAll(16),
                           customerWidget(data.postRequestDetail!),
                           providerWidget(data.bidderData.validate()),
-                          postJobServiceWidget(serviceList: data.postRequestDetail!.service.validate()),
+                          postJobServiceWidget(
+                              serviceList:
+                                  data.postRequestDetail!.service.validate()),
                           24.height,
                         ],
                       ),
@@ -277,7 +318,8 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
                       left: 16,
                       right: 16,
                       child: AppButton(
-                        child: Text(languages.bid, style: boldTextStyle(color: white)),
+                        child: Text(languages.bid,
+                            style: boldTextStyle(color: white)),
                         color: context.primaryColor,
                         width: context.width(),
                         onTap: () async {
@@ -286,7 +328,8 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
                             contentPadding: EdgeInsets.zero,
                             hideSoftKeyboard: true,
                             backgroundColor: context.cardColor,
-                            builder: (_) => BidPriceDialog(data: widget.postJobData),
+                            builder: (_) =>
+                                BidPriceDialog(data: widget.postJobData),
                           );
 
                           if (res ?? false) {
@@ -315,7 +358,8 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
             },
             loadingWidget: LoaderWidget(),
           ),
-          Observer(builder: (context) => LoaderWidget().visible(appStore.isLoading))
+          Observer(
+              builder: (context) => LoaderWidget().visible(appStore.isLoading))
         ],
       ),
     );

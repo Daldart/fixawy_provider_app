@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:fixawy_provider/utils/widgets/in_app_notification_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as Matrial;
+
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:fixawy_provider/components/app_common_dialog.dart';
 import 'package:fixawy_provider/components/app_widgets.dart';
@@ -652,6 +654,9 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
                       4.height,
                       if (data.subCategoryName.validate().isNotEmpty)
                         Marquee(
+                          textDirection: isRTL
+                              ? Matrial.TextDirection.rtl
+                              : Matrial.TextDirection.ltr,
                           child: Row(
                             children: [
                               Text('${data.categoryName}',
@@ -1472,8 +1477,9 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
       future: future,
       initialData: initialData(),
       builder: (context, snap) {
-        snap.hasData?
-          log("check_status: ${snap.data?.bookingDetail?.status}") : null;
+        snap.hasData
+            ? log("check_status: ${snap.data?.bookingDetail?.status}")
+            : null;
 
         return RefreshIndicator(
           onRefresh: () async {

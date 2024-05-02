@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import '../../utils/common.dart';
+
 class TotalWidget extends StatelessWidget {
   final String title;
   final String total;
   final String icon;
   final Color? color;
 
-  TotalWidget({required this.title, required this.total, required this.icon, this.color});
+  TotalWidget(
+      {required this.title,
+      required this.total,
+      required this.icon,
+      this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -24,18 +30,29 @@ class TotalWidget extends StatelessWidget {
               SizedBox(
                 width: context.width() / 2 - 94,
                 child: Marquee(
-                  child: Marquee(child: Text(total.validate(), style: boldTextStyle(color: Colors.white, size: 16), maxLines: 1)),
+                  textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
+                  child: Marquee(
+                      textDirection:
+                          isRTL ? TextDirection.rtl : TextDirection.ltr,
+                      child: Text(total.validate(),
+                          style: boldTextStyle(color: Colors.white, size: 16),
+                          maxLines: 1)),
                 ),
               ),
               Container(
                 padding: EdgeInsets.all(8),
-                decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white),
-                child: Image.asset(icon, width: 18, height: 18, color: context.primaryColor),
+                decoration:
+                    BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+                child: Image.asset(icon,
+                    width: 18, height: 18, color: context.primaryColor),
               ),
             ],
           ),
           8.height,
-          Marquee(child: Text(title, style: secondaryTextStyle(size: 14, color: Colors.white))),
+          Marquee(
+              textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
+              child: Text(title,
+                  style: secondaryTextStyle(size: 14, color: Colors.white))),
         ],
       ),
     );

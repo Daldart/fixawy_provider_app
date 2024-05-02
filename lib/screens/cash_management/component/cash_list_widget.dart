@@ -16,7 +16,8 @@ class CashListWidget extends StatefulWidget {
   final PaymentHistoryData data;
   final Function() onRefresh;
 
-  const CashListWidget({Key? key, required this.data, required this.onRefresh}) : super(key: key);
+  const CashListWidget({Key? key, required this.data, required this.onRefresh})
+      : super(key: key);
 
   @override
   State<CashListWidget> createState() => _CashListWidgetState();
@@ -45,7 +46,8 @@ class _CashListWidgetState extends State<CashListWidget> {
         color: context.primaryColor,
         text: languages.sendCashToProvider,
         onTap: () async {
-          await PayToScreen(paymentData: widget.data, totalNumberOfBookings: 1).launch(context);
+          await PayToScreen(paymentData: widget.data, totalNumberOfBookings: 1)
+              .launch(context);
           widget.onRefresh.call();
         },
       );
@@ -55,7 +57,8 @@ class _CashListWidgetState extends State<CashListWidget> {
         color: context.primaryColor,
         text: languages.sendCashToAdmin,
         onTap: () async {
-          await PayToScreen(paymentData: widget.data, totalNumberOfBookings: 1).launch(context);
+          await PayToScreen(paymentData: widget.data, totalNumberOfBookings: 1)
+              .launch(context);
           widget.onRefresh.call();
         },
       );
@@ -88,7 +91,8 @@ class _CashListWidgetState extends State<CashListWidget> {
     log(widget.data.datetime.toString());
     return GestureDetector(
       onTap: () {
-        BookingDetailScreen(bookingId: widget.data.bookingId.validate().toInt()).launch(context);
+        BookingDetailScreen(bookingId: widget.data.bookingId.validate().toInt())
+            .launch(context);
       },
       child: Container(
         decoration: boxDecorationDefault(color: context.cardColor),
@@ -103,16 +107,26 @@ class _CashListWidgetState extends State<CashListWidget> {
                 Row(
                   children: [
                     Marquee(
-                      child: PriceWidget(price: widget.data.totalAmount.validate(), size: 16, color: appStore.isDarkMode ? Colors.white : context.primaryColor),
+                      textDirection:
+                          isRTL ? TextDirection.rtl : TextDirection.ltr,
+                      child: PriceWidget(
+                          price: widget.data.totalAmount.validate(),
+                          size: 16,
+                          color: appStore.isDarkMode
+                              ? Colors.white
+                              : context.primaryColor),
                     ).expand(),
                     if (widget.data.status.validate() != APPROVED_BY_HANDYMAN)
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
                           color: primaryColor.withOpacity(0.1),
                           borderRadius: radius(8),
                         ),
                         child: Marquee(
+                          textDirection:
+                              isRTL ? TextDirection.rtl : TextDirection.ltr,
                           child: Text(
                             handleBankText(status: widget.data.type.validate()),
                             style: boldTextStyle(color: primaryColor, size: 12),
@@ -123,13 +137,23 @@ class _CashListWidgetState extends State<CashListWidget> {
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
-                        color: widget.data.status.validate().getCashPaymentStatusBackgroundColor.withOpacity(0.1),
+                        color: widget.data.status
+                            .validate()
+                            .getCashPaymentStatusBackgroundColor
+                            .withOpacity(0.1),
                         borderRadius: radius(8),
                       ),
                       child: Marquee(
+                        textDirection:
+                            isRTL ? TextDirection.rtl : TextDirection.ltr,
                         child: Text(
-                          handleStatusText(status: widget.data.status.validate()),
-                          style: boldTextStyle(color: widget.data.status.validate().getCashPaymentStatusBackgroundColor, size: 12),
+                          handleStatusText(
+                              status: widget.data.status.validate()),
+                          style: boldTextStyle(
+                              color: widget.data.status
+                                  .validate()
+                                  .getCashPaymentStatusBackgroundColor,
+                              size: 12),
                         ),
                       ),
                     ),
@@ -140,7 +164,8 @@ class _CashListWidgetState extends State<CashListWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('${languages.lblBookingID}', style: secondaryTextStyle()),
+                    Text('${languages.lblBookingID}',
+                        style: secondaryTextStyle()),
                     8.width,
                     Text(
                       widget.data.bookingId.toString().suffixText(value: "#"),
@@ -155,7 +180,8 @@ class _CashListWidgetState extends State<CashListWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text('${languages.lblDate} ${languages.ofTransfer}', style: secondaryTextStyle()),
+                    Text('${languages.lblDate} ${languages.ofTransfer}',
+                        style: secondaryTextStyle()),
                     8.width,
                     Text(
                       "${formatDate(widget.data.datetime.toString(), format: DATE_FORMAT_9)}",
@@ -179,7 +205,8 @@ class _CashListWidgetState extends State<CashListWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text('${languages.refNumber}: ', style: secondaryTextStyle()),
+                          Text('${languages.refNumber}: ',
+                              style: secondaryTextStyle()),
                           8.width,
                           Text(
                             "${widget.data.txnId.validate()}",

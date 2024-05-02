@@ -17,13 +17,17 @@ class ServiceDetailHeaderComponent extends StatefulWidget {
   final ServiceData serviceDetail;
   final VoidCallback? voidCallback;
 
-  const ServiceDetailHeaderComponent({required this.serviceDetail, this.voidCallback, Key? key}) : super(key: key);
+  const ServiceDetailHeaderComponent(
+      {required this.serviceDetail, this.voidCallback, Key? key})
+      : super(key: key);
 
   @override
-  State<ServiceDetailHeaderComponent> createState() => _ServiceDetailHeaderComponentState();
+  State<ServiceDetailHeaderComponent> createState() =>
+      _ServiceDetailHeaderComponentState();
 }
 
-class _ServiceDetailHeaderComponentState extends State<ServiceDetailHeaderComponent> {
+class _ServiceDetailHeaderComponentState
+    extends State<ServiceDetailHeaderComponent> {
   @override
   void initState() {
     super.initState();
@@ -83,7 +87,9 @@ class _ServiceDetailHeaderComponentState extends State<ServiceDetailHeaderCompon
             left: 8,
             child: Container(
               child: BackWidget(color: context.iconColor).paddingLeft(8),
-              decoration: BoxDecoration(shape: BoxShape.circle, color: context.cardColor.withOpacity(0.7)),
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: context.cardColor.withOpacity(0.7)),
             ),
           ),
           Positioned(
@@ -91,13 +97,18 @@ class _ServiceDetailHeaderComponentState extends State<ServiceDetailHeaderCompon
             child: isUserTypeProvider
                 ? Container(
                     padding: EdgeInsets.all(0),
-                    decoration: BoxDecoration(shape: BoxShape.circle, color: context.cardColor.withOpacity(0.7)),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: context.cardColor.withOpacity(0.7)),
                     child: PopupMenuButton(
-                      icon: Icon(Icons.more_horiz, size: 24, color: context.iconColor),
+                      icon: Icon(Icons.more_horiz,
+                          size: 24, color: context.iconColor),
                       padding: EdgeInsets.all(8),
                       onSelected: (selection) {
                         if (selection == 1) {
-                          AddServices(data: widget.serviceDetail).launch(context).then((value) {
+                          AddServices(data: widget.serviceDetail)
+                              .launch(context)
+                              .then((value) {
                             if (value ?? false) {
                               init();
 
@@ -110,8 +121,14 @@ class _ServiceDetailHeaderComponentState extends State<ServiceDetailHeaderCompon
                       },
                       color: context.cardColor,
                       itemBuilder: (context) => [
-                        PopupMenuItem(child: Text(languages.lblEdit, style: boldTextStyle()), value: 1),
-                        PopupMenuItem(child: Text(languages.lblDelete, style: boldTextStyle()), value: 2),
+                        PopupMenuItem(
+                            child:
+                                Text(languages.lblEdit, style: boldTextStyle()),
+                            value: 1),
+                        PopupMenuItem(
+                            child: Text(languages.lblDelete,
+                                style: boldTextStyle()),
+                            value: 2),
                       ],
                     ),
                   )
@@ -132,9 +149,14 @@ class _ServiceDetailHeaderComponentState extends State<ServiceDetailHeaderCompon
                       children: List.generate(
                         widget.serviceDetail.attchments!.take(2).length,
                         (i) => Container(
-                          decoration: BoxDecoration(border: Border.all(color: white, width: 2), borderRadius: radius()),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: white, width: 2),
+                              borderRadius: radius()),
                           child: GalleryComponent(
-                            images: widget.serviceDetail.attchments.validate().map((e) => e.url.validate()).toList(),
+                            images: widget.serviceDetail.attchments
+                                .validate()
+                                .map((e) => e.url.validate())
+                                .toList(),
                             index: i,
                             padding: 32,
                             height: 60,
@@ -152,16 +174,29 @@ class _ServiceDetailHeaderComponentState extends State<ServiceDetailHeaderCompon
                           height: 60,
                           width: 60,
                           alignment: Alignment.center,
-                          decoration: BoxDecoration(border: Border.all(color: white, width: 2), borderRadius: radius()),
-                          child: Text('+' '${widget.serviceDetail.attchments!.length - 2}', style: boldTextStyle(color: white)),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: white, width: 2),
+                              borderRadius: radius()),
+                          child: Text(
+                              '+'
+                              '${widget.serviceDetail.attchments!.length - 2}',
+                              style: boldTextStyle(color: white)),
                         ),
                       ).onTap(
                         () {
                           GalleryListScreen(
-                            galleryImages: widget.serviceDetail.attchments.validate().map((e) => e.url.validate()).toList(),
+                            galleryImages: widget.serviceDetail.attchments
+                                .validate()
+                                .map((e) => e.url.validate())
+                                .toList(),
                             serviceName: widget.serviceDetail.name.validate(),
-                          ).launch(context, pageRouteAnimation: PageRouteAnimation.Fade, duration: 400.milliseconds).then((value) {
-                            setStatusBarColor(transparentColor, delayInMilliSeconds: 1000);
+                          )
+                              .launch(context,
+                                  pageRouteAnimation: PageRouteAnimation.Fade,
+                                  duration: 400.milliseconds)
+                              .then((value) {
+                            setStatusBarColor(transparentColor,
+                                delayInMilliSeconds: 1000);
                           });
                         },
                       ),
@@ -178,21 +213,38 @@ class _ServiceDetailHeaderComponentState extends State<ServiceDetailHeaderCompon
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      if (widget.serviceDetail.subCategoryName.validate().isNotEmpty)
+                      if (widget.serviceDetail.subCategoryName
+                          .validate()
+                          .isNotEmpty)
                         Marquee(
+                          textDirection:
+                              isRTL ? TextDirection.rtl : TextDirection.ltr,
                           child: Row(
                             children: [
-                              Text('${widget.serviceDetail.categoryName}', style: boldTextStyle(color: textSecondaryColorGlobal, size: 12)),
-                              Text('  >  ', style: boldTextStyle(size: 14, color: textSecondaryColorGlobal)),
-                              Text('${widget.serviceDetail.subCategoryName.capitalizeFirstLetter()}', style: boldTextStyle(color: context.primaryColor, size: 12)),
+                              Text('${widget.serviceDetail.categoryName}',
+                                  style: boldTextStyle(
+                                      color: textSecondaryColorGlobal,
+                                      size: 12)),
+                              Text('  >  ',
+                                  style: boldTextStyle(
+                                      size: 14,
+                                      color: textSecondaryColorGlobal)),
+                              Text(
+                                  '${widget.serviceDetail.subCategoryName.capitalizeFirstLetter()}',
+                                  style: boldTextStyle(
+                                      color: context.primaryColor, size: 12)),
                             ],
                           ),
                         )
                       else
-                        Text('${widget.serviceDetail.categoryName}', style: boldTextStyle(color: context.primaryColor)),
+                        Text('${widget.serviceDetail.categoryName}',
+                            style: boldTextStyle(color: context.primaryColor)),
                       8.height,
                       Marquee(
-                        child: Text('${widget.serviceDetail.name.validate()}', style: boldTextStyle(size: 18)),
+                        textDirection:
+                            isRTL ? TextDirection.rtl : TextDirection.ltr,
+                        child: Text('${widget.serviceDetail.name.validate()}',
+                            style: boldTextStyle(size: 18)),
                         directionMarguee: DirectionMarguee.oneDirection,
                       ),
                       8.height,
@@ -200,7 +252,8 @@ class _ServiceDetailHeaderComponentState extends State<ServiceDetailHeaderCompon
                         children: [
                           PriceWidget(
                             price: widget.serviceDetail.price.validate(),
-                            isHourlyService: widget.serviceDetail.isHourlyService,
+                            isHourlyService:
+                                widget.serviceDetail.isHourlyService,
                             size: 16,
                             hourlyTextColor: textSecondaryColorGlobal,
                             isFreeService: widget.serviceDetail.isFreeService,
@@ -215,11 +268,14 @@ class _ServiceDetailHeaderComponentState extends State<ServiceDetailHeaderCompon
                       ),
                       4.height,
                       TextIcon(
-                        edgeInsets: EdgeInsets.symmetric(horizontal: 0, vertical: 8),
+                        edgeInsets:
+                            EdgeInsets.symmetric(horizontal: 0, vertical: 8),
                         text: '${languages.hintDuration}',
                         textStyle: secondaryTextStyle(size: 14),
                         expandedText: true,
-                        suffix: Text("${widget.serviceDetail.duration.validate()} ${languages.lblHr}", style: boldTextStyle(color: context.primaryColor)),
+                        suffix: Text(
+                            "${widget.serviceDetail.duration.validate()} ${languages.lblHr}",
+                            style: boldTextStyle(color: context.primaryColor)),
                       ),
                       TextIcon(
                         text: '${languages.lblRating}',
@@ -231,10 +287,15 @@ class _ServiceDetailHeaderComponentState extends State<ServiceDetailHeaderCompon
                             Image.asset(
                               ic_star_fill,
                               height: 18,
-                              color: getRatingBarColor(widget.serviceDetail.totalRating.validate().toInt()),
+                              color: getRatingBarColor(widget
+                                  .serviceDetail.totalRating
+                                  .validate()
+                                  .toInt()),
                             ),
                             4.width,
-                            Text("${widget.serviceDetail.totalRating.validate().toStringAsFixed(1)}", style: boldTextStyle()),
+                            Text(
+                                "${widget.serviceDetail.totalRating.validate().toStringAsFixed(1)}",
+                                style: boldTextStyle()),
                           ],
                         ),
                       ),

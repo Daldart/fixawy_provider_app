@@ -9,6 +9,8 @@ import 'package:fixawy_provider/utils/configs.dart';
 import 'package:fixawy_provider/utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import '../../utils/common.dart';
+
 class ServiceComponent extends StatelessWidget {
   final ServiceData data;
   final double width;
@@ -34,26 +36,36 @@ class ServiceComponent extends StatelessWidget {
               clipBehavior: Clip.none,
               children: [
                 CachedImageWidget(
-                  url: data.imageAttachments!.isNotEmpty ? data.imageAttachments!.first.validate() : "",
+                  url: data.imageAttachments!.isNotEmpty
+                      ? data.imageAttachments!.first.validate()
+                      : "",
                   fit: BoxFit.cover,
                   height: 180,
                   width: context.width(),
-                ).cornerRadiusWithClipRRectOnly(topRight: defaultRadius.toInt(), topLeft: defaultRadius.toInt()),
+                ).cornerRadiusWithClipRRectOnly(
+                    topRight: defaultRadius.toInt(),
+                    topLeft: defaultRadius.toInt()),
                 Positioned(
                   top: 12,
                   left: 12,
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 2, vertical: 2),
-                    constraints: BoxConstraints(maxWidth: context.width() * 0.3),
+                    constraints:
+                        BoxConstraints(maxWidth: context.width() * 0.3),
                     decoration: boxDecorationWithShadow(
                       backgroundColor: context.cardColor.withOpacity(0.9),
                       borderRadius: radius(24),
                     ),
                     child: Marquee(
+                      textDirection:
+                          isRTL ? TextDirection.rtl : TextDirection.ltr,
                       directionMarguee: DirectionMarguee.oneDirection,
                       child: Text(
-                        "${data.subCategoryName.validate().isNotEmpty ? data.subCategoryName.validate() : data.categoryName.validate()}".toUpperCase(),
-                        style: boldTextStyle(color: appStore.isDarkMode ? white : primaryColor, size: 12),
+                        "${data.subCategoryName.validate().isNotEmpty ? data.subCategoryName.validate() : data.categoryName.validate()}"
+                            .toUpperCase(),
+                        style: boldTextStyle(
+                            color: appStore.isDarkMode ? white : primaryColor,
+                            size: 12),
                       ).paddingSymmetric(horizontal: 8, vertical: 4),
                     ),
                   ),
@@ -76,7 +88,8 @@ class ServiceComponent extends StatelessWidget {
                     ),
                     child: PriceWidget(
                       price: data.price.validate(),
-                      isHourlyService: data.type.validate() == SERVICE_TYPE_HOURLY,
+                      isHourlyService:
+                          data.type.validate() == SERVICE_TYPE_HOURLY,
                       color: Colors.white,
                       hourlyTextColor: Colors.white,
                       size: 14,
@@ -87,7 +100,8 @@ class ServiceComponent extends StatelessWidget {
                 Positioned(
                   bottom: 0,
                   left: 16,
-                  child: DisabledRatingBarWidget(rating: data.totalRating.validate(), size: 14),
+                  child: DisabledRatingBarWidget(
+                      rating: data.totalRating.validate(), size: 14),
                 ),
               ],
             ),
@@ -97,8 +111,10 @@ class ServiceComponent extends StatelessWidget {
             children: [
               8.height,
               Marquee(
+                textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
                 directionMarguee: DirectionMarguee.oneDirection,
-                child: Text(data.name.validate(), style: boldTextStyle()).paddingSymmetric(horizontal: 16),
+                child: Text(data.name.validate(), style: boldTextStyle())
+                    .paddingSymmetric(horizontal: 16),
               ),
               16.height,
             ],

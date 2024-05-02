@@ -13,6 +13,7 @@ import 'package:nb_utils/nb_utils.dart';
 import '../../components/base_scaffold_widget.dart';
 import '../../components/empty_error_state_widget.dart';
 import '../../models/booking_detail_response.dart';
+import '../../utils/common.dart';
 import '../../utils/constant.dart';
 
 class AssignHandymanScreen extends StatefulWidget {
@@ -20,7 +21,12 @@ class AssignHandymanScreen extends StatefulWidget {
   final Function? onUpdate;
   final int? serviceAddressId;
 
-  const AssignHandymanScreen({Key? key, this.onUpdate, required this.bookingId, required this.serviceAddressId}) : super(key: key);
+  const AssignHandymanScreen(
+      {Key? key,
+      this.onUpdate,
+      required this.bookingId,
+      required this.serviceAddressId})
+      : super(key: key);
 
   @override
   _AssignHandymanScreenState createState() => _AssignHandymanScreenState();
@@ -60,7 +66,8 @@ class _AssignHandymanScreenState extends State<AssignHandymanScreen> {
 
     showConfirmDialogCustom(
       context,
-      title: '${languages.lblAreYouSureYouWantToAssignThisServiceTo} ${userListData!.firstName.validate()}',
+      title:
+          '${languages.lblAreYouSureYouWantToAssignThisServiceTo} ${userListData!.firstName.validate()}',
       positiveText: languages.lblYes,
       negativeText: languages.lblNo,
       primaryColor: context.primaryColor,
@@ -128,7 +135,7 @@ class _AssignHandymanScreenState extends State<AssignHandymanScreen> {
       };
       appStore.setLoading(true);
 
-     await bookingUpdate(updateBookingRequest).then((res) async {
+      await bookingUpdate(updateBookingRequest).then((res) async {
         appStore.setLoading(false);
       }).catchError((e) {
         appStore.setLoading(false);
@@ -147,7 +154,9 @@ class _AssignHandymanScreenState extends State<AssignHandymanScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CachedImageWidget(
-            url: userData.profileImage!.isNotEmpty ? userData.profileImage.validate() : "",
+            url: userData.profileImage!.isNotEmpty
+                ? userData.profileImage.validate()
+                : "",
             height: 60,
             fit: BoxFit.cover,
             circle: true,
@@ -159,6 +168,7 @@ class _AssignHandymanScreenState extends State<AssignHandymanScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Marquee(
+                textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
                 child: HandymanNameWidget(
                   size: 14,
                   name: userData.displayName.validate(),
@@ -252,8 +262,13 @@ class _AssignHandymanScreenState extends State<AssignHandymanScreen> {
                 itemBuilder: (BuildContext context, index) {
                   return Column(
                     children: [
-                      buildRadioListTile(userData: snap[index]).paddingOnly(bottom: 2, top: 2),
-                      Divider(endIndent: 16.0, indent: 16.0, height: 0, color: context.dividerColor),
+                      buildRadioListTile(userData: snap[index])
+                          .paddingOnly(bottom: 2, top: 2),
+                      Divider(
+                          endIndent: 16.0,
+                          indent: 16.0,
+                          height: 0,
+                          color: context.dividerColor),
                     ],
                   );
                 },
@@ -294,7 +309,9 @@ class _AssignHandymanScreenState extends State<AssignHandymanScreen> {
                     _handleAssignToMyself();
                   },
                   width: context.width(),
-                  shapeBorder: RoundedRectangleBorder(borderRadius: radius(), side: BorderSide(color: context.primaryColor)),
+                  shapeBorder: RoundedRectangleBorder(
+                      borderRadius: radius(),
+                      side: BorderSide(color: context.primaryColor)),
                   color: context.scaffoldBackgroundColor,
                   elevation: 0,
                   textColor: context.primaryColor,

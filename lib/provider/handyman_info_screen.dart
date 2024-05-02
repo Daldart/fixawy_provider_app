@@ -78,12 +78,23 @@ class HandymanInfoScreenState extends State<HandymanInfoScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           10.height,
-                          Text(data.handymanData!.displayName.validate(), style: boldTextStyle(size: 16)),
-                          if (data.handymanData!.designation.validate().isNotEmpty)
+                          Text(data.handymanData!.displayName.validate(),
+                              style: boldTextStyle(size: 16)),
+                          if (data.handymanData!.designation
+                              .validate()
+                              .isNotEmpty)
                             Column(
                               children: [
                                 4.height,
-                                Marquee(child: Text(data.handymanData!.designation.validate(), style: secondaryTextStyle(weight: FontWeight.bold))),
+                                Marquee(
+                                    textDirection: isRTL
+                                        ? TextDirection.rtl
+                                        : TextDirection.ltr,
+                                    child: Text(
+                                        data.handymanData!.designation
+                                            .validate(),
+                                        style: secondaryTextStyle(
+                                            weight: FontWeight.bold))),
                                 4.height,
                               ],
                             ),
@@ -92,12 +103,20 @@ class HandymanInfoScreenState extends State<HandymanInfoScreen> {
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(languages.lblMemberSince, style: secondaryTextStyle(weight: FontWeight.bold)),
-                                Text(" ${DateTime.parse(data.handymanData!.createdAt.validate()).year}", style: secondaryTextStyle(weight: FontWeight.bold)),
+                                Text(languages.lblMemberSince,
+                                    style: secondaryTextStyle(
+                                        weight: FontWeight.bold)),
+                                Text(
+                                    " ${DateTime.parse(data.handymanData!.createdAt.validate()).year}",
+                                    style: secondaryTextStyle(
+                                        weight: FontWeight.bold)),
                               ],
                             ),
                           10.height,
-                          DisabledRatingBarWidget(rating: data.handymanData!.handymanRating.validate().toDouble()),
+                          DisabledRatingBarWidget(
+                              rating: data.handymanData!.handymanRating
+                                  .validate()
+                                  .toDouble()),
                         ],
                       ).expand(),
                     ],
@@ -134,7 +153,9 @@ class HandymanInfoScreenState extends State<HandymanInfoScreen> {
                         children: [
                           BackWidget(),
                           16.width,
-                          Text(languages.lblAboutHandyman, style: boldTextStyle(color: Colors.white, size: 18)),
+                          Text(languages.lblAboutHandyman,
+                              style:
+                                  boldTextStyle(color: Colors.white, size: 18)),
                         ],
                       ),
                     ),
@@ -145,22 +166,33 @@ class HandymanInfoScreenState extends State<HandymanInfoScreen> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            if (snap.data!.handymanData!.knownLanguagesArray.isNotEmpty)
+                            if (snap.data!.handymanData!.knownLanguagesArray
+                                .isNotEmpty)
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(languages.knownLanguages, style: boldTextStyle()),
+                                  Text(languages.knownLanguages,
+                                      style: boldTextStyle()),
                                   8.height,
                                   Wrap(
-                                    children: snap.data!.handymanData!.knownLanguagesArray.map((e) {
+                                    children: snap
+                                        .data!.handymanData!.knownLanguagesArray
+                                        .map((e) {
                                       return Container(
-                                        decoration: boxDecorationWithRoundedCorners(
-                                          borderRadius: BorderRadius.all(Radius.circular(4)),
-                                          backgroundColor: appStore.isDarkMode ? cardDarkColor : primaryColor.withOpacity(0.1),
+                                        decoration:
+                                            boxDecorationWithRoundedCorners(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(4)),
+                                          backgroundColor: appStore.isDarkMode
+                                              ? cardDarkColor
+                                              : primaryColor.withOpacity(0.1),
                                         ),
-                                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 8, vertical: 4),
                                         margin: EdgeInsets.all(4),
-                                        child: Text(e, style: secondaryTextStyle(weight: FontWeight.bold)),
+                                        child: Text(e,
+                                            style: secondaryTextStyle(
+                                                weight: FontWeight.bold)),
                                       );
                                     }).toList(),
                                   ),
@@ -171,18 +203,28 @@ class HandymanInfoScreenState extends State<HandymanInfoScreen> {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(languages.essentialSkills, style: boldTextStyle()),
+                                  Text(languages.essentialSkills,
+                                      style: boldTextStyle()),
                                   8.height,
                                   Wrap(
-                                    children: snap.data!.handymanData!.skillsArray.map((e) {
+                                    children: snap
+                                        .data!.handymanData!.skillsArray
+                                        .map((e) {
                                       return Container(
-                                        decoration: boxDecorationWithRoundedCorners(
-                                          borderRadius: BorderRadius.all(Radius.circular(4)),
-                                          backgroundColor: appStore.isDarkMode ? cardDarkColor : primaryColor.withOpacity(0.1),
+                                        decoration:
+                                            boxDecorationWithRoundedCorners(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(4)),
+                                          backgroundColor: appStore.isDarkMode
+                                              ? cardDarkColor
+                                              : primaryColor.withOpacity(0.1),
                                         ),
-                                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 8, vertical: 4),
                                         margin: EdgeInsets.all(4),
-                                        child: Text(e, style: secondaryTextStyle(weight: FontWeight.bold)),
+                                        child: Text(e,
+                                            style: secondaryTextStyle(
+                                                weight: FontWeight.bold)),
                                       );
                                     }).toList(),
                                   ),
@@ -192,15 +234,23 @@ class HandymanInfoScreenState extends State<HandymanInfoScreen> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(languages.personalInfo, style: boldTextStyle()),
+                                Text(languages.personalInfo,
+                                    style: boldTextStyle()),
                                 8.height,
                                 TextIcon(
                                   spacing: 10,
                                   onTap: () {
-                                    launchMail("${snap.data!.handymanData!.email.validate()}");
+                                    launchMail(
+                                        "${snap.data!.handymanData!.email.validate()}");
                                   },
-                                  prefix: Image.asset(ic_message, width: 16, height: 16, color: appStore.isDarkMode ? Colors.white : context.primaryColor),
-                                  text: snap.data!.handymanData!.email.validate(),
+                                  prefix: Image.asset(ic_message,
+                                      width: 16,
+                                      height: 16,
+                                      color: appStore.isDarkMode
+                                          ? Colors.white
+                                          : context.primaryColor),
+                                  text:
+                                      snap.data!.handymanData!.email.validate(),
                                   textStyle: secondaryTextStyle(size: 14),
                                   expandedText: true,
                                 ),
@@ -208,10 +258,17 @@ class HandymanInfoScreenState extends State<HandymanInfoScreen> {
                                 TextIcon(
                                   spacing: 10,
                                   onTap: () {
-                                    launchCall("${snap.data!.handymanData!.contactNumber.validate()}");
+                                    launchCall(
+                                        "${snap.data!.handymanData!.contactNumber.validate()}");
                                   },
-                                  prefix: Image.asset(calling, width: 16, height: 16, color: appStore.isDarkMode ? Colors.white : context.primaryColor),
-                                  text: snap.data!.handymanData!.contactNumber.validate(),
+                                  prefix: Image.asset(calling,
+                                      width: 16,
+                                      height: 16,
+                                      color: appStore.isDarkMode
+                                          ? Colors.white
+                                          : context.primaryColor),
+                                  text: snap.data!.handymanData!.contactNumber
+                                      .validate(),
                                   textStyle: secondaryTextStyle(size: 14),
                                   expandedText: true,
                                 ),
@@ -224,7 +281,9 @@ class HandymanInfoScreenState extends State<HandymanInfoScreen> {
                           label: languages.review,
                           list: snap.data!.handymanRatingReview!,
                           onTap: () {
-                            RatingViewAllScreen(handymanId: snap.data!.handymanData!.id).launch(context);
+                            RatingViewAllScreen(
+                                    handymanId: snap.data!.handymanData!.id)
+                                .launch(context);
                           },
                         ),
                         snap.data!.handymanRatingReview.validate().isNotEmpty
@@ -234,7 +293,10 @@ class HandymanInfoScreenState extends State<HandymanInfoScreen> {
                                 padding: EdgeInsets.symmetric(vertical: 6),
                                 isCustomer: true,
                               )
-                            : Text(languages.lblNoReviewYet, style: secondaryTextStyle()).center().paddingOnly(top: 16),
+                            : Text(languages.lblNoReviewYet,
+                                    style: secondaryTextStyle())
+                                .center()
+                                .paddingOnly(top: 16),
                       ],
                     ).paddingAll(16),
                   ],

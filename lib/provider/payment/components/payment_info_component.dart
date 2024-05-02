@@ -49,7 +49,8 @@ class _PaymentInfoComponentState extends State<PaymentInfoComponent> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(languages.paymentHistory, style: boldTextStyle()).paddingAll(16),
+            Text(languages.paymentHistory, style: boldTextStyle())
+                .paddingAll(16),
             SnapHelperWidget<List<PaymentData>>(
               future: future,
               onSuccess: (data) {
@@ -69,26 +70,38 @@ class _PaymentInfoComponentState extends State<PaymentInfoComponent> {
                     PaymentData data = list[index];
 
                     return Container(
-                      decoration: boxDecorationDefault(color: context.scaffoldBackgroundColor),
+                      decoration: boxDecorationDefault(
+                          color: context.scaffoldBackgroundColor),
                       padding: EdgeInsets.all(16),
                       margin: EdgeInsets.all(8),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Marquee(child: Text('${languages.transactionId} ${data.txnId.validate()}', style: primaryTextStyle())),
+                          Marquee(
+                              textDirection:
+                                  isRTL ? TextDirection.rtl : TextDirection.ltr,
+                              child: Text(
+                                  '${languages.transactionId} ${data.txnId.validate()}',
+                                  style: primaryTextStyle())),
                           8.height,
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
                                 children: [
-                                  PriceWidget(price: data.totalAmount.validate()),
+                                  PriceWidget(
+                                      price: data.totalAmount.validate()),
                                   8.width,
-                                  Text('(${data.paymentMethod.validate().capitalizeFirstLetter()})', style: primaryTextStyle()).expand(),
+                                  Text('(${data.paymentMethod.validate().capitalizeFirstLetter()})',
+                                          style: primaryTextStyle())
+                                      .expand(),
                                 ],
                               ).expand(),
                               8.width,
-                              Text(formatDate(data.date.validate().toString(), format: DATE_FORMAT_8), style: secondaryTextStyle()),
+                              Text(
+                                  formatDate(data.date.validate().toString(),
+                                      format: DATE_FORMAT_8),
+                                  style: secondaryTextStyle()),
                             ],
                           ),
                         ],

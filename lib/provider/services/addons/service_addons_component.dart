@@ -6,6 +6,7 @@ import '../../../components/price_widget.dart';
 import '../../../components/view_all_label_component.dart';
 import '../../../main.dart';
 import '../../../models/booking_detail_response.dart';
+import '../../../utils/common.dart';
 
 class AddonComponent extends StatefulWidget {
   final List<Serviceaddon> serviceAddon;
@@ -62,7 +63,9 @@ class _AddonComponentState extends State<AddonComponent> {
                   decoration: boxDecorationWithRoundedCorners(
                     borderRadius: radius(),
                     backgroundColor: context.cardColor,
-                    border: appStore.isDarkMode ? Border.all(color: context.dividerColor) : null,
+                    border: appStore.isDarkMode
+                        ? Border.all(color: context.dividerColor)
+                        : null,
                   ),
                   child: Row(
                     children: [
@@ -80,8 +83,12 @@ class _AddonComponentState extends State<AddonComponent> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Marquee(
+                                textDirection: isRTL
+                                    ? TextDirection.rtl
+                                    : TextDirection.ltr,
                                 directionMarguee: DirectionMarguee.oneDirection,
-                                child: Text(data.name.validate(), style: boldTextStyle()),
+                                child: Text(data.name.validate(),
+                                    style: boldTextStyle()),
                               ),
                               2.height,
                               PriceWidget(

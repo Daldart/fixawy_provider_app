@@ -164,6 +164,8 @@ class BookingItemComponentState extends State<BookingItemComponent> {
                               borderRadius: radius(8),
                             ),
                             child: Marquee(
+                              textDirection:
+                                  isRTL ? TextDirection.rtl : TextDirection.ltr,
                               child: Text(
                                 widget.bookingData.status
                                     .validate()
@@ -216,6 +218,8 @@ class BookingItemComponentState extends State<BookingItemComponent> {
                   ),
                   8.height,
                   Marquee(
+                    textDirection:
+                        isRTL ? TextDirection.rtl : TextDirection.ltr,
                     child: Text(
                       widget.bookingData.isPackageBooking
                           ? '${widget.bookingData.bookingPackage!.name.validate()}'
@@ -285,6 +289,8 @@ class BookingItemComponentState extends State<BookingItemComponent> {
                       Text(languages.lblAddress, style: secondaryTextStyle()),
                       8.width,
                       Marquee(
+                        textDirection:
+                            isRTL ? TextDirection.rtl : TextDirection.ltr,
                         child: Text(
                           widget.bookingData.address != null
                               ? widget.bookingData.address.validate()

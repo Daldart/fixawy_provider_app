@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import '../utils/common.dart';
+
 class HandymanNameWidget extends StatelessWidget {
   final String name;
   final bool? isHandymanAvailable;
@@ -33,7 +35,11 @@ class HandymanNameWidget extends StatelessWidget {
               8.width,
             ],
           ),
-        Marquee(child: Text(name, style: boldTextStyle(size: size), maxLines: 1)).flexible(),
+        Marquee(
+                textDirection: isRTL ? TextDirection.rtl : TextDirection.ltr,
+                child:
+                    Text(name, style: boldTextStyle(size: size), maxLines: 1))
+            .flexible(),
       ],
     );
   }

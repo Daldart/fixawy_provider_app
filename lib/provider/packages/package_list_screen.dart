@@ -65,7 +65,8 @@ class _PackageListScreenState extends State<PackageListScreen> {
   Future<void> confirmationDialog({required PackageData packageData}) async {
     showConfirmDialogCustom(
       context,
-      title: '${languages.areYouSureWantToDeleteThe} ${packageData.name.validate()} ${languages.package}?',
+      title:
+          '${languages.areYouSureWantToDeleteThe} ${packageData.name.validate()} ${languages.package}?',
       primaryColor: context.primaryColor,
       positiveText: languages.lblYes,
       negativeText: languages.lblNo,
@@ -146,12 +147,16 @@ class _PackageListScreenState extends State<PackageListScreen> {
                     width: context.width(),
                     margin: EdgeInsets.all(8),
                     padding: EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-                    decoration: boxDecorationRoundedWithShadow(defaultRadius.toInt(), backgroundColor: context.cardColor),
+                    decoration: boxDecorationRoundedWithShadow(
+                        defaultRadius.toInt(),
+                        backgroundColor: context.cardColor),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CachedImageWidget(
-                          url: data.imageAttachments.validate().isNotEmpty ? data.imageAttachments!.first.validate() : '',
+                          url: data.imageAttachments.validate().isNotEmpty
+                              ? data.imageAttachments!.first.validate()
+                              : '',
                           height: 70,
                           fit: BoxFit.cover,
                           radius: defaultRadius,
@@ -161,23 +166,42 @@ class _PackageListScreenState extends State<PackageListScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             4.height,
-                            Marquee(child: Text(data.name.validate(), style: boldTextStyle())),
+                            Marquee(
+                                textDirection: isRTL
+                                    ? TextDirection.rtl
+                                    : TextDirection.ltr,
+                                child: Text(data.name.validate(),
+                                    style: boldTextStyle())),
                             4.height,
-                            if (data.categoryName.validate().isNotEmpty && data.subCategoryName.validate().isNotEmpty)
+                            if (data.categoryName.validate().isNotEmpty &&
+                                data.subCategoryName.validate().isNotEmpty)
                               Marquee(
+                                textDirection: isRTL
+                                    ? TextDirection.rtl
+                                    : TextDirection.ltr,
                                 child: Row(
                                   children: [
-                                    Text('${data.categoryName.validate()}', style: secondaryTextStyle()),
-                                    Text('  >  ', style: boldTextStyle(size: 14, color: textSecondaryColorGlobal)),
-                                    Text('${data.subCategoryName.validate()}', style: primaryTextStyle(size: textSecondarySizeGlobal.toInt())),
+                                    Text('${data.categoryName.validate()}',
+                                        style: secondaryTextStyle()),
+                                    Text('  >  ',
+                                        style: boldTextStyle(
+                                            size: 14,
+                                            color: textSecondaryColorGlobal)),
+                                    Text('${data.subCategoryName.validate()}',
+                                        style: primaryTextStyle(
+                                            size: textSecondarySizeGlobal
+                                                .toInt())),
                                   ],
                                 ),
                               )
                             else if (data.categoryName != null)
-                              Text('${data.categoryName.validate()}', style: secondaryTextStyle())
+                              Text('${data.categoryName.validate()}',
+                                  style: secondaryTextStyle())
                             else
                               Offstage(),
-                            if (data.categoryName != null || data.subCategoryName != null) 4.height,
+                            if (data.categoryName != null ||
+                                data.subCategoryName != null)
+                              4.height,
                             PriceWidget(
                               price: data.price.validate(),
                               hourlyTextColor: Colors.white,
@@ -186,12 +210,14 @@ class _PackageListScreenState extends State<PackageListScreen> {
                           ],
                         ).expand(),
                         PopupMenuButton(
-                          icon: Icon(Icons.more_vert, size: 24, color: context.iconColor),
+                          icon: Icon(Icons.more_vert,
+                              size: 24, color: context.iconColor),
                           color: context.scaffoldBackgroundColor,
                           padding: EdgeInsets.all(8),
                           onSelected: (selection) async {
                             if (selection == 1) {
-                              bool? res = await AddPackageScreen(data: data).launch(context);
+                              bool? res = await AddPackageScreen(data: data)
+                                  .launch(context);
 
                               if (res ?? false) {
                                 appStore.setLoading(true);
@@ -204,8 +230,14 @@ class _PackageListScreenState extends State<PackageListScreen> {
                             }
                           },
                           itemBuilder: (context) => [
-                            PopupMenuItem(child: Text(languages.lblEdit, style: boldTextStyle()), value: 1),
-                            PopupMenuItem(child: Text(languages.lblDelete, style: boldTextStyle()), value: 2),
+                            PopupMenuItem(
+                                child: Text(languages.lblEdit,
+                                    style: boldTextStyle()),
+                                value: 1),
+                            PopupMenuItem(
+                                child: Text(languages.lblDelete,
+                                    style: boldTextStyle()),
+                                value: 2),
                           ],
                         ),
                       ],
@@ -236,7 +268,8 @@ class _PackageListScreenState extends State<PackageListScreen> {
               );
             },
           ),
-          Observer(builder: (context) => LoaderWidget().visible(appStore.isLoading))
+          Observer(
+              builder: (context) => LoaderWidget().visible(appStore.isLoading))
         ],
       ),
     );
