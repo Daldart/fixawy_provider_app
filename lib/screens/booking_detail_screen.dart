@@ -1456,7 +1456,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
           InAppNotification.show(
             child: NotificationBody(
               subject: languages.bookingStatus,
-              body: "${value.bookingDetail?.status}",
+              body: "${value.bookingDetail?.statusLabel}",
             ),
             context: context,
             onTap: () => Navigator.pushReplacement(
