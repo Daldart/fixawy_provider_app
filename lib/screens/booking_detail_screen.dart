@@ -97,22 +97,6 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
         toast(e.toString());
       });
 
-      future.then((value) => {
-            InAppNotification.show(
-              child: NotificationBody(
-                subject: languages.bookingStatus,
-                body: "${value.bookingDetail?.statusLabel}",
-              ),
-              context: context,
-              onTap: () => Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => BookingDetailScreen(
-                            bookingId: value.bookingDetail!.id!,
-                          ))),
-              duration: Duration(milliseconds: _duration),
-            )
-          });
       // setState(() {
       // });
     }
@@ -120,6 +104,22 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
 
   Future<void> init({bool flag = false}) async {
     future = bookingDetail({CommonKeys.bookingId: widget.bookingId.toString()});
+    future.then((value) => {
+          InAppNotification.show(
+            child: NotificationBody(
+              subject: languages.bookingStatus,
+              body: "${value.bookingDetail?.statusLabel}",
+            ),
+            context: context,
+            onTap: () => Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => BookingDetailScreen(
+                          bookingId: value.bookingDetail!.id!,
+                        ))),
+            duration: Duration(milliseconds: _duration),
+          )
+        });
     if (flag) {
       _paymentUniqueKey = UniqueKey();
       setState(() {});
