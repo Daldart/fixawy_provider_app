@@ -455,7 +455,7 @@ class LanguageAr extends Languages {
   String get lblPriceDetail => "تفاصيل السعر";
 
   @override
-  String get lblSubTotal => "المجموع الفرعي";
+  String get lblSubTotal => "تكلفة الخدمه ";
 
   @override
   String get lblTax => "ضريبة";
@@ -1762,6 +1762,9 @@ class LanguageAr extends Languages {
 
   @override
   String get hintPhoneTxt => 'رقم الهاتف';
+
+  @override
+  String get lblfee => "الرسوم";
 
   @override
   String get withdraw => 'سحب مالي';

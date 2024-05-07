@@ -21,6 +21,7 @@ abstract class Languages {
   String get signIn;
   String get searchForBooking;
   String get amount;
+  String get lblfee;
 
   String get signUp;
   String get area;

@@ -1791,6 +1791,9 @@ class LanguageEn extends Languages {
   String get withdraw => 'Withdraw';
 
   @override
+  String get lblfee => "Fee";
+
+  @override
   String get alreadyWithdrawn => 'Already withdrawn';
 
   @override

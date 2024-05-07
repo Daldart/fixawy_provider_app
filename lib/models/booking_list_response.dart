@@ -83,7 +83,7 @@ class BookingData {
   List<ExtraChargesModel>? extraCharges;
   String? bookingType;
   PackageData? bookingPackage;
-
+  num? feeAmount;
   num? finalTotalServicePrice;
   num? finalTotalTax;
   num? finalSubTotal;
@@ -142,6 +142,7 @@ class BookingData {
     this.providerId,
     this.providerName,
     //this.serviceAttachments,
+    this.feeAmount,
     this.taxes,
     this.serviceId,
     this.serviceName,
@@ -176,6 +177,7 @@ class BookingData {
     return BookingData(
       city: json['city'] ?? '',
       state: json['state'] ?? '',
+      feeAmount: json['fee_amount'] ?? 0,
       address: json['address'],
       customerId: json['customer_id'],
       customerName: json['customer_name'],
