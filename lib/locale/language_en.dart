@@ -1782,7 +1782,11 @@ class LanguageEn extends Languages {
 
   @override
   String get hintPhoneTxt => 'Phone Number';
+  @override
+  String get area => "Area";
 
+  @override
+  String get state => "State";
   @override
   String get withdraw => 'Withdraw';
 

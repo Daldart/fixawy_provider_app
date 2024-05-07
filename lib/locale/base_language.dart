@@ -23,7 +23,9 @@ abstract class Languages {
   String get amount;
 
   String get signUp;
+  String get area;
 
+  String get state;
   String get hintFirstNameTxt;
 
   String get hintLastNameTxt;
@@ -1170,5 +1172,4 @@ abstract class Languages {
   String get pendingWithdraw;
 
   String get submit;
-
 }

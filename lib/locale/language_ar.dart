@@ -1765,7 +1765,11 @@ class LanguageAr extends Languages {
 
   @override
   String get withdraw => 'سحب مالي';
+  @override
+  String get area => "المنطقة";
 
+  @override
+  String get state => "المحافظه";
   @override
   String get alreadyWithdrawn => 'تم السحب';
 

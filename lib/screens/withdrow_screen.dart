@@ -27,10 +27,10 @@ class Withdrow extends StatefulWidget {
 class _Withdrow extends State<Withdrow> {
   late Future<FinancialDataModel> future;
 
-  late TextEditingController amountCont ;
+  late TextEditingController amountCont;
 
-  late TextEditingController noteCont ;
-   String? _selectedMethod;
+  late TextEditingController noteCont;
+  String? _selectedMethod;
   @override
   void initState() {
     super.initState();
@@ -41,15 +41,14 @@ class _Withdrow extends State<Withdrow> {
     appStore.setLoading(true);
     future = withdrawSummary();
     amountCont = TextEditingController();
-    noteCont  = TextEditingController();
+    noteCont = TextEditingController();
 
     appStore.setLoading(false);
-
   }
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: appBarWidget(
         languages.withdraw,
         textColor: white,
@@ -65,7 +64,7 @@ class _Withdrow extends State<Withdrow> {
               if (snap.hasData) {
                 return AnimatedScrollView(
                   physics: AlwaysScrollableScrollPhysics(),
-                  padding: EdgeInsets.all(16 ),
+                  padding: EdgeInsets.all(16),
                   crossAxisAlignment: CrossAxisAlignment.start,
                   listAnimationType: ListAnimationType.FadeIn,
                   fadeInConfiguration:
@@ -76,55 +75,51 @@ class _Withdrow extends State<Withdrow> {
                     AppTextField(
                       textFieldType: TextFieldType.NUMBER,
                       controller: amountCont,
-
-                      decoration: inputDecoration(context, hint: languages.amount),
+                      decoration:
+                          inputDecoration(context, hint: languages.amount),
                     ),
-
-
                     16.height,
-
-
-              DropdownButtonFormField<String>(
-
-              decoration: inputDecoration(context, hint: languages.withdrawMethods),
-              isExpanded: true,
-              value: _selectedMethod ,
-              dropdownColor: context.cardColor,
-              items: <String>['Cash'].map((String data) {
-              return DropdownMenuItem<String>(
-              value: data,
-              child: Text(data, style: primaryTextStyle()),
-              );
-              }).toList(),
-              onChanged: (value) {
-              setState(() {
-              _selectedMethod = value!;
-              });
-              },
-              ).paddingTop(16),
+                    DropdownButtonFormField<String>(
+                      decoration: inputDecoration(context,
+                          hint: languages.withdrawMethods),
+                      isExpanded: true,
+                      value: _selectedMethod,
+                      dropdownColor: context.cardColor,
+                      items: <String>['Cash'].map((String data) {
+                        return DropdownMenuItem<String>(
+                          value: data,
+                          child: Text(data, style: primaryTextStyle()),
+                        );
+                      }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedMethod = value!;
+                        });
+                      },
+                    ).paddingTop(16),
                     16.height,
                     AppTextField(
                       controller: noteCont,
                       textFieldType: TextFieldType.MULTILINE,
                       maxLines: 5,
                       minLines: 3,
-                      decoration: inputDecoration(context, hint: languages.note),
-                    ).expand(),
-
-
-                       16.height,
+                      decoration:
+                          inputDecoration(context, hint: languages.note),
+                    ),
+                    16.height,
                     AppButton(
-
                       text: languages.submit,
                       width: context.width(),
                       color: primaryColor,
                       textColor: Colors.white,
                       onTap: () async {
-                        if(_selectedMethod ==null||amountCont.value.text.isEmpty)
-                          {return;}
+                        if (_selectedMethod == null ||
+                            amountCont.value.text.isEmpty) {
+                          return;
+                        }
                         WithdrawModel withdrawal = WithdrawModel(
-                          amount:double.parse( amountCont.value.text),
-                          paymentMethod:_selectedMethod! ,
+                          amount: double.parse(amountCont.value.text),
+                          paymentMethod: _selectedMethod!,
                           notes: noteCont.value.text,
                         );
 
@@ -132,20 +127,16 @@ class _Withdrow extends State<Withdrow> {
 
                         final response = await requestWithdraw(withdrawal);
 
-                       toast(response.message);
+                        toast(response.message);
                         appStore.setLoading(false);
                         init();
                         setState(() {});
-
-
                       },
                     ),
-                   ],
+                  ],
                   onSwipeRefresh: () async {
-
                     init();
                     setState(() {});
-
                   },
                 );
               }

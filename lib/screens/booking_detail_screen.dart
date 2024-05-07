@@ -421,6 +421,22 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
                     buildTimeWidget(bookingDetail: bookingDetail),
                   ],
                 ),
+              8.height,
+              Row(
+                children: [
+                  Text("${languages.state}: ", style: secondaryTextStyle()),
+                  if (bookingDetail.state.validate().isNotEmpty)
+                    Text(bookingDetail.state!, style: boldTextStyle(size: 12))
+                ],
+              ).visible(bookingDetail.state.validate().isNotEmpty),
+              8.height,
+              Row(
+                children: [
+                  Text("${languages.area}: ", style: secondaryTextStyle()),
+                  if (bookingDetail.city.validate().isNotEmpty)
+                    Text(bookingDetail.city!, style: boldTextStyle(size: 12))
+                ],
+              ).visible(bookingDetail.city.validate().isNotEmpty),
             ],
           ).expand(),
           if (serviceDetail.attchments!.isNotEmpty &&
