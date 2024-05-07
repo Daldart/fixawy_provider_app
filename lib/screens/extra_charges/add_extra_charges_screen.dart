@@ -41,7 +41,8 @@ class _AddExtraChargesScreenState extends State<AddExtraChargesScreen> {
       contentPadding: EdgeInsets.zero,
       barrierDismissible: false,
       builder: (_) {
-        return AddExtraChargesDialog(data: data, indexOfextraCharge: indexOfextraCharge);
+        return AddExtraChargesDialog(
+            data: data, indexOfextraCharge: indexOfextraCharge);
       },
     );
 
@@ -91,7 +92,8 @@ class _AddExtraChargesScreenState extends State<AddExtraChargesScreen> {
               ExtraChargesModel data = chargesList[i];
 
               return Container(
-                decoration: boxDecorationRoundedWithShadow(16, backgroundColor: context.cardColor),
+                decoration: boxDecorationRoundedWithShadow(16,
+                    backgroundColor: context.cardColor),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -102,7 +104,9 @@ class _AddExtraChargesScreenState extends State<AddExtraChargesScreen> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           IconButton(
-                            style: ButtonStyle(padding: MaterialStatePropertyAll(EdgeInsets.zero)),
+                            style: ButtonStyle(
+                                padding:
+                                    MaterialStatePropertyAll(EdgeInsets.zero)),
                             icon: ic_edit_square.iconImage(size: 18),
                             visualDensity: VisualDensity.compact,
                             onPressed: () async {
@@ -110,8 +114,11 @@ class _AddExtraChargesScreenState extends State<AddExtraChargesScreen> {
                             },
                           ),
                           IconButton(
-                            style: ButtonStyle(padding: MaterialStatePropertyAll(EdgeInsets.zero)),
-                            icon: ic_delete.iconImage(size: 18, color: Colors.redAccent),
+                            style: ButtonStyle(
+                                padding:
+                                    MaterialStatePropertyAll(EdgeInsets.zero)),
+                            icon: ic_delete.iconImage(
+                                size: 18, color: Colors.redAccent),
                             visualDensity: VisualDensity.compact,
                             onPressed: () async {
                               showConfirmDialogCustom(
@@ -122,6 +129,9 @@ class _AddExtraChargesScreenState extends State<AddExtraChargesScreen> {
                                 negativeText: languages.lblNo,
                                 onAccept: (BuildContext context) {
                                   chargesList.removeAt(i);
+
+                                  finish(context, true);
+
                                   setState(() {});
                                 },
                               );
@@ -136,7 +146,8 @@ class _AddExtraChargesScreenState extends State<AddExtraChargesScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(languages.lblChargeName, style: secondaryTextStyle()),
+                            Text(languages.lblChargeName,
+                                style: secondaryTextStyle()),
                             Text(data.title.validate(), style: boldTextStyle()),
                           ],
                         ),
@@ -144,24 +155,40 @@ class _AddExtraChargesScreenState extends State<AddExtraChargesScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(languages.lblPrice, style: secondaryTextStyle()),
-                            PriceWidget(price: '${data.price.validate() * data.qty.validate()}'.toDouble(), size: 14, color: textPrimaryColorGlobal, isBoldText: true),
+                            Text(languages.lblPrice,
+                                style: secondaryTextStyle()),
+                            PriceWidget(
+                                price:
+                                    '${data.price.validate() * data.qty.validate()}'
+                                        .toDouble(),
+                                size: 14,
+                                color: textPrimaryColorGlobal,
+                                isBoldText: true),
                           ],
                         ),
                         8.height,
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(languages.quantity, style: secondaryTextStyle()),
-                            Text(data.qty.toString().validate(), style: boldTextStyle()),
+                            Text(languages.quantity,
+                                style: secondaryTextStyle()),
+                            Text(data.qty.toString().validate(),
+                                style: boldTextStyle()),
                           ],
                         ),
                         8.height,
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(languages.lblTotalCharges, style: secondaryTextStyle()),
-                            PriceWidget(price: '${data.price.validate() * data.qty.validate()}'.toDouble(), size: 16, color: textPrimaryColorGlobal, isBoldText: true),
+                            Text(languages.lblTotalCharges,
+                                style: secondaryTextStyle()),
+                            PriceWidget(
+                                price:
+                                    '${data.price.validate() * data.qty.validate()}'
+                                        .toDouble(),
+                                size: 16,
+                                color: textPrimaryColorGlobal,
+                                isBoldText: true),
                           ],
                         ),
                       ],

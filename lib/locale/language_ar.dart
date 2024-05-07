@@ -853,7 +853,7 @@ class LanguageAr extends Languages {
       "تم إضافة الرسوم الاضافية  بنجاح";
 
   @override
-  String get lblChargeName => "اسم المسؤول";
+  String get lblChargeName => "تفاصيل الاضافة  ";
 
   @override
   String get lblPrice => "سعر";

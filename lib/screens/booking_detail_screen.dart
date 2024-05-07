@@ -1349,15 +1349,14 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
                     ).paddingOnly(bottom: 16, left: 16, right: 16),
 
                   /// Extra Charges
-                  if (res.data!.bookingDetail!.extraCharges
-                      .validate()
-                      .isNotEmpty)
-                    extraChargesWidget(
-                            extraChargesList: res
-                                .data!.bookingDetail!.extraCharges
-                                .validate(),
-                            res: res.data!)
-                        .paddingOnly(left: 16, right: 16, bottom: 16),
+                  // if (res.data!.bookingDetail!.extraCharges
+                  //     .validate()
+                  //     .isNotEmpty)
+                  extraChargesWidget(
+                          extraChargesList:
+                              res.data!.bookingDetail!.extraCharges.validate(),
+                          res: res.data!)
+                      .paddingOnly(left: 16, right: 16, bottom: 16),
 
                   /// Payment Detail Card
                   if (res.data!.bookingDetail!.paymentId != null &&
