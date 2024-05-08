@@ -26,7 +26,6 @@ import 'package:fixawy_provider/utils/configs.dart';
 import 'package:fixawy_provider/utils/constant.dart';
 import 'package:in_app_notification/in_app_notification.dart';
 import 'package:nb_utils/nb_utils.dart';
-
 import 'app_theme.dart';
 import 'models/booking_list_response.dart';
 import 'models/booking_status_response.dart';

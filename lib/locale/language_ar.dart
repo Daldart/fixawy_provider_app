@@ -434,7 +434,7 @@ class LanguageAr extends Languages {
   String get lblDate => "تاريخ";
 
   @override
-  String get lblAboutHandyman => "عن العمال";
+  String get lblAboutHandyman => "عن الصنايعي";
 
   @override
   String get lblAboutCustomer => "عن العميل";
