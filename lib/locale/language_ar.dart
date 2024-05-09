@@ -6,28 +6,28 @@ class LanguageAr extends Languages {
       'Your Plan Is About to Expire In $days Days';
 
   @override
-  String get appName => 'مزود';
+  String get appName => 'مزود الخدمة';
 
   @override
-  String get provider => 'مزود';
+  String get provider => 'مزود الخدمة';
 
   @override
-  String get lblShowingOnly4Handyman => 'اضهار ٤ عمال فقط';
+  String get lblShowingOnly4Handyman => 'اضهار ٤ فنيين فقط';
 
   @override
-  String get lblRecentlyOnlineHandyman => 'العمال المتصلون';
+  String get lblRecentlyOnlineHandyman => 'الفنيين المتصلون';
 
   @override
-  String get lblStartDrive => 'ابدأ العمل';
+  String get lblStartDrive => 'ابدأ التحرك';
 
   @override
-  String get handyman => 'عامل';
+  String get handyman => 'فني';
 
   @override
   String get signIn => 'تسجيل دخول';
 
   @override
-  String get signUp => 'اشتراك';
+  String get signUp => 'تسجيل الحساب';
 
   @override
   String get hintFirstNameTxt => 'أدخل اسمك الأول';
@@ -51,7 +51,7 @@ class LanguageAr extends Languages {
   String get confirm => 'تاكيد';
 
   @override
-  String get forgotPassword => 'هل نسيت كلمة السر؟';
+  String get forgotPassword => 'هل نسيت كلمة المرور؟';
 
   @override
   String get alreadyHaveAccountTxt => 'هل لديك حساب';
@@ -72,13 +72,13 @@ class LanguageAr extends Languages {
   String get saveChanges => 'حفظ التغييرات';
 
   @override
-  String get camera => 'الكميرا';
+  String get camera => 'الكاميرا';
 
   @override
-  String get language => 'اللغات';
+  String get language => 'اختيار اللغة';
 
   @override
-  String get appTheme => 'سمة التطبيق';
+  String get appTheme => 'واجهة التطبيق';
 
   @override
   String get bookingHistory => 'تاريخ الحجز';
@@ -91,7 +91,7 @@ class LanguageAr extends Languages {
       'هل ترغب في تسجيل الخروج من التطبيق؟ يمكنك دائما تسجيل الدخول مرة أخرى!';
 
   @override
-  String get chooseTheme => 'اختر سمة التطبيق';
+  String get chooseTheme => 'اختر واجهة التطبيق';
 
   @override
   String get selectCountry => 'حدد الدولة';
@@ -106,7 +106,7 @@ class LanguageAr extends Languages {
   String get changePassword => 'تغيير كلمة المرور';
 
   @override
-  String get passwordNotMatch => 'كلمة السر غير متطابقة';
+  String get passwordNotMatch => 'كلمة المرور غير متطابقة';
 
   @override
   String get doNotHaveAccount => 'ليس لديك حساب؟';
@@ -139,16 +139,16 @@ class LanguageAr extends Languages {
   String get bookingStatuesSubmitMessage => 'تم تنفيذ الاجراء ';
 
   @override
-  String get darkMode => 'الوضع المظلم';
+  String get darkMode => 'داكن';
 
   @override
-  String get lightMode => 'وضع ضوء';
+  String get lightMode => 'فاتح';
 
   @override
   String get systemDefault => 'وضع النظام';
 
   @override
-  String get confirmationRequestTxt => 'هل أنت متأكد من أن تنفيذ هذا الإجراء؟';
+  String get confirmationRequestTxt => 'هل أنت متأكد من  تنفيذ هذا الإجراء؟';
 
   @override
   String get notAvailable => 'غير متوفر';
@@ -160,7 +160,7 @@ class LanguageAr extends Languages {
   String get cantLogin => 'لا يمكن تسجيل الدخول';
 
   @override
-  String get pleaseContactAdmin => 'يرجى الاتصال مع المسؤول';
+  String get pleaseContactAdmin => 'يرجى الاتصال بفيكساوي';
 
   @override
   String get lblOk => 'نعم';
@@ -172,7 +172,7 @@ class LanguageAr extends Languages {
   String get paymentCash => 'كاش';
 
   @override
-  String get paymentMethod => 'طريقة الدفع او السداد';
+  String get paymentMethod => 'طريقة الدفع ';
 
   @override
   String get hintAddress => 'أدخل العنوان';
@@ -190,7 +190,7 @@ class LanguageAr extends Languages {
   String get lblReason => 'السبب';
 
   @override
-  String get lblSelectHandyman => 'يرجى اختيار Fixawy.';
+  String get lblSelectHandyman => 'يرجى اختيار فني';
 
   @override
   String get lblAssign => 'تعيين';
@@ -199,10 +199,10 @@ class LanguageAr extends Languages {
   String get lblCall => 'اتصال';
 
   @override
-  String get lblAssignHandyman => 'تعيين Fixawy.';
+  String get lblAssignHandyman => 'تعيين فني';
 
   @override
-  String get lblAssigned => 'مكلف';
+  String get lblAssigned => 'تم تعيين';
 
   @override
   String get viewAll => 'عرض الكل';
@@ -214,10 +214,10 @@ class LanguageAr extends Languages {
   String get lblRevenue => 'إيرادات';
 
   @override
-  String get lblAddHandyman => 'أضف Fixawy.';
+  String get lblAddHandyman => 'أضف فني.';
 
   @override
-  String get lblBooking => 'الحجز';
+  String get lblBooking => 'حجوزات';
 
   @override
   String get lblTotalBooking => 'إجمالي الحجوزات';
@@ -226,10 +226,10 @@ class LanguageAr extends Languages {
   String get lblTotalService => 'إجمالي الخدمات';
 
   @override
-  String get lblTotalHandyman => 'مجموع العمال';
+  String get lblTotalHandyman => 'مجموع الفنيين';
 
   @override
-  String get monthlyEarnings => 'الدخل الشهري';
+  String get monthlyEarnings => 'الايراد الشهري';
 
   @override
   String get lblPayment => 'الدفعات';
@@ -238,10 +238,10 @@ class LanguageAr extends Languages {
   String get lblBookingID => 'رقم الحجز';
 
   @override
-  String get lblPaymentID => 'معرف الدفع';
+  String get lblPaymentID => 'رقم الدفع';
 
   @override
-  String get lblAmount => 'كمية';
+  String get lblAmount => 'المبلغ';
 
   @override
   String get hintAddService => 'إضافة خدمة';
@@ -250,13 +250,13 @@ class LanguageAr extends Languages {
   String get hintServiceName => 'أدخل اسم الخدمة';
 
   @override
-  String get hintSelectCategory => 'اختر الفئة';
+  String get hintSelectCategory => 'اختر القسم';
 
   @override
   String get hintSelectType => 'اختر نوع الخدمة';
 
   @override
-  String get hintSelectStatus => 'حدد الحالة';
+  String get hintSelectStatus => 'اختر الحالة';
 
   @override
   String get hintPrice => 'سعر';
@@ -286,7 +286,7 @@ class LanguageAr extends Languages {
   String get lblProfile => 'الملف الشخصي';
 
   @override
-  String get lblAllHandyman => 'كل العمال';
+  String get lblAllHandyman => 'كل الفنيين';
 
   @override
   String get lblTime => 'الوقت';
@@ -298,7 +298,7 @@ class LanguageAr extends Languages {
   String get lblAllService => 'كل الخدمات';
 
   @override
-  String get lblChat => 'دردشة';
+  String get lblChat => 'محادثات';
 
   @override
   String get selectAddress => 'حدد عناوين الخدمة';
@@ -325,7 +325,7 @@ class LanguageAr extends Languages {
   String get lblServices => 'خدمات';
 
   @override
-  String get lblEditService => 'تحرير الخدمة';
+  String get lblEditService => 'تعديل الخدمة';
 
   @override
   String get selectImgNote =>
@@ -338,7 +338,7 @@ class LanguageAr extends Languages {
   String get lblDurationMin => 'المدة: دقيقة';
 
   @override
-  String get lblWaitForAcceptReq => 'يرجى انتظار الادارة لقبول طلبك';
+  String get lblWaitForAcceptReq => 'انتظر قبول طلبك من الادارة';
 
   @override
   String get lblAddServiceAddress => 'إضافة عنوان للخدمة';
@@ -347,7 +347,7 @@ class LanguageAr extends Languages {
   String get errorPasswordLength => 'يجب أن يكون طول كلمة المرور أكثر من';
 
   @override
-  String get hintPassword => 'كلمه السر';
+  String get hintPassword => 'كلمه المرور';
 
   @override
   String get hintRequired => 'هذه الخانة مطلوبه';
@@ -380,10 +380,10 @@ class LanguageAr extends Languages {
   String get lblPrivacyPolicy => "سياسة الخصوصية";
 
   @override
-  String get lblHelpAndSupport => "مساعدة و دعم";
+  String get lblHelpAndSupport => "المساعدة والدعم";
 
   @override
-  String get lblAbout => "عن";
+  String get lblAbout => "عن فيكساوي";
 
   @override
   String get lblProviderType => "نوع مقدم الخدمة";
@@ -401,19 +401,19 @@ class LanguageAr extends Languages {
   String get lblMyTax => "الضرائب الخاصة بي";
 
   @override
-  String get lblLoginTitle => "مرحبا !";
+  String get lblLoginTitle => "اهلا بك";
 
   @override
-  String get lblLoginSubtitle => "مرحبا بك مرة أخرى";
+  String get lblLoginSubtitle => "اهلا بك مرة أخرى";
 
   @override
-  String get lblSignupTitle => "مرحبا";
+  String get lblSignupTitle => "اهلا بك";
 
   @override
   String get lblSignupSubtitle => "انشيء حسابك للحصول على تجربة أفضل";
 
   @override
-  String get lblSignup => "تسجيل";
+  String get lblSignup => "تسجيل حساب";
 
   @override
   String get lblUserType => "نوع المستخدم";
@@ -434,7 +434,7 @@ class LanguageAr extends Languages {
   String get lblDate => "تاريخ";
 
   @override
-  String get lblAboutHandyman => "عن الصنايعي";
+  String get lblAboutHandyman => "عن الفني";
 
   @override
   String get lblAboutCustomer => "عن العميل";
@@ -443,10 +443,10 @@ class LanguageAr extends Languages {
   String get lblPaymentDetail => "تفاصيل الدفع";
 
   @override
-  String get lblId => "هوية شخصية";
+  String get lblId => "رقم الحجز";
 
   @override
-  String get lblMethod => "طريقة";
+  String get lblMethod => "طريقة الدفع";
 
   @override
   String get lblStatus => "حالة الخدمة";
@@ -479,19 +479,19 @@ class LanguageAr extends Languages {
   String get lblUnreadNotification => "غير مقروء";
 
   @override
-  String get lblMarkAllAsRead => "اشر عليها بانها قرات";
+  String get lblMarkAllAsRead => "تحديد الكل كمقروء";
 
   @override
-  String get lblCloseAppMsg => "اضغط مرة أخرى مرة أخرى للخروج من التطبيق";
+  String get lblCloseAppMsg => "اضغط مرة أخرى للخروج من التطبيق";
 
   @override
   String get lblAddress => "عنوان";
 
   @override
-  String get lblType => "النوع";
+  String get lblType => "الفئة";
 
   @override
-  String get lblHandymanType => "Handyman نوع";
+  String get lblHandymanType => " فئة الفني";
 
   @override
   String get lblFixed => "سعر ثابت";
@@ -500,7 +500,7 @@ class LanguageAr extends Languages {
   String get lblHello => "أهلا";
 
   @override
-  String get lblWelcomeBack => "مرحبا بعودتك!";
+  String get lblWelcomeBack => "اهلا بعودتك";
 
   @override
   String get lblNoReviewYet => "لا يوجد تقييمات";
@@ -524,20 +524,20 @@ class LanguageAr extends Languages {
   String get lblExperience => "الخبرة";
 
   @override
-  String get lblOf => "(ق) من";
+  String get lblOf => "من";
 
   @override
   String get lblSelectAddress => "اختر العنوان";
 
   @override
-  String get lblOppS => "Opps";
+  String get lblOppS => "حدث خطأ";
 
   @override
   String get lblNoInternet =>
       "الرجاء التاكد من اتصالك بالانترنت، يرجى المحاولة مرة أخرى.";
 
   @override
-  String get lblRetry => "اعادة";
+  String get lblRetry => " حاول مرة اخرى";
 
   @override
   String get lblServiceStatus => "حالة الخدمة";
@@ -555,13 +555,13 @@ class LanguageAr extends Languages {
   String get lblChoosePaymentMethod => "اختر وسيلة الدفع";
 
   @override
-  String get lblNoPayments => "لا مدفوعات";
+  String get lblNoPayments => "لا توجد مدفوعات";
 
   @override
-  String get lblPayWith => "هل تريد أن تدفع مع";
+  String get lblPayWith => "هل تريد أن تدفع بـ";
 
   @override
-  String get lblProceed => "تقدم";
+  String get lblProceed => "تابع";
 
   @override
   String get lblPricingPlan => "خطة التسعير";
@@ -570,7 +570,7 @@ class LanguageAr extends Languages {
   String get lblSelectPlan => 'على استعداد للبدء؟';
 
   @override
-  String get lblMakePayment => "قم بالدفع";
+  String get lblMakePayment => "ادفع الان";
 
   @override
   String get lblRestore => "يعيد";
@@ -579,10 +579,10 @@ class LanguageAr extends Languages {
   String get lblForceDelete => "حذف";
 
   @override
-  String get lblActivated => "فعال";
+  String get lblActivated => "مفعل";
 
   @override
-  String get lblDeactivated => "إلغاء تفعيل";
+  String get lblDeactivated => "غير مفعل";
 
   @override
   String get lblNoDescriptionAvailable => "لا يوجد وصف متاح";
@@ -594,7 +594,7 @@ class LanguageAr extends Languages {
   String get lblGetDirection => "احصل على اتجاه";
 
   @override
-  String get lblDeleteTitle => "انت تغادر الان!!";
+  String get lblDeleteTitle => "انت تغادر الان";
 
   @override
   String get lblDeleteSubTitle => "هل ترغب بالخروج؟";
@@ -606,19 +606,19 @@ class LanguageAr extends Languages {
   String get lblTodayServices => "خدمات اليوم";
 
   @override
-  String get lblPlanExpired => "opps! انتهاء صلاحية الاشتراك";
+  String get lblPlanExpired => "انتهى الاشتراك";
 
   @override
   String get lblPlanSubTitle => "انتهت صلاحية اشتراكك السابق";
 
   @override
-  String get btnTxtBuyNow => "اشتري الآن";
+  String get btnTxtBuyNow => "اشترك الآن";
 
   @override
   String get lblChooseYourPlan => "اختر خطتك";
 
   @override
-  String get lblRenewSubTitle => "شراء خطة جديدة للحصول على حجوزات خدمة جديدة";
+  String get lblRenewSubTitle => "شراء خطة جديدة للحصول على حجوزات جديدة";
 
   @override
   String get lblReminder => "تذكير";
@@ -630,34 +630,34 @@ class LanguageAr extends Languages {
   String get lblCurrentPlan => "الخطة الحالية";
 
   @override
-  String get lblValidTill => "صالح لغاية";
+  String get lblValidTill => "صالح حتى";
 
   @override
   String get lblSearchHere => "ابحث هنا...";
 
   @override
-  String get lblEarningList => "قائمة الارباح";
+  String get lblEarningList => "قائمة الايرادات";
 
   @override
   String get lblSubscriptionTitle => "هل تريد بالتأكيد إلغاء الخطة الحالية؟";
 
   @override
-  String get lblPlan => "حزمة";
+  String get lblPlan => "خطة";
 
   @override
-  String get lblCancelPlan => "إلغاء الحزمة";
+  String get lblCancelPlan => "إلغاء الخطة";
 
   @override
   String get lblSubscriptionHistory => "تاريخ الاشتراك";
 
   @override
-  String get lblTrashHandyman => "كان Fixawy القمامة بنجاح";
+  String get lblTrashHandyman => "تم حذف الفني";
 
   @override
   String get lblPlsSelectAddress => "يرجى تحديد العنوان";
 
   @override
-  String get lblPlsSelectCategory => "الرجاء اختيار الفئة";
+  String get lblPlsSelectCategory => "الرجاء اختيار القسم";
 
   @override
   String get lblEnterHours => "أدخل ساعات تصل إلى 24 ساعة";
@@ -666,7 +666,7 @@ class LanguageAr extends Languages {
   String get lblEnterMinute => "أدخل الدقيقة حتى 60 دقيقة";
 
   @override
-  String get lblSelectSubCategory => "حدد الفئة الفرعية";
+  String get lblSelectSubCategory => "حدد القسم الفرعي";
 
   @override
   String get lblServiceProof => "دليل الخدمة";
@@ -690,25 +690,25 @@ class LanguageAr extends Languages {
   String get lblWallet => "محفظة";
 
   @override
-  String get lblSelectUserType => 'حدد نوع المستخدم';
+  String get lblSelectUserType => 'حدد فئة المستخدم';
 
   @override
   String get lblIAgree => "محفظة";
 
   @override
-  String get lblTermsOfService => "حدد نوع المستخدم";
+  String get lblTermsOfService => "شروط الخدمة";
 
   @override
-  String get lblLoginAgain => "أنا أوافق على";
+  String get lblLoginAgain => "سجل الدخول مرة اخرى";
 
   @override
-  String get lblTermCondition => "شروط الخدمة";
+  String get lblTermCondition => "برجاء الموافقة على الشروط و الاحكام";
 
   @override
-  String get lblServiceTotalTime => "إجمالي الخدمة";
+  String get lblServiceTotalTime => "إجمالي وقت الخدمة";
 
   @override
-  String get lblHelpLineNum => "رقم خط المساعدة";
+  String get lblHelpLineNum => "رقم المساعدة";
 
   @override
   String get lblReasonCancelling => "سبب إلغاء هذا الحجز";
@@ -723,7 +723,7 @@ class LanguageAr extends Languages {
   String get lblDesignation => "اللقب";
 
   @override
-  String get lblHandymanIsOffline => "العامل غير متصل";
+  String get lblHandymanIsOffline => "الفني غير متصل";
 
   @override
   String get lblDoYouWantToRestore => "هل تريد استعادة؟";
@@ -751,22 +751,22 @@ class LanguageAr extends Languages {
   String get lblUnderMaintenance => "تحت الصيانة...";
 
   @override
-  String get lblCatchUpAfterAWhile => "التحصيل بعد فترة من الوقت";
+  String get lblCatchUpAfterAWhile => "حاول في وقت لاحق";
 
   @override
-  String get lblRecheck => "إعادة فحص";
+  String get lblRecheck => "حاول مرة اخرى";
 
   @override
-  String get lblTrialFor => "مجانا";
+  String get lblTrialFor => "تجريبي حتى";
 
   @override
-  String get lblDays => "أيام";
+  String get lblDays => "يوم";
 
   @override
   String get lblFreeTrial => "تجربة مجانية";
 
   @override
-  String get lblAtLeastOneImage => " صوراخترة واحدة على at-east";
+  String get lblAtLeastOneImage => "اختر صورة واحدة على الاقل";
 
   @override
   String get lblService => "خدمة";
@@ -795,10 +795,10 @@ class LanguageAr extends Languages {
   String get lblAssignToMyself => "تعيين لنفسي";
 
   @override
-  String get lblFree => "غير مدفوع الأجر";
+  String get lblFree => "مجاني";
 
   @override
-  String get lblMyProvider => "مزود خدمة";
+  String get lblMyProvider => "مزود الخدمة";
 
   @override
   String get lblAvailableStatus => "الحالة المتاحة";
@@ -831,32 +831,32 @@ class LanguageAr extends Languages {
   String get lblRequiredAfterCountryCode => "مطلوب بعد رمز البلد";
 
   @override
-  String get lblExtraCharges => "رسوم إضافية";
+  String get lblExtraCharges => "خدمات إضافية";
 
   @override
-  String get lblAddExtraCharges => "أضف رسوم إضافية";
+  String get lblAddExtraCharges => "أضف خدمات إضافية";
 
   @override
   String get lblCompleted => 'اكتمل';
 
   @override
-  String get lblAddExtraChargesDetail => "إضافة تفاصيل الرسوم الاضافية";
+  String get lblAddExtraChargesDetail => "إضافة تفاصيل الخدمات الاضافية";
 
   @override
-  String get lblEnterExtraChargesDetail => "أدخل تفاصيل الرسوم الاضافية";
+  String get lblEnterExtraChargesDetail => "أدخل تفاصيل الخدمات الاضافية";
 
   @override
-  String get lblTotalCharges => "الكلفة الاجماليه";
+  String get lblTotalCharges => "التكلفة الاجماليه";
 
   @override
   String get lblSuccessFullyAddExtraCharges =>
-      "تم إضافة الرسوم الاضافية  بنجاح";
+      "تم إضافة الخدمات الاضافية  بنجاح";
 
   @override
-  String get lblChargeName => "تفاصيل الاضافة  ";
+  String get lblChargeName => "تفاصيل الخدمة  ";
 
   @override
-  String get lblPrice => "سعر";
+  String get lblPrice => "السعر";
 
   @override
   String get lblEnterAmount => "أدخل المبلغ";
@@ -871,39 +871,38 @@ class LanguageAr extends Languages {
   String get noBookingSubTitle => "يبدو أن عميلك لم يحجز خدماتك بعد";
 
   @override
-  String get noNotificationTitle => "لا يوجد اسم للاشعار";
+  String get noNotificationTitle => "لا يوجد عنوان للاشعار";
 
   @override
-  String get noNotificationSubTitle =>
-      "سنقوم بإعلامك بمجرد أن يكون لدينا شيء لك";
+  String get noNotificationSubTitle => "سنقوم بإعلامك بمجرد ظهور اشعار جديد";
 
   @override
-  String get noHandymanAvailable => "العمال غير متصلون";
+  String get noHandymanAvailable => "جميع الفنيين مشغلون الان";
 
   @override
-  String get noHandymanYet => "لا يوجد عمال لغاية الان";
+  String get noHandymanYet => "لا يوجد فني حتى الان";
 
   @override
-  String get noHandymanSubTitle => "لا يوجد عمال لغاية الان";
+  String get noHandymanSubTitle => "";
 
   @override
   String get noServiceFound => "لم يتم العثور على خدمة";
 
   @override
-  String get noServiceSubTitle => "لم يتم العثور على خدمة";
+  String get noServiceSubTitle => "اضف خدماتك للبدأ في العمل ";
 
   @override
   String get noServiceAddressTitle => "لم يتم العثور على عنوان الخدمة";
 
   @override
   String get noServiceAddressSubTitle =>
-      "أضف عنوان الخدمة الخاص بك أولاً ثم يظهر هنا";
+      "أضف عنوان الخدمة الخاص بك أولاً ثم سيظهر هنا";
 
   @override
-  String get noSubscriptionPlan => "لا توجد خطة اشتراك هنا";
+  String get noSubscriptionPlan => "لا توجد خطة اشتراك ";
 
   @override
-  String get noSubscriptionFound => "لم يتم العثور على اشتراك";
+  String get noSubscriptionFound => "لم يتم العثور على خطة اشتراك";
 
   @override
   String get noSubscriptionSubTitle => "لم تشترك في أي خطة";
@@ -912,25 +911,27 @@ class LanguageAr extends Languages {
   String get noTexesFound => "";
 
   @override
-  String get noWalletHistoryTitle => "لم يتم العثور على سجلات في المحفظة";
+  String get noWalletHistoryTitle =>
+      "لم يتم العثور على تاريخ معاملات في المحفظة";
 
   @override
-  String get noWalletHistorySubTitle => "لم يتم العثور على سجلات في المحفظة";
+  String get noWalletHistorySubTitle =>
+      "لم يتم العثور على تاريخ معاملات في المحفظة";
 
   @override
-  String get noExtraChargesHere => "لا توجد رسوم إضافية هنا";
+  String get noExtraChargesHere => "لا توجد خدمات إضافية هنا";
 
   @override
-  String get getYourFirstReview => "احصل على المراجعة الأولى";
+  String get getYourFirstReview => "احصل على  تقييمك الاول";
 
   @override
   String get ratingViewAllSubtitle => "شاهد التقييمات العالية لخذماتك";
 
   @override
-  String get noDocumentFound => "لم يتم العثور على وثيقة";
+  String get noDocumentFound => "لم يتم العثور على مستند";
 
   @override
-  String get noDocumentSubTitle => "لا يوجد وثيقة للتحقق";
+  String get noDocumentSubTitle => "لا يوجد مستند للتحقق";
 
   @override
   String get noConversation => "لا محادثة";
@@ -942,7 +943,7 @@ class LanguageAr extends Languages {
   String get bidList => 'قائمة العطاءات';
 
   @override
-  String get bid => 'مُنَاقَصَة';
+  String get bid => 'عطاء';
 
   @override
   String get postJobTitle => 'طلب خدمة خاصة';
@@ -957,7 +958,7 @@ class LanguageAr extends Languages {
   String get estimatedPrice => 'السعر المقدر';
 
   @override
-  String get assignedProvider => 'مزود مخصص';
+  String get assignedProvider => 'مزود الخدمة المحدد';
 
   @override
   String get giveYourEstimatePriceHere => 'ادخل تقدير سعر الخاص بك هنا';
@@ -1031,7 +1032,7 @@ class LanguageAr extends Languages {
   String get day => 'يوم';
 
   @override
-  String get pleaseSelectServiceAddresses => 'الرجاء تحديد مواقع تقديم الخدمة';
+  String get pleaseSelectServiceAddresses => 'الرجاء تحديد عناوين تقديم الخدمة';
 
   @override
   String get pleaseSelectImages => 'الرجاء تحديد الصور';
@@ -1054,13 +1055,13 @@ class LanguageAr extends Languages {
   String get chooseImage => 'اختر صورة';
 
   @override
-  String get removeImage => 'إزالة الصورة';
+  String get removeImage => 'حذف الصورة';
 
   @override
   String get availableAt => 'متاحة في';
 
   @override
-  String get clearChat => 'حذف الدردشة';
+  String get clearChat => 'حذف المحادثة';
 
   @override
   String get upcomingBookings => 'الحجوزات القادمة';
@@ -1073,7 +1074,7 @@ class LanguageAr extends Languages {
 
   @override
   String get subTitleOfSelectService =>
-      'عند تمكين هذه الميزة ، ستتمكن من اختيار الخدمة من فئات متعددة.';
+      'عند تمكين هذه الميزة ، ستتمكن من اختيار خدمة او اكثر من اقسام متعددة.';
 
   @override
   String get enabled => 'فعال';
@@ -1082,13 +1083,13 @@ class LanguageAr extends Languages {
   String get disabled => 'غير فعال ';
 
   @override
-  String get doYouWantTo => 'هل انت ترغب في';
+  String get doYouWantTo => 'هل ترغب في';
 
   @override
   String get enable => 'تفعيل';
 
   @override
-  String get disable => 'الغاء تفعيل';
+  String get disable => 'الغاء التفعيل';
 
   @override
   String get package => 'حزمة';
@@ -1097,10 +1098,10 @@ class LanguageAr extends Languages {
   String get packages => 'حزم';
 
   @override
-  String get packageService => 'خدمة الحزمة';
+  String get packageService => 'خدمات الحزمة';
 
   @override
-  String get confirmationRemovePackage => 'هل تريد إزالة هذه الخدمة من الحزمة؟';
+  String get confirmationRemovePackage => 'هل تريد حذف هذه الخدمة من الحزمة؟';
 
   @override
   String get packageName => 'اسم الحزمة';
@@ -1121,13 +1122,13 @@ class LanguageAr extends Languages {
   String get endDate => 'تاريخ الانتهاء';
 
   @override
-  String get pleaseSelectService => 'الرجاء تحديد الخدمة';
+  String get pleaseSelectService => 'اختر الخدمة';
 
   @override
-  String get pleaseEnterTheEndDate => 'الرجاء إدخال تاريخ الانتهاء';
+  String get pleaseEnterTheEndDate => 'ادخل تاريخ الانتهاء';
 
   @override
-  String get editPackage => 'تحرير الحزمة';
+  String get editPackage => 'تعديل الحزمة';
 
   @override
   String get addPackage => 'أضف الحزمة';
@@ -1139,7 +1140,7 @@ class LanguageAr extends Languages {
   String get packageNotAvailable => 'الحزمة غير متوفرة';
 
   @override
-  String get includedInThisPackage => 'مضافة في هذه الحزمة';
+  String get includedInThisPackage => 'متضمنة في هذه الحزمة';
 
   @override
   String get packageServicesWillAppearHere => 'ستظهر خدمات الحزمة هنا';
@@ -1148,10 +1149,10 @@ class LanguageAr extends Languages {
   String get showingFixPriceServices => 'إظهار الخدمات ثابتة الاسعار';
 
   @override
-  String get pleaseSelectTheCategory => 'الرجاء تحديد الفئة';
+  String get pleaseSelectTheCategory => 'الرجاء تحديد القسم';
 
   @override
-  String get lblInvalidTransaction => 'المعاملة غير صالحة';
+  String get lblInvalidTransaction => 'المعاملة خاطئة';
 
   @override
   String get youWillGetTheseServicesWithThisPackage =>
@@ -1171,20 +1172,20 @@ class LanguageAr extends Languages {
 
   @override
   String get lblSubTitleNoTransaction =>
-      'لم يتم العثور على شيء في السجل حتى الآن. إكمال الخدمات أولاً ثم احصل على الدفع';
+      'لم يتم العثور على شيء في السجل حتى الآن. اكمل الخدمات أولاً ثم احصل على قيمة الخدمات';
 
   @override
   String get lblCheckOutWithCinetPay => 'الخروج مع CinetPay';
 
   @override
   String get yourPaymentFailedPleaseTryAgain =>
-      'فشلت دفعتك ، يرجى المحاولة مرة أخرى';
+      'فشلت عملية الدفع ، يرجى المحاولة مرة أخرى';
 
   @override
-  String get yourPaymentHasBeenMadeSuccessfully => 'تم سداد دفعتك بنجاح';
+  String get yourPaymentHasBeenMadeSuccessfully => 'تم الدفع بنجاح';
 
   @override
-  String get lblTransactionFailed => 'فشل الاجراء';
+  String get lblTransactionFailed => 'معاملة فاشلة';
 
   @override
   String get lblTransactionCancelled => 'تم إلغاء المعاملة';
@@ -1228,7 +1229,7 @@ class LanguageAr extends Languages {
   String get lblTokenExpired => 'انتهت صلاحية الرمز';
 
   @override
-  String get lblFailedToLoadPredictions => 'فشل تحميل التنبؤات';
+  String get lblFailedToLoadPredictions => 'فشل تحميل التوقعات';
 
   @override
   String get personalInfo => 'معلومات شخصية';
@@ -1246,10 +1247,10 @@ class LanguageAr extends Languages {
   String get addKnownLanguage => 'أضف لغة معروفة';
 
   @override
-  String get authorBy => 'مؤلف';
+  String get authorBy => 'كتبت بواسطه';
 
   @override
-  String get views => 'الآراء';
+  String get views => 'التقييمات';
 
   @override
   String get deleteBlogTitle => 'هل أنت متأكد من حذف هذه المدونة؟';
@@ -1270,7 +1271,7 @@ class LanguageAr extends Languages {
   String get noBlogsFound => 'لم يتم العثور على مدونات';
 
   @override
-  String get aboutYou => 'حولك';
+  String get aboutYou => 'عنك';
 
   @override
   String get pleaseAddKnownLanguage => 'الرجاء إضافة لغة معروفة';
@@ -1282,7 +1283,7 @@ class LanguageAr extends Languages {
   String get published => 'تم النشر';
 
   @override
-  String get clearChatMessage => 'هل أنت متأكد أنك تريد مسح هذه الدردشة؟';
+  String get clearChatMessage => 'هل أنت متأكد أنك تريد مسح هذه المحادثة';
 
   @override
   String get all => 'الجميع';
@@ -1297,7 +1298,7 @@ class LanguageAr extends Languages {
   String get inProgress => 'قيد العمل';
 
   @override
-  String get hold => 'توقف';
+  String get hold => ' توقف مؤقت';
 
   @override
   String get cancelled => 'ألغيت';
@@ -1336,7 +1337,7 @@ class LanguageAr extends Languages {
   String get invalidInput => 'ادخال غير صحيح';
 
   @override
-  String get remainingAmount => 'الكمية المتبقية';
+  String get remainingAmount => 'المبلغ المتبقي';
 
   @override
   String get advancePayment => 'الدفع المسبق';
@@ -1345,10 +1346,10 @@ class LanguageAr extends Languages {
   String get valueConditionMessage => 'يجب أن تكون القيمة من 1 إلى 100';
 
   @override
-  String get withExtraAndAdvanceCharge => 'مع رسوم إضافية ودفع مسبق';
+  String get withExtraAndAdvanceCharge => 'مع خدمات إضافية ودفع مسبق';
 
   @override
-  String get withExtraCharge => 'تكلفة اضافية';
+  String get withExtraCharge => 'خدمات اضافية';
 
   @override
   String get min => 'دقيقة';
@@ -1390,7 +1391,7 @@ class LanguageAr extends Languages {
   String get userRole => 'دور المستخدم';
 
   @override
-  String get paymentHistory => 'سجل الدفعات';
+  String get paymentHistory => 'تاريخ عمليات الدفع';
 
   @override
   String get theService => 'الخدمة';
@@ -1446,10 +1447,10 @@ class LanguageAr extends Languages {
   String get requested => 'تم الطلب';
 
   @override
-  String get assigned => 'مُكَلَّف';
+  String get assigned => 'تم التعيين';
 
   @override
-  String get reload => 'إعادة تحميل';
+  String get reload => 'إعادة التحميل';
 
   @override
   String get noConversationSubTitle => 'لم تجري أي محادثة بعد';
@@ -1465,55 +1466,55 @@ class LanguageAr extends Languages {
   String get unlimited => 'غير محدود';
 
   @override
-  String get upTo => 'يصل إلى';
+  String get upTo => 'حتى';
 
   @override
   String get amountToBeReceived => 'المبلغ الواجب استلامه';
 
   @override
-  String get yourCashPaymentForBookingId => 'دفعك النقدي لحجز معرف';
+  String get yourCashPaymentForBookingId => 'رقم الدفع النقدي';
 
   @override
   String get isAcceptedAsOn => 'مقبول كما في';
 
   @override
-  String get sendCashToProvider => 'أرسل النقود إلى المزود';
+  String get sendCashToProvider => 'أرسل المبلغ النقدي إلى مزود الخدمة';
 
   @override
-  String get sendCashToAdmin => 'أرسل النقود إلى المسؤول';
+  String get sendCashToAdmin => 'أرسل المبلغ النقدي إلى المسؤول';
 
   @override
   String get cashPaymentApproval => 'موافقة الدفع النقدي';
 
   @override
-  String get approvedByHandyman => 'وافق عليها هانيدان';
+  String get approvedByHandyman => 'وافق عليها الفني';
 
   @override
-  String get sentToProvider => 'أرسل إلى مزود';
+  String get sentToProvider => 'تم الارسال إلى مزود الخدمة';
 
   @override
-  String get pendingByProvider => 'معلق من قبل المزود';
+  String get pendingByProvider => 'معلق مؤقتاً من قبل مزود الخدمة';
 
   @override
-  String get approvedByProvider => 'معتمد من قبل المزود';
+  String get approvedByProvider => 'معتمد من قبل مزود الخدمة';
 
   @override
-  String get pendingByAdmin => 'معلق من قبل المسؤول';
+  String get pendingByAdmin => 'معلق من قبل فيكساوي';
 
   @override
-  String get approvedByAdmin => 'معتمد من قبل المسؤول';
+  String get approvedByAdmin => 'معتمد من قبل فيكساوي';
 
   @override
-  String get sentToAdmin => 'أرسل إلى المسؤول';
+  String get sentToAdmin => 'أرسل إلى فيكساوي';
 
   @override
   String get ofTransfer => 'من النقل';
 
   @override
-  String get refNumber => 'المرجع. رقم';
+  String get refNumber => 'المرجع رقم';
 
   @override
-  String get todaySEarning => 'كسب اليوم';
+  String get todaySEarning => 'ايراد اليوم';
 
   @override
   String get cash => 'نقدي';
@@ -1522,25 +1523,25 @@ class LanguageAr extends Languages {
   String get bank => 'بنك';
 
   @override
-  String get handymanApprovedTheRequest => 'وافق هاندمان على الطلب';
+  String get handymanApprovedTheRequest => 'وافق الفني على الطلب';
 
   @override
-  String get requestSentToTheProvider => 'طلب تم إرساله إلى المزود';
+  String get requestSentToTheProvider => 'طلب تم إرساله إلى مزود الخدمة';
 
   @override
-  String get requestSentToTheAdmin => 'طلب إرسال إلى المسؤول';
+  String get requestSentToTheAdmin => 'طلب إرسال إلى فيكساوي';
 
   @override
-  String get requestPendingWithTheProvider => 'طلب معلق مع المزود';
+  String get requestPendingWithTheProvider => 'طلب معلق مع مزود الخدمة';
 
   @override
-  String get providerApprovedTheRequest => 'وافق المزود على الطلب';
+  String get providerApprovedTheRequest => 'وافق مزود الخدمة على الطلب';
 
   @override
-  String get requestPendingWithTheAdmin => 'طلب معلق مع المسؤول';
+  String get requestPendingWithTheAdmin => 'طلب معلق مع فيكساوي';
 
   @override
-  String get adminApprovedTheRequest => 'وافق المسؤول على الطلب';
+  String get adminApprovedTheRequest => 'وافق فيكساوي على الطلب';
 
   @override
   String get today => 'اليوم';
@@ -1549,7 +1550,7 @@ class LanguageAr extends Languages {
   String get yesterday => 'أمس';
 
   @override
-  String get customDate => 'موعد مخصص';
+  String get customDate => 'تاريخ محدد';
 
   @override
   String get totalCash => 'مجموع المبالغ النقدية';
@@ -1564,19 +1565,19 @@ class LanguageAr extends Languages {
   String get sortBy => 'ترتيب حسب';
 
   @override
-  String get noPaymentsFounds => 'لا توجد مدفوعات أسس';
+  String get noPaymentsFounds => 'لا توجد مدفوعات';
 
   @override
   String get cashBalance => 'الرصيد النقدي';
 
   @override
-  String get close => 'يغلق';
+  String get close => 'اغلق';
 
   @override
   String get retryPaymentDetails => 'أعد إعادة تقديم تفاصيل الدفع';
 
   @override
-  String get totalAmountToPay => 'إجمالي المبلغ للدفع';
+  String get totalAmountToPay => 'إجمالي المطلوب دفعه';
 
   @override
   String get from => 'من';
@@ -1588,30 +1589,31 @@ class LanguageAr extends Languages {
   String get choosePaymentMethod => 'اختر وسيلة الدفع';
 
   @override
-  String get sendToAdmin => 'أرسل إلى المسؤول';
+  String get sendToAdmin => 'أرسل إلى فيكساوي';
 
   @override
-  String get sendToProvider => 'أرسل إلى مزود';
+  String get sendToProvider => 'أرسل إلى مزود الخدمة';
 
   @override
   String get detailsOfTheBank => 'تفاصيل البنك';
 
   @override
-  String get selectABankTransferMoneyAndEnterTheReferenceIDInTheTextFieldBelow =>
-      'حدد بنكًا ، وتحويل الأموال ، وأدخل المعرف المرجعي في حقل النص أدناه.';
+  String
+      get selectABankTransferMoneyAndEnterTheReferenceIDInTheTextFieldBelow =>
+          'حدد بنكًا ، حول المبلغ ، وأدخل الكود المرجعي في حقل النص أدناه.';
 
   @override
-  String get noBanksAvailable => 'لا البنوك المتاحة';
+  String get noBanksAvailable => 'لا بنوك المتاحة';
 
   @override
   String get chooseCashOrContactAdminForBankInformation =>
-      'اختر النقود أو الاتصال المسؤول للحصول على معلومات مصرفية';
+      'اختر نقدي أو اتصل بفيكساوي للحصول على معلومات التحويل البنكي';
 
   @override
   String get bankName => 'اسم البنك';
 
   @override
-  String get accountNumber => 'رقم حساب';
+  String get accountNumber => 'رقم الحساب';
 
   @override
   String get iFSCCode => 'رمز IFSC';
@@ -1621,7 +1623,7 @@ class LanguageAr extends Languages {
 
   @override
   String get pleaseWaitWhileWeLoadBankDetails =>
-      'الرجاء الانتظار أثناء تحميل تفاصيل البنوك ...';
+      'الرجاء الانتظار أثناء تحميل تفاصيل البنك ...';
 
   @override
   String get cashPaymentConfirmation => 'تأكيد الدفع النقدي';
@@ -1631,73 +1633,73 @@ class LanguageAr extends Languages {
 
   @override
   String get pleaseWaitWhileWeLoadChatDetails =>
-      'يرجى الانتظار أثناء تحميل تفاصيل الدردشة';
+      'يرجى الانتظار أثناء تحميل تفاصيل المحادثة';
 
   @override
-  String get isNotAvailableForChat => 'غير متوفر للدردشة';
+  String get isNotAvailableForChat => 'غير متوفر للمحادثة';
 
   @override
-  String get connectWithFirebaseForChat => 'تواصل مع Firebase للدردشة';
+  String get connectWithFirebaseForChat => 'تواصل مع Firebase للمحادثة';
 
   @override
   String get admin => 'مسؤل';
 
   @override
-  String get cashStatus => 'الوضع النقدي';
+  String get cashStatus => 'حالة السداد النقدي';
 
   @override
   String get closeApp => 'أغلق التطبيق';
 
   @override
   String get youMustProvideValidCurrentPassword =>
-      'يجب عليك توفير كلمة مرور الحالية صالحة';
+      'يجب عليك توفير كلمة مرور حالية صالحة';
 
   @override
-  String get selectUserType => 'حدد نوع المستخدم';
+  String get selectUserType => 'حدد فئة المستخدم';
 
   @override
-  String get pleaseSelectUserType => 'الرجاء تحديد نوع المستخدم';
+  String get pleaseSelectUserType => 'الرجاء تحديد فئة المستخدم';
 
   @override
-  String get copied => 'نسخ';
+  String get copied => 'تم النسخ';
 
   @override
-  String get pleaseContactYourAdmin => 'يرجى الاتصال بمسؤولك!';
+  String get pleaseContactYourAdmin => 'يرجى الاتصال بفيكساوي';
 
   @override
-  String get search => 'يبحث';
+  String get search => 'بحث';
 
   @override
   String get wouldYouLikeToAssignThisBooking => 'هل ترغب في تعيين هذا الحجز؟';
 
   @override
-  String get connect => 'يتصل';
+  String get connect => 'اتصال';
 
   @override
-  String get youAreNotConnectedWithChatServer => 'أنت غير متصل بخادم الدردشة';
+  String get youAreNotConnectedWithChatServer => 'أنت غير متصل بخادم المحادثات';
 
   @override
   String get tapBelowButtonToConnectWithOurChatServer =>
-      'اضغط أدناه على الزر للاتصال بخادم الدردشة الخاص بنا';
+      'اضغط أدناه على الزر للاتصال بخادم المحادثات الخاص بنا';
 
   @override
   String get transactionId => 'رقم المعاملة';
 
   @override
-  String get appliedTaxes => 'الضرائب التطبيقية';
+  String get appliedTaxes => 'الضرائب';
 
   @override
   String get by => 'بواسطة';
 
   @override
   String get thisOrderWillBe =>
-      'سيتم تمييز هذا الطلب كما هو مكتمل. هل ترغب في المتابعة؟';
+      'سيتم تغيير حالةالخدمة الي مكتمل. هل ترغب في المتابعة؟';
 
   @override
-  String get externalWallet => 'محفظة خارجية';
+  String get externalWallet => 'محفظة الكترونية';
 
   @override
-  String get start => 'بدأ';
+  String get start => 'ابدأ';
 
   @override
   String get digitalService => 'الخدمة الرقمية';
@@ -1711,13 +1713,13 @@ class LanguageAr extends Languages {
       'يرجى التأكد من اختيار حالة حجز واحدة على الأقل';
 
   @override
-  String get apply => 'يتقدم';
+  String get apply => 'تطبيق';
 
   @override
-  String get clearFilter => 'مرشح واضح';
+  String get clearFilter => 'مسح التصفية';
 
   @override
-  String get bookingStatus => 'وضع الحجز';
+  String get bookingStatus => 'حالة الحجز';
 
   @override
   String get filterBy => 'مصنف بواسطة';
@@ -1736,7 +1738,7 @@ class LanguageAr extends Languages {
 
   @override
   String get pleaseNoteThatAllServiceMarkedCompleted =>
-      'يرجى ملاحظة أن جميع الوظائف الإضافية للخدمة محددة كما اكتملت!';
+      'ملحوظة : سيتم تغير حالة جميع الخدمات الاضافيةالمحددة الى مكتمل!';
 
   @override
   String get serviceVisitType => 'نوع زيارة الخدمة';
@@ -1746,25 +1748,25 @@ class LanguageAr extends Languages {
       'سيتم إكمال هذه الخدمة عبر الإنترنت/عن بُعد.';
 
   @override
-  String get visitOption => 'خيار زيارة';
+  String get visitOption => 'خيارات الزيارة';
 
   @override
-  String get onSiteVisit => 'في الموقع زيارة';
+  String get onSiteVisit => 'زيارة الموقع';
 
   @override
   String get onlineRemoteService => 'خدمة عبر الإنترنت/عن بُعد';
 
   @override
-  String get addOns => 'الوظائف الإضافية';
+  String get addOns => 'الخدمات الإضافية';
 
   @override
-  String get serviceAddOns => 'الوظائف الإضافية للخدمة';
+  String get serviceAddOns => 'الخدمات الإضافية';
 
   @override
   String get hintPhoneTxt => 'رقم الهاتف';
 
   @override
-  String get lblfee => "الرسوم";
+  String get lblfee => "رسوم الخدمة";
 
   @override
   String get withdraw => 'سحب مالي';
@@ -1777,7 +1779,7 @@ class LanguageAr extends Languages {
   String get alreadyWithdrawn => 'تم السحب';
 
   @override
-  String get netRevenue => 'اجمالي الربح';
+  String get netRevenue => 'اجمالي الايراد';
 
   @override
   String get pendingWithdraw => 'في انتظار الموافقة';

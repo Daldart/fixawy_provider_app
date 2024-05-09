@@ -12,16 +12,16 @@ class LanguageEn extends Languages {
   String get provider => 'Provider';
 
   @override
-  String get lblShowingOnly4Handyman => 'Showing Only 4 Fixawy';
+  String get lblShowingOnly4Handyman => 'Showing Only 4 Fixers';
 
   @override
-  String get lblRecentlyOnlineHandyman => 'Recently Online Fixawy';
+  String get lblRecentlyOnlineHandyman => 'Recently Online Fixer';
 
   @override
   String get lblStartDrive => 'Start Drive';
 
   @override
-  String get handyman => 'Fixawy';
+  String get handyman => 'Fixer';
 
   @override
   String get signIn => 'Sign In';
@@ -148,8 +148,7 @@ class LanguageEn extends Languages {
   String get systemDefault => 'System Mode';
 
   @override
-  String get confirmationRequestTxt =>
-      'Are you sure want to perform this action?';
+  String get confirmationRequestTxt => 'Are you sure to perform this action?';
 
   @override
   String get notAvailable => 'Not Available';
@@ -191,7 +190,7 @@ class LanguageEn extends Languages {
   String get lblReason => 'Reason';
 
   @override
-  String get lblSelectHandyman => 'Please Select Fixawy';
+  String get lblSelectHandyman => 'Please Select Fixer';
 
   @override
   String get lblAssign => 'Assign';
@@ -200,7 +199,7 @@ class LanguageEn extends Languages {
   String get lblCall => 'Call';
 
   @override
-  String get lblAssignHandyman => 'Assign Fixawy';
+  String get lblAssignHandyman => 'Assign Fixer';
 
   @override
   String get lblAssigned => 'Assigned';
@@ -215,7 +214,7 @@ class LanguageEn extends Languages {
   String get lblRevenue => 'Revenue';
 
   @override
-  String get lblAddHandyman => "Add Handyman";
+  String get lblAddHandyman => "Add Fixer";
 
   @override
   String get lblBooking => 'Bookings';
@@ -386,7 +385,7 @@ class LanguageEn extends Languages {
   String get lblHelpAndSupport => "Help and Support";
 
   @override
-  String get lblAbout => "About";
+  String get lblAbout => "About Us";
 
   @override
   String get lblProviderType => "Provider Type";
@@ -438,7 +437,7 @@ class LanguageEn extends Languages {
   String get lblDate => "Date";
 
   @override
-  String get lblAboutHandyman => "About Handyman";
+  String get lblAboutHandyman => "About Fixer";
 
   @override
   String get lblAboutCustomer => "About Customer";
@@ -495,7 +494,7 @@ class LanguageEn extends Languages {
   String get lblType => "Type";
 
   @override
-  String get lblHandymanType => "Handyman Type";
+  String get lblHandymanType => "Fixer Type";
 
   @override
   String get lblFixed => "Fixed";
@@ -663,7 +662,7 @@ class LanguageEn extends Languages {
   String get lblSubscriptionHistory => "Subscription History";
 
   @override
-  String get lblTrashHandyman => "Handyman has been Trash successfully";
+  String get lblTrashHandyman => "Fixer has been removed successfully";
 
   @override
   String get lblPlsSelectAddress => "Please Selected Address";
@@ -735,7 +734,7 @@ class LanguageEn extends Languages {
   String get lblDesignation => "Designation";
 
   @override
-  String get lblHandymanIsOffline => "Handyman is Offline";
+  String get lblHandymanIsOffline => "Fixer is Offline";
 
   @override
   String get lblDoYouWantToRestore => "Do you want to Restore?";
@@ -883,14 +882,13 @@ class LanguageEn extends Languages {
       "We'll notify you once we have something for you";
 
   @override
-  String get noHandymanAvailable => "Handyman Not Available";
+  String get noHandymanAvailable => "Fixer Not Available";
 
   @override
-  String get noHandymanYet => "No Handyman Yet";
+  String get noHandymanYet => "No Fixer Yet";
 
   @override
-  String get noHandymanSubTitle =>
-      "Please check and handyman status active first";
+  String get noHandymanSubTitle => "Please check Fixer status active first";
 
   @override
   String get noServiceFound => "No Service Found";
@@ -1505,7 +1503,7 @@ class LanguageEn extends Languages {
   String get cashPaymentApproval => "Cash Payment Approval";
 
   @override
-  String get approvedByHandyman => "Approved by Handyman";
+  String get approvedByHandyman => "Approved by Fixer";
 
   @override
   String get sentToProvider => "Sent to Provider";
@@ -1541,7 +1539,7 @@ class LanguageEn extends Languages {
   String get bank => "Bank";
 
   @override
-  String get handymanApprovedTheRequest => "Handyman approved the request";
+  String get handymanApprovedTheRequest => "Fixer approved the request";
 
   @override
   String get requestSentToTheProvider => "Request sent to the provider";
