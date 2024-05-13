@@ -92,8 +92,8 @@ void main() async {
 
   localeLanguageList = languageList();
 
-  // appStore.setLanguage(getStringAsync(SELECTED_LANGUAGE_CODE, defaultValue: DEFAULT_LANGUAGE));
-  appStore.setLanguage(DEFAULT_LANGUAGE);
+  appStore.setLanguage(getStringAsync(SELECTED_LANGUAGE_CODE, defaultValue: DEFAULT_LANGUAGE));
+  // appStore.setLanguage(DEFAULT_LANGUAGE);
 
   await appStore.setLoggedIn(getBoolAsync(IS_LOGGED_IN));
 
