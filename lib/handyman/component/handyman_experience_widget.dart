@@ -9,7 +9,8 @@ class HandymanExperienceWidget extends StatefulWidget {
   const HandymanExperienceWidget({Key? key}) : super(key: key);
 
   @override
-  _HandymanExperienceWidgetState createState() => _HandymanExperienceWidgetState();
+  _HandymanExperienceWidgetState createState() =>
+      _HandymanExperienceWidgetState();
 }
 
 class _HandymanExperienceWidgetState extends State<HandymanExperienceWidget> {
@@ -25,7 +26,8 @@ class _HandymanExperienceWidgetState extends State<HandymanExperienceWidget> {
   }
 
   void init() async {
-    Duration duration = DateTime.now().difference(DateTime.parse(appStore.createdAt));
+    Duration duration =
+        DateTime.now().difference(DateTime.parse(appStore.createdAt));
 
     if (duration.inDays < 365) {
       temp = languages.lblDay;
@@ -49,10 +51,11 @@ class _HandymanExperienceWidgetState extends State<HandymanExperienceWidget> {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("$value", style: boldTextStyle(color: primaryColor, size: LABEL_TEXT_SIZE)),
+          Text(" $value ",
+              style: boldTextStyle(color: primaryColor, size: LABEL_TEXT_SIZE)),
           8.height,
           Text(
-            "$temp${languages.lblOf} \n${languages.lblExperience}",
+            " $temp${languages.lblOf} \n ${languages.lblExperience}",
             style: secondaryTextStyle(),
             textAlign: TextAlign.center,
           ),
