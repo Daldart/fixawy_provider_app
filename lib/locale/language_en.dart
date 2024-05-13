@@ -286,7 +286,7 @@ class LanguageEn extends Languages {
   String get lblProfile => 'Profile';
 
   @override
-  String get lblAllHandyman => "Handyman List";
+  String get lblAllHandyman => "Fixers List";
 
   @override
   String get lblTime => 'Time';
@@ -1393,7 +1393,7 @@ class LanguageEn extends Languages {
   String get providerHome => 'Provider Home';
 
   @override
-  String get handymanHome => 'Handyman Home';
+  String get handymanHome => 'Fixer Home';
 
   @override
   String get home => 'Home';
