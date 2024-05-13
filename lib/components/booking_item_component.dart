@@ -445,7 +445,7 @@ class BookingItemComponentState extends State<BookingItemComponent> {
                             },
                           ).expand(),
                         12.width,
-                        AppButton(
+/*                        AppButton(
                           child:
                               Text(languages.decline, style: boldTextStyle()),
                           width: context.width(),
@@ -462,7 +462,7 @@ class BookingItemComponentState extends State<BookingItemComponent> {
                                   BookingStatusKeys.pending);
                             }
                           },
-                        ).expand(),
+                        ).expand(),*/
                       ],
                     ).paddingOnly(bottom: 8, left: 8, right: 8, top: 16),
                   if (isUserTypeProvider &&
