@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "11972838861",
+    "project_id": "fixawy-test",
+    "storage_bucket": "fixawy-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11972838861:android:81cb86cf5bf5ede1c9b084",
+        "android_client_info": {
+          "package_name": "com.fixawy.providerapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAqo4PZQNWJ2pYm9qbBXHyxld4OmcNwOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11972838861:android:0d8db74f40d2a999c9b084",
+        "android_client_info": {
+          "package_name": "com.fixawy.servicebooking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAqo4PZQNWJ2pYm9qbBXHyxld4OmcNwOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11972838861:android:82b33c2443612c78c9b084",
+        "android_client_info": {
+          "package_name": "com.foksart.fixawyBeta"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAqo4PZQNWJ2pYm9qbBXHyxld4OmcNwOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
