@@ -1,4 +1,3 @@
-
 // import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
@@ -9,7 +8,6 @@ import '../../../models/configuration_response.dart';
 import '../../../networks/network_utils.dart';
 import '../../../utils/common.dart';
 import '../../../utils/configs.dart';
-
 
 class StripeServiceNew {
   late PaymentSetting paymentSetting;
@@ -48,15 +46,22 @@ class StripeServiceNew {
     //   throw e.toString();
     // });
 
-    Request request = http.Request(HttpMethodType.POST.name, Uri.parse(stripeURL));
+    Request request =
+        http.Request(HttpMethodType.POST.name, Uri.parse(stripeURL));
 
     request.bodyFields = {
       'amount': '${(totalAmount * 100).toInt()}',
-      'currency': await isIqonicProduct ? STRIPE_CURRENCY_CODE : '${appStore.currencyCode}',
-      'description': 'Name: ${appStore.userFullName} - Email: ${appStore.userEmail}',
+      'currency': await isFixawyProduct
+          ? STRIPE_CURRENCY_CODE
+          : '${appStore.currencyCode}',
+      'description':
+          'Name: ${appStore.userFullName} - Email: ${appStore.userEmail}',
     };
 
-    request.headers.addAll(buildHeaderTokens(extraKeys: {'isStripePayment': true, 'stripeKeyPayment': stripePaymentKey}));
+    request.headers.addAll(buildHeaderTokens(extraKeys: {
+      'isStripePayment': true,
+      'stripeKeyPayment': stripePaymentKey
+    }));
 
     log('URL: ${request.url}');
     log('Header: ${request.headers}');

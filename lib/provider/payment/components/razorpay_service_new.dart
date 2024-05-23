@@ -61,9 +61,14 @@ class RazorPayServiceNew {
       'theme.color': primaryColor.toHex(),
       'description': APP_NAME,
       'image': 'https://razorpay.com/assets/razorpay-glyph.svg',
-      'currency': await isIqonicProduct ? RAZORPAY_CURRENCY_CODE : '${appStore.currencyCode}',
-      'prefill': {'contact': appStore.userContactNumber, 'email': appStore.userEmail},
-       'external': {
+      'currency': await isFixawyProduct
+          ? RAZORPAY_CURRENCY_CODE
+          : '${appStore.currencyCode}',
+      'prefill': {
+        'contact': appStore.userContactNumber,
+        'email': appStore.userEmail
+      },
+      'external': {
         'wallets': ['paytm']
       }
     };
