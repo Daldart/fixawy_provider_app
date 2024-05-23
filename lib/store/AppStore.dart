@@ -166,7 +166,8 @@ abstract class _AppStore with Store {
   @action
   Future<void> setEarningType(String val, {bool isInitializing = false}) async {
     earningType = val;
-    if (!isInitializing) await compareValuesInSharedPreference(EARNING_TYPE, val);
+    if (!isInitializing)
+      await compareValuesInSharedPreference(EARNING_TYPE, val);
   }
 
   @action
@@ -176,27 +177,34 @@ abstract class _AppStore with Store {
   }
 
   @action
-  Future<void> addSelectedPackageService(ServiceData val, {bool isInitializing = false}) async {
+  Future<void> addSelectedPackageService(ServiceData val,
+      {bool isInitializing = false}) async {
     selectedServiceList.add(val);
     log('Selected Service length: ${selectedServiceList.length}');
   }
 
   @action
-  Future<void> addAllSelectedPackageService(List<ServiceData> val, {bool isInitializing = false}) async {
+  Future<void> addAllSelectedPackageService(List<ServiceData> val,
+      {bool isInitializing = false}) async {
     selectedServiceList.addAll(val);
     log('Selected All Service length: ${selectedServiceList.length}');
   }
 
   @action
-  Future<void> removeSelectedPackageService(ServiceData val, {bool isInitializing = false}) async {
-    selectedServiceList.remove(selectedServiceList.firstWhere((element) => element.id == val.id));
+  Future<void> removeSelectedPackageService(ServiceData val,
+      {bool isInitializing = false}) async {
+    selectedServiceList.remove(
+        selectedServiceList.firstWhere((element) => element.id == val.id));
     log('After remove Selected Service length: ${selectedServiceList.length}');
   }
 
   @action
-  Future<void> setCategoryBasedPackageService(bool val, {bool isInitializing = false}) async {
+  Future<void> setCategoryBasedPackageService(bool val,
+      {bool isInitializing = false}) async {
     isCategoryWisePackageService = val;
-    if (!isInitializing) await setValue(CATEGORY_BASED_SELECT_PACKAGE_SERVICE, isCategoryWisePackageService);
+    if (!isInitializing)
+      await setValue(
+          CATEGORY_BASED_SELECT_PACKAGE_SERVICE, isCategoryWisePackageService);
   }
 
   @action
@@ -241,21 +249,27 @@ abstract class _AppStore with Store {
   }
 
   @action
-  Future<void> setCurrencySymbol(String val, {bool isInitializing = false}) async {
+  Future<void> setCurrencySymbol(String val,
+      {bool isInitializing = false}) async {
     currencySymbol = val;
-    if (!isInitializing) await compareValuesInSharedPreference(CURRENCY_COUNTRY_SYMBOL, val);
+    if (!isInitializing)
+      await compareValuesInSharedPreference(CURRENCY_COUNTRY_SYMBOL, val);
   }
 
   @action
-  Future<void> setCurrencyCode(String val, {bool isInitializing = false}) async {
+  Future<void> setCurrencyCode(String val,
+      {bool isInitializing = false}) async {
     currencyCode = val;
-    if (!isInitializing) await compareValuesInSharedPreference(CURRENCY_COUNTRY_CODE, val);
+    if (!isInitializing)
+      await compareValuesInSharedPreference(CURRENCY_COUNTRY_CODE, val);
   }
 
   @action
-  Future<void> setCurrencyCountryId(String val, {bool isInitializing = false}) async {
+  Future<void> setCurrencyCountryId(String val,
+      {bool isInitializing = false}) async {
     currencyCountryId = val;
-    if (!isInitializing) await compareValuesInSharedPreference(CURRENCY_COUNTRY_ID, val);
+    if (!isInitializing)
+      await compareValuesInSharedPreference(CURRENCY_COUNTRY_ID, val);
   }
 
   @action
@@ -271,7 +285,8 @@ abstract class _AppStore with Store {
   }
 
   @action
-  Future<void> setPlanSubscribeStatus(bool val, {bool isInitializing = false}) async {
+  Future<void> setPlanSubscribeStatus(bool val,
+      {bool isInitializing = false}) async {
     isPlanSubscribe = val && planTitle.isNotEmpty;
     if (!isInitializing) await setValue(IS_PLAN_SUBSCRIBE, val);
   }
@@ -313,27 +328,35 @@ abstract class _AppStore with Store {
   }
 
   @action
-  Future<void> setPrivacyPolicy(String val, {bool isInitializing = false}) async {
+  Future<void> setPrivacyPolicy(String val,
+      {bool isInitializing = false}) async {
     privacyPolicy = val;
-    if (!isInitializing) await compareValuesInSharedPreference(PRIVACY_POLICY, val);
+    if (!isInitializing)
+      await compareValuesInSharedPreference(PRIVACY_POLICY, val);
   }
 
   @action
-  Future<void> setTermConditions(String val, {bool isInitializing = false}) async {
+  Future<void> setTermConditions(String val,
+      {bool isInitializing = false}) async {
     termConditions = val;
-    if (!isInitializing) await compareValuesInSharedPreference(TERM_CONDITIONS, val);
+    if (!isInitializing)
+      await compareValuesInSharedPreference(TERM_CONDITIONS, val);
   }
 
   @action
-  Future<void> setInquiryEmail(String val, {bool isInitializing = false}) async {
+  Future<void> setInquiryEmail(String val,
+      {bool isInitializing = false}) async {
     inquiryEmail = val;
-    if (!isInitializing) await compareValuesInSharedPreference(INQUIRY_EMAIL, val);
+    if (!isInitializing)
+      await compareValuesInSharedPreference(INQUIRY_EMAIL, val);
   }
 
   @action
-  Future<void> setHelplineNumber(String val, {bool isInitializing = false}) async {
+  Future<void> setHelplineNumber(String val,
+      {bool isInitializing = false}) async {
     helplineNumber = val;
-    if (!isInitializing) await compareValuesInSharedPreference(HELPLINE_NUMBER, val);
+    if (!isInitializing)
+      await compareValuesInSharedPreference(HELPLINE_NUMBER, val);
   }
 
   @action
@@ -343,7 +366,8 @@ abstract class _AppStore with Store {
   }
 
   @action
-  Future<void> setCompletedBooking(int val, {bool isInitializing = false}) async {
+  Future<void> setCompletedBooking(int val,
+      {bool isInitializing = false}) async {
     completedBooking = val;
     if (!isInitializing) await setValue(COMPLETED_BOOKING, val);
   }
@@ -361,7 +385,8 @@ abstract class _AppStore with Store {
   }
 
   @action
-  Future<void> setServiceAddressId(int val, {bool isInitializing = false}) async {
+  Future<void> setServiceAddressId(int val,
+      {bool isInitializing = false}) async {
     serviceAddressId = val;
     if (!isInitializing) await setValue(SERVICE_ADDRESS_ID, val);
   }
@@ -391,7 +416,8 @@ abstract class _AppStore with Store {
   }
 
   @action
-  Future<void> setContactNumber(String val, {bool isInitializing = false}) async {
+  Future<void> setContactNumber(String val,
+      {bool isInitializing = false}) async {
     userContactNumber = val;
     if (!isInitializing) await setValue(CONTACT_NUMBER, val);
   }
@@ -473,8 +499,15 @@ abstract class _AppStore with Store {
   }
 
   @action
-  Future<void> setHandymanAvailability(int val, {bool isInitializing = false}) async {
+  Future<void> setHandymanAvailability(int val,
+      {bool isInitializing = false}) async {
     handymanAvailability = val;
     if (isInitializing) await setValue(HANDYMAN_AVAILABLE_STATUS, val);
+  }
+
+  @action
+  Future<void> setPushNotificationSubscriptionStatus(bool val) async {
+    // isSubscribedForPushNotification = val;
+    await setValue(IS_SUBSCRIBED_FOR_PUSH_NOTIFICATION, val);
   }
 }

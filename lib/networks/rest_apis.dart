@@ -66,7 +66,7 @@ import '../models/response_withdraw.dart';
 import '../models/wallet_history_list_response.dart';
 import '../provider/jobRequest/models/bidder_data.dart';
 import '../provider/jobRequest/models/post_job_data.dart';
-import '../utils/one_signal_utils.dart';
+import '../utils/firebase_messaging_utils.dart';
 
 //region Auth API
 Future<void> logout(BuildContext context) async {
@@ -142,6 +142,8 @@ Future<void> logout(BuildContext context) async {
 }
 
 Future<void> clearPreferences() async {
+  unsubscribeFirebaseTopic(appStore.userId!);
+
   cachedProviderDashboardResponse = null;
   cachedHandymanDashboardResponse = null;
   cachedBookingList = null;
@@ -235,6 +237,9 @@ Future<void> saveUserData(UserData data) async {
     }
 
     await appStore.setLoggedIn(true);
+
+    // Subscribe to Firebase topics to receive push notifications
+    subscribeToFirebaseTopic();
   }
 }
 
@@ -343,7 +348,7 @@ Future<ConfigurationResponse> configurationDashboard() async {
     }
   });
 
-  saveOneSignalPlayerId();
+  //saveOneSignalPlayerId();
 
   return data;
 }
@@ -454,10 +459,7 @@ Future<FinancialDataModel> withdrawSummary() async {
   try {
     final response = await buildHttpResponse('handyman-withdraw-summary',
         method: HttpMethodType.GET);
-    final data =
-    FinancialDataModel.fromJson(await handleResponse(response));
-
-
+    final data = FinancialDataModel.fromJson(await handleResponse(response));
 
     completer.complete(data);
   } catch (e) {
@@ -466,10 +468,11 @@ Future<FinancialDataModel> withdrawSummary() async {
 
   return completer.future;
 }
+
 Future<WithdrawalResponse> requestWithdraw(WithdrawModel model) async {
   return WithdrawalResponse.fromJson(await handleResponse(
-      await buildHttpResponse('handyman-withdraw-request',request:model.toJson() ,
-          method: HttpMethodType.POST)));
+      await buildHttpResponse('handyman-withdraw-request',
+          request: model.toJson(), method: HttpMethodType.POST)));
 }
 ////endregion
 //region Handyman API
@@ -481,7 +484,7 @@ Future<HandymanDashBoardResponse> handymanDashboard() async {
     final response = await buildHttpResponse('handyman-dashboard',
         method: HttpMethodType.GET);
     final data =
-    HandymanDashBoardResponse.fromJson(await handleResponse(response));
+        HandymanDashBoardResponse.fromJson(await handleResponse(response));
 
     // Perform additional code or post-processing
     _performAdditionalProcessingHandyman(data);
@@ -493,7 +496,6 @@ Future<HandymanDashBoardResponse> handymanDashboard() async {
 
   return completer.future;
 }
-
 
 void _performAdditionalProcessingHandyman(HandymanDashBoardResponse data) {
   cachedHandymanDashboardResponse = data;
