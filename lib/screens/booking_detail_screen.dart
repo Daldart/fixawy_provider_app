@@ -910,9 +910,9 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
     if (res.bookingDetail!.status == BookingStatusKeys.accept) {
       showBottomActionBar = true;
 
-      Future.delayed(Duration(minutes: 5), () {
-        updateBooking(res, '', BookingStatusKeys.pending);
-      });
+      // Future.delayed(Duration(minutes: 5), () {
+      //   updateBooking(res, '', BookingStatusKeys.pending);
+      // });
 
       return Container(
         child: Row(
