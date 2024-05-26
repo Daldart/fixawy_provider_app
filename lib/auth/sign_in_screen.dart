@@ -320,26 +320,6 @@ class _SignInScreenState extends State<SignInScreen> {
                     _buildForgotRememberWidget(),
                     _buildButtonWidget(),
                     16.height,
-                    SnapHelperWidget<bool>(
-                        future: isFixawyProduct,
-                        onSuccess: (data) {
-                          if (data) {
-                            return UserDemoModeScreen(
-                              onChanged: (phone, password) {
-                                if (phone.isNotEmpty && password.isNotEmpty) {
-                                  phoneCont.text = phone;
-                                  // emailCont.text = email;
-                                  passwordCont.text = password;
-                                } else {
-                                  // emailCont.clear();
-                                  phoneCont.clear();
-                                  passwordCont.clear();
-                                }
-                              },
-                            );
-                          }
-                          return Offstage();
-                        }),
                   ],
                 ),
               ),
