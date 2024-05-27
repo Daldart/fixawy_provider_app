@@ -1789,7 +1789,7 @@ class LanguageEn extends Languages {
   String get withdraw => 'Withdraw';
 
   @override
-  String get lblfee => "Fee";
+  String get lblfee => "Service fees";
 
   @override
   String get alreadyWithdrawn => 'Already withdrawn';
