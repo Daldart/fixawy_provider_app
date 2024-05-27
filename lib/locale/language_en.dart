@@ -12,6 +12,9 @@ class LanguageEn extends Languages {
   String get provider => 'Provider';
 
   @override
+  String get lblDoneOrders => "Done Orders";
+
+  @override
   String get lblShowingOnly4Handyman => 'Showing Only 4 Fixers';
 
   @override

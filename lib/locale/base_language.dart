@@ -359,6 +359,8 @@ abstract class Languages {
 
   String get lblExperience;
 
+  String get lblDoneOrders;
+
   String get lblOf;
 
   String get lblSelectAddress;
