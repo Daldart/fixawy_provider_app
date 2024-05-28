@@ -1,4 +1,4 @@
-package com.fixawy.fixer;
+package com.fixawy.providerapp;
 
 import io.flutter.embedding.android.FlutterActivity;
 

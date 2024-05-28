@@ -39,7 +39,7 @@ class StripeServices {
 
     request.bodyFields = {
       'amount': '${(totalAmount.toInt() * 100)}',
-      'currency': await isIqonicProduct ? 'INR' : '${appStore.currencyCode}',
+      'currency': await isFixawyProduct ? 'INR' : '${appStore.currencyCode}',
       'description': 'Name: ${appStore.userFullName} - Email: ${appStore.userEmail}',
     };
 

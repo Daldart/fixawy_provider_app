@@ -55,7 +55,7 @@ class _HandymanExperienceWidgetState extends State<HandymanExperienceWidget> {
               style: boldTextStyle(color: primaryColor, size: LABEL_TEXT_SIZE)),
           8.height,
           Text(
-            " $temp${languages.lblOf} \n ${languages.lblExperience}",
+            "${languages.lblDoneOrders}",
             style: secondaryTextStyle(),
             textAlign: TextAlign.center,
           ),

@@ -1,7 +1,5 @@
 // import 'package:flutter_paypal_checkout/flutter_paypal_checkout.dart';
 
-
-
 class PayPalService {
 /*  static Future paypalCheckOut({
     required BuildContext context,
@@ -33,7 +31,7 @@ class PayPalService {
         {
           "amount": {
             "total": totalAmount,
-            "currency": await isIqonicProduct ? PAYPAL_CURRENCY_CODE : '${appStore.currencyCode}',
+            "currency": await isFixawyProduct ? PAYPAL_CURRENCY_CODE : '${appStore.currencyCode}',
             "details": {"subtotal": totalAmount, "shipping": '0', "shipping_discount": 0}
           },
           "description": 'Name: ${appStore.userFullName} - Email: ${appStore.userEmail}',

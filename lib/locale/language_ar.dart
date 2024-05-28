@@ -524,6 +524,9 @@ class LanguageAr extends Languages {
   String get lblExperience => "الخبرة";
 
   @override
+  String get lblDoneOrders => "عملية ناجحة";
+
+  @override
   String get lblOf => "من";
 
   @override

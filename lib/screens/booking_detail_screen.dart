@@ -1443,11 +1443,11 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
                       ],
                     ).paddingOnly(left: 16, right: 16, bottom: 16),
 
-                  CashPaymentHistoryScreen(
-                    bookingId:
-                        res.data!.bookingDetail!.id.validate().toString(),
-                    key: _paymentUniqueKey,
-                  ),
+                  // CashPaymentHistoryScreen(
+                  //   bookingId:
+                  //       res.data!.bookingDetail!.id.validate().toString(),
+                  //   key: _paymentUniqueKey,
+                  // ),
 
                   /// Customer Review Widget
                   if (res.data!.ratingData.validate().isNotEmpty)

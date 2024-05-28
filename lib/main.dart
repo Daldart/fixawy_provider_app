@@ -27,6 +27,7 @@ import 'package:fixawy_provider/utils/constant.dart';
 import 'package:in_app_notification/in_app_notification.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'app_theme.dart';
+import 'firebase_options.dart';
 import 'models/booking_list_response.dart';
 import 'models/booking_status_response.dart';
 import 'models/dashboard_response.dart';
@@ -34,7 +35,7 @@ import 'models/extra_charges_model.dart';
 import 'models/handyman_dashboard_response.dart';
 import 'models/payment_list_reasponse.dart';
 import 'provider/timeSlots/timeSlotStore/time_slot_store.dart';
-import 'utils/one_signal_utils.dart';
+import 'utils/firebase_messaging_utils.dart';
 
 //region Mobx Stores
 AppStore appStore = AppStore();
@@ -74,9 +75,12 @@ List<WalletHistory>? cachedWalletList;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   if (!isDesktop) {
-    Firebase.initializeApp().then((value) {
+    Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+        .then((value) {
+      initFirebaseMessaging();
+
+      // initFirebaseMessaging();
       FlutterError.onError =
           FirebaseCrashlytics.instance.recordFlutterFatalError;
 
@@ -85,21 +89,21 @@ void main() async {
       log(e.toString());
     });
   }
-
   defaultSettings();
 
   await initialize();
 
   localeLanguageList = languageList();
 
-  appStore.setLanguage(getStringAsync(SELECTED_LANGUAGE_CODE, defaultValue: DEFAULT_LANGUAGE));
+  appStore.setLanguage(
+      getStringAsync(SELECTED_LANGUAGE_CODE, defaultValue: DEFAULT_LANGUAGE));
   // appStore.setLanguage(DEFAULT_LANGUAGE);
 
   await appStore.setLoggedIn(getBoolAsync(IS_LOGGED_IN));
 
   await setLoginValues();
 
-  initializeOneSignal();
+  //initializeOneSignal();
 
   runApp(MyApp());
 }
