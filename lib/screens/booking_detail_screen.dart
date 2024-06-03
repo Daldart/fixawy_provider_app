@@ -314,7 +314,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
                 val.bookingDetail!.isAdvancePaymentDone
                     ? SERVICE_PAYMENT_STATUS_ADVANCE_PAID
                     : val.bookingDetail!.paymentStatus.validate(),
-            BookingUpdateKeys.status: BookingStatusKeys.complete,
+            BookingUpdateKeys.status: val.bookingDetail?.status,
           }
         : {
             CommonKeys.id: val.bookingDetail!.id.validate(),
@@ -341,17 +341,9 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
       req.putIfAbsent(BookingServiceKeys.extraCharges, () => charges);
     }
 
-    if (chargesList.isNotEmpty && isEditExtraCharges) {
+    if (chargesList.isEmpty && isEditExtraCharges) {
       List<Map<String, dynamic>> charges = [];
 
-      chargesList.forEach((element) {
-        charges.add({
-          "id": element.id.validate(),
-          "title": element.title.validate(),
-          "qty": element.qty.validate(),
-          "price": element.price.validate(),
-        });
-      });
       req.putIfAbsent(BookingServiceKeys.extraCharges, () => charges);
     }
 
@@ -1092,7 +1084,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
                 bool? a =
                     await AddExtraChargesScreen(isFromEditExtraCharge: true)
                         .launch(context);
-
+// Extracharge Changed
                 if (a ?? false) {
                   _handlePendingApproval(val: res, isEditExtraCharges: true);
                 }

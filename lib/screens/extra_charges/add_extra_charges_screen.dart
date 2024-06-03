@@ -209,7 +209,7 @@ class _AddExtraChargesScreenState extends State<AddExtraChargesScreen> {
           onTap: () {
             showConfirmDialogCustom(
               context,
-              title: languages.thisOrderWillBe,
+              title: languages.saveChanges,
               primaryColor: primaryColor,
               positiveText: languages.lblYes,
               negativeText: languages.lblNo,
