@@ -328,7 +328,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
                     : val.bookingDetail!.paymentStatus.validate(),
           };
 
-    if (chargesList.isNotEmpty && isAddExtraCharges) {
+    if (isEditExtraCharges || (chargesList.isNotEmpty && isAddExtraCharges)) {
       List<Map<String, dynamic>> charges = [];
 
       chargesList.forEach((element) {
@@ -338,12 +338,6 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
           "price": element.price.validate(),
         });
       });
-      req.putIfAbsent(BookingServiceKeys.extraCharges, () => charges);
-    }
-
-    if (chargesList.isEmpty && isEditExtraCharges) {
-      List<Map<String, dynamic>> charges = [];
-
       req.putIfAbsent(BookingServiceKeys.extraCharges, () => charges);
     }
 
