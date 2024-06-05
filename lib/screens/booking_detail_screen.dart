@@ -138,8 +138,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
   //region Methods
   Future<void> confirmationRequestDialog(
       BuildContext context, String status, BookingDetailResponse res) async {
-    if (status == BookingStatusKeys.complete &&  res.bookingDetail!.paymentMethod == PAYMENT_METHOD_COD ||
-        res.bookingDetail!.paymentMethod == languages.paymentCash) {
+    if (status == BookingStatusKeys.complete && res.bookingDetail!.paymentMethod == languages.paymentCash) {
       showInDialog(
         context,
         contentPadding: EdgeInsets.all(0),
@@ -1013,8 +1012,8 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
       // return Text(languages.lblWaitingForResponse, style: boldTextStyle()).center();
     } else if (res.bookingDetail!.status == BookingStatusKeys.complete) {
       log("paymentMethod: ${res.bookingDetail!.paymentMethod}");
-      if (res.bookingDetail!.paymentMethod == PAYMENT_METHOD_COD &&
-          res.bookingDetail!.paymentStatus == PENDING || res.bookingDetail!.paymentMethod == languages.paymentCash) {
+      if (res.bookingDetail!.paymentMethod == languages.paymentCash &&
+          res.bookingDetail!.paymentStatus == PENDING) {
 
         showBottomActionBar = true;
         return AppButton(
