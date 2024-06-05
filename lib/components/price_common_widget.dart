@@ -253,6 +253,26 @@ class PriceCommonWidget extends StatelessWidget {
                     ],
                   ),
 
+                ///Fee Amount
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(languages.lblfee,
+                            style: secondaryTextStyle(
+                              size: 14,
+                            )).flexible(fit: FlexFit.loose),
+                        16.width,
+                        PriceWidget(
+                            price: bookingDetail.feeAmount!,
+                            color: textPrimaryColorGlobal),
+                      ],
+                    ),
+                  ],
+                ),
+                Divider(height: 26, color: context.dividerColor),
+
                 if ((bookingDetail.isHourlyService ||
                         bookingDetail.isFixedService) &&
                     bookingDetail.bookingType.validate() ==
@@ -292,27 +312,6 @@ class PriceCommonWidget extends StatelessWidget {
                       Divider(height: 26, color: context.dividerColor),
                     ],
                   ),
-
-                ///Fee Amount
-
-                Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(languages.lblfee,
-                            style: secondaryTextStyle(
-                              size: 14,
-                            )).flexible(fit: FlexFit.loose),
-                        16.width,
-                        PriceWidget(
-                            price: bookingDetail.feeAmount!,
-                            color: textPrimaryColorGlobal),
-                      ],
-                    ),
-                  ],
-                ),
-                Divider(height: 26, color: context.dividerColor),
 
                 if (bookingDetail.finalTotalTax.validate() != 0 &&
                     bookingDetail.bookingType.validate() ==
