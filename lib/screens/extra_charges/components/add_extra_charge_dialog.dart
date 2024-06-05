@@ -90,8 +90,8 @@ class _AddExtraChargesDialogState extends State<AddExtraChargesDialog> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(languages.lblAddExtraChargesDetail, style: boldTextStyle(color: white)).paddingOnly(left: 16),
-                    CloseButton(color: Colors.white),
+                    Text(languages.lblAddExtraChargesDetail, style: boldTextStyle(color: black)).paddingOnly(left: 16),
+                    CloseButton(color: black),
                   ],
                 ),
               ),
@@ -169,7 +169,7 @@ class _AddExtraChargesDialogState extends State<AddExtraChargesDialog> {
                       AppButton(
                         text: isEdit ? languages.saveChanges : languages.hintAdd,
                         color: primaryColor,
-                        textStyle: boldTextStyle(color: white),
+                        textStyle: boldTextStyle(color: black),
                         width: context.width() - context.navigationBarHeight,
                         onTap: () {
                           addCharges();

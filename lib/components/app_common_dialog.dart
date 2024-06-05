@@ -22,8 +22,8 @@ class AppCommonDialog extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Text(title, style: boldTextStyle(color: Colors.white)).expand(),
-                CloseButton(color: Colors.white),
+                Text(title, style: boldTextStyle(color: black)).expand(),
+                CloseButton(color: black),
               ],
             ),
           ),

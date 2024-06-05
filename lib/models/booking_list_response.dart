@@ -177,7 +177,7 @@ class BookingData {
     return BookingData(
       city: json['city'] ?? '',
       state: json['state'] ?? '',
-      feeAmount: json['fee_amount'] ?? 0,
+      feeAmount: json['final_total_fee'] ?? 0,
       address: json['address'],
       customerId: json['customer_id'],
       customerName: json['customer_name'],

@@ -91,6 +91,7 @@ class _CashConfirmDialogState extends State<CashConfirmDialog> {
                   16.width,
                   AppButton(
                     text: languages.confirm,
+                    textStyle: boldTextStyle(color: black),
                     color: context.primaryColor,
                     onTap: () {
                       widget.onAccept.call(remarkCont.text);

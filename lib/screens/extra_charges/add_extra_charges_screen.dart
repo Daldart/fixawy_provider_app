@@ -63,12 +63,12 @@ class _AddExtraChargesScreenState extends State<AddExtraChargesScreen> {
         languages.lblAddExtraCharges,
         backWidget: BackWidget(),
         showBack: true,
-        textColor: white,
+        textColor: black,
         color: context.primaryColor,
         elevation: 0.0,
         actions: [
           IconButton(
-            icon: Icon(Icons.add, color: white),
+            icon: Icon(Icons.add, color: black),
             onPressed: () async {
               openDialog();
             },
@@ -205,6 +205,7 @@ class _AddExtraChargesScreenState extends State<AddExtraChargesScreen> {
         padding: EdgeInsets.all(16),
         child: AppButton(
           text: languages.btnSave,
+          textStyle: boldTextStyle(color: black),
           color: context.primaryColor,
           onTap: () {
             showConfirmDialogCustom(
