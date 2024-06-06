@@ -326,7 +326,7 @@ class PriceCommonWidget extends StatelessWidget {
                               Text(languages.lblTax,
                                       style: secondaryTextStyle(size: 14))
                                   .expand(),
-                              Icon(Icons.info_outline_rounded,
+/*                              Icon(Icons.info_outline_rounded,
                                       size: 20, color: context.primaryColor)
                                   .onTap(
                                 () {
@@ -342,7 +342,7 @@ class PriceCommonWidget extends StatelessWidget {
                                     },
                                   );
                                 },
-                              ),
+                              ),*/
                             ],
                           ).expand(),
                           //Text(language.lblTax, style: secondaryTextStyle(size: 14)),
