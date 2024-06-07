@@ -8,7 +8,6 @@ import 'package:fixawy_provider/main.dart';
 import 'package:fixawy_provider/provider/fragments/provider_home_fragment.dart';
 import 'package:fixawy_provider/provider/fragments/provider_payment_fragment.dart';
 import 'package:fixawy_provider/provider/fragments/provider_profile_fragment.dart';
-import 'package:fixawy_provider/screens/chat/user_chat_list_screen.dart';
 import 'package:fixawy_provider/utils/colors.dart';
 import 'package:fixawy_provider/utils/common.dart';
 import 'package:fixawy_provider/utils/configs.dart';
@@ -106,12 +105,13 @@ class ProviderDashboardScreenState extends State<ProviderDashboardScreen> {
           textColor: black,
           showBack: false,
           actions: [
-            IconButton(
-              icon: chat.iconImage(color: black, size: 20),
-              onPressed: () async {
-                ChatListScreen().launch(context);
-              },
-            ),
+            // Chat Tool Bar Hidden
+            // IconButton(
+            //   icon: chat.iconImage(color: black, size: 20),
+            //   onPressed: () async {
+            //     ChatListScreen().launch(context);
+            //   },
+            // ),
             IconButton(
               icon: Stack(
                 clipBehavior: Clip.none,
