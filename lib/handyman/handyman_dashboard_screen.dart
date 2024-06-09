@@ -8,7 +8,6 @@ import 'package:fixawy_provider/fragments/notification_fragment.dart';
 import 'package:fixawy_provider/handyman/screen/fragments/handyman_fragment.dart';
 import 'package:fixawy_provider/handyman/screen/fragments/handyman_profile_fragment.dart';
 import 'package:fixawy_provider/main.dart';
-import 'package:fixawy_provider/screens/chat/user_chat_list_screen.dart';
 import 'package:fixawy_provider/utils/colors.dart';
 import 'package:fixawy_provider/utils/common.dart';
 import 'package:fixawy_provider/utils/configs.dart';
@@ -119,12 +118,12 @@ class _HandymanDashboardScreenState extends State<HandymanDashboardScreen> {
               );
             },
           ),
-          IconButton(
+/*          IconButton(
             icon: Image.asset(chat, height: 20, width: 20, color: black),
             onPressed: () async {
               ChatListScreen().launch(context);
             },
-          ),
+          ),*/
         ],
       ),
       bottomNavigationBar: Blur(
