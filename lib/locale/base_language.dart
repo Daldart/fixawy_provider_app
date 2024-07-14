@@ -81,6 +81,8 @@ abstract class Languages {
 
   String get withdraw;
 
+  String get financialTransactions;
+
   String get passwordNotMatch;
 
   String get doNotHaveAccount;
@@ -1169,6 +1171,9 @@ abstract class Languages {
   String get withdrawMethods;
 
   String get readyToWithdraw;
+
+  String get debt;
+  String get payofdebt;
 
   String get alreadyWithdrawn;
 

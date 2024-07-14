@@ -108,7 +108,9 @@ class _Withdrow extends State<Withdrow> {
                     ),
                     16.height,
                     AppButton(
-                      text: languages.submit,
+                      text: snap.data!.readyToWithdrawal > 0
+                          ? languages.withdraw
+                          : languages.payofdebt,
                       width: context.width(),
                       color: primaryColor,
                       textColor: Colors.white,

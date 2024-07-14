@@ -1772,7 +1772,7 @@ class LanguageAr extends Languages {
   String get lblfee => "رسوم الخدمة";
 
   @override
-  String get withdraw => 'سحب مالي';
+  String get withdraw => 'سحب ';
   @override
   String get area => "المنطقة";
 
@@ -1788,7 +1788,7 @@ class LanguageAr extends Languages {
   String get pendingWithdraw => 'في انتظار الموافقة';
 
   @override
-  String get readyToWithdraw => 'جاهز للسحب';
+  String get readyToWithdraw => 'الرصيد المتاح للسحب';
 
   @override
   String get withdrawMethods => 'طريقة السحب';
@@ -1804,4 +1804,12 @@ class LanguageAr extends Languages {
 
   @override
   String get searchForBooking => 'البحث عن حجوزات';
+
+  @override
+  String get financialTransactions => 'سحب وايداع مالي';
+
+  @override
+  String get payofdebt => ' سداد المديونيه';
+  @override
+  String get debt => '  برجاء سداد المديونية';
 }

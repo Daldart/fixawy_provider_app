@@ -8,9 +8,6 @@ import 'package:nb_utils/nb_utils.dart';
 
 import '../../models/financial_Data.dart';
 
-
-
-
 class WithdrowCards extends StatelessWidget {
   final FinancialDataModel snap;
 
@@ -23,56 +20,52 @@ class WithdrowCards extends StatelessWidget {
       runSpacing: 16,
       children: [
         HandymanTotalWidget(
-
           title: languages.netRevenue,
           total: snap.netTotal.validate().toPriceFormat(),
           icon: percent_line,
         ).onTap(
-              () {
+          () {
             TotalEarningScreen().launch(context);
           },
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
         ),
         HandymanTotalWidget(
-
-
           title: languages.alreadyWithdrawn,
           total: snap.alreadyWithdrawn.validate().toPriceFormat(),
           icon: percent_line,
         ).onTap(
-              () {
-         //   TotalEarningScreen().launch(context);
-          },
-          highlightColor: Colors.transparent,
-          splashColor: Colors.transparent,
-        ),     HandymanTotalWidget(
-
-
-          title: languages.pendingWithdraw,
-          total: snap.pendingWithdrawal.validate().toPriceFormat(),
-          icon: percent_line,
-        ).onTap(
-              () {
-          //  TotalEarningScreen().launch(context);
+          () {
+            //   TotalEarningScreen().launch(context);
           },
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
         ),
         HandymanTotalWidget(
-
-
-          title: languages.readyToWithdraw,
-          total: snap.readyToWithdrawal.validate().toPriceFormat(),
+          title: languages.pendingWithdraw,
+          total: snap.pendingWithdrawal.validate().toPriceFormat(),
           icon: percent_line,
         ).onTap(
-              () {
-       //     TotalEarningScreen().launch(context);
+          () {
+            //  TotalEarningScreen().launch(context);
           },
           highlightColor: Colors.transparent,
           splashColor: Colors.transparent,
         ),
-
+        HandymanTotalWidget(
+          color: snap.readyToWithdrawal > 0 ? Colors.green : Colors.red,
+          title: snap.readyToWithdrawal > 0
+              ? languages.readyToWithdraw
+              : languages.debt,
+          total: snap.readyToWithdrawal.validate().toPriceFormat(),
+          icon: percent_line,
+        ).onTap(
+          () {
+            //     TotalEarningScreen().launch(context);
+          },
+          highlightColor: Colors.transparent,
+          splashColor: Colors.transparent,
+        ),
       ],
     );
   }

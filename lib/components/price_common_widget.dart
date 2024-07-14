@@ -301,7 +301,7 @@ class PriceCommonWidget extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Text(languages.lblTotalCharges,
+                          Text(languages.lblExtraCharges,
                                   style: secondaryTextStyle(size: 14))
                               .expand(),
                           PriceWidget(

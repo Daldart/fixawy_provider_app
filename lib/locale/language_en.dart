@@ -1804,7 +1804,7 @@ class LanguageEn extends Languages {
   String get pendingWithdraw => 'Pending withdraw';
 
   @override
-  String get readyToWithdraw => 'Ready to withdraw';
+  String get readyToWithdraw => 'Balance available  for withdrawal';
 
   @override
   String get withdrawMethods => 'Withdraw Method';
@@ -1820,4 +1820,13 @@ class LanguageEn extends Languages {
 
   @override
   String get searchForBooking => 'Search for booking';
+
+  @override
+  String get financialTransactions => 'Withdraw and deposit';
+
+  @override
+  String get debt => 'Pay of the debt';
+
+  @override
+  String get payofdebt => 'Pay of the debt';
 }

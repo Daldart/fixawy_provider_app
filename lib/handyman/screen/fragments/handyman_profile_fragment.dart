@@ -293,13 +293,13 @@ class _HandymanProfileFragmentState extends State<HandymanProfileFragment> {
               SettingItemWidget(
                 leading: Image.asset(withdrow,
                     height: 18, width: 18, color: context.iconColor),
-                title: languages.withdraw,
+                title: languages.financialTransactions,
                 trailing: Icon(Icons.chevron_right,
                     color: appStore.isDarkMode ? white : gray.withOpacity(0.8),
                     size: 24),
                 onTap: () {
-                 Withdrow().launch(context);
-                // TotalEarningScreen().launch(context);
+                  Withdrow().launch(context);
+                  // TotalEarningScreen().launch(context);
                 },
               ),
               Divider(
