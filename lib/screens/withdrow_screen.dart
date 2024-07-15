@@ -81,7 +81,9 @@ class _Withdrow extends State<Withdrow> {
                     16.height,
                     DropdownButtonFormField<String>(
                       decoration: inputDecoration(context,
-                          hint: languages.withdrawMethods),
+                          hint: snap.data!.readyToWithdrawal > 0
+                              ? languages.withdrawMethods
+                              : languages.paymentMethod),
                       isExpanded: true,
                       value: _selectedMethod,
                       dropdownColor: context.cardColor,
