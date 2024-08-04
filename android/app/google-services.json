@@ -7,6 +7,44 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:11972838861:android:c1023dfb66d7e810c9b084",
+        "android_client_info": {
+          "package_name": "com.fixawy.fixer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAqo4PZQNWJ2pYm9qbBXHyxld4OmcNwOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11972838861:android:5e35ab06858fe993c9b084",
+        "android_client_info": {
+          "package_name": "com.fixawy.fixerapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAqo4PZQNWJ2pYm9qbBXHyxld4OmcNwOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:11972838861:android:81cb86cf5bf5ede1c9b084",
         "android_client_info": {
           "package_name": "com.fixawy.providerapp"
