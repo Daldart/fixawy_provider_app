@@ -268,7 +268,7 @@ class HandymanInfoScreenState extends State<HandymanInfoScreen> {
                                           ? Colors.white
                                           : context.primaryColor),
                                   text: snap.data!.handymanData!.contactNumber
-                                      .validate(),
+                                      .validate().replaceAll('+', ""),
                                   textStyle: secondaryTextStyle(size: 14),
                                   expandedText: true,
                                 ),
