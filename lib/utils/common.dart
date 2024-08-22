@@ -517,32 +517,74 @@ void ifNotTester(BuildContext context, VoidCallback callback) {
   }
 }
 
-void forceUpdate(BuildContext context) async {
+void forceUpdate(BuildContext context,
+    {required int currentAppVersionCode}) async {
   showInDialog(
     context,
     contentPadding: EdgeInsets.zero,
-    barrierDismissible: !remoteConfigDataModel.isForceUpdate.validate(),
+    barrierDismissible: currentAppVersionCode >=
+        getIntAsync(PROVIDER_APP_MINIMUM_VERSION).toInt(),
     builder: (_) {
-      return NewUpdateDialog();
+      return PopScope(
+        canPop: false,
+        onPopInvoked: (bool) {
+          //
+        },
+        child: NewUpdateDialog(
+            canClose: currentAppVersionCode >=
+                getIntAsync(PROVIDER_APP_MINIMUM_VERSION).toInt()),
+      );
     },
   );
 }
 
+
+// void forceUpdate(BuildContext context) async {
+//   showInDialog(
+//     context,
+//     contentPadding: EdgeInsets.zero,
+//     barrierDismissible: !remoteConfigDataModel.isForceUpdate.validate(),
+//     builder: (_) {
+//       return NewUpdateDialog();
+//     },
+//   );
+// }
+
+// Future<void> showForceUpdateDialog(BuildContext context) async {
+//   if (getBoolAsync(UPDATE_NOTIFY, defaultValue: true)) {
+//     getPackageInfo().then((value) {
+//       if (isAndroid &&
+//           remoteConfigDataModel.android != null &&
+//           remoteConfigDataModel.android!.versionCode.validate().toInt() >
+//               value.versionCode.validate().toInt()) {
+//         forceUpdate(context);
+//       } else if (isIOS &&
+//           remoteConfigDataModel.iOS != null &&
+//           remoteConfigDataModel.iOS!.versionCode.validate() !=
+//               value.versionCode.validate()) {
+//         forceUpdate(context);
+//       }
+//     });
+//   }
+// }
+
 Future<void> showForceUpdateDialog(BuildContext context) async {
   if (getBoolAsync(UPDATE_NOTIFY, defaultValue: true)) {
     getPackageInfo().then((value) {
-      if (isAndroid &&
-          remoteConfigDataModel.android != null &&
-          remoteConfigDataModel.android!.versionCode.validate().toInt() >
+
+        if (isAndroid &&
+          getIntAsync(PROVIDER_APP_LATEST_VERSION).toInt() >
               value.versionCode.validate().toInt()) {
-        forceUpdate(context);
+        forceUpdate(context,
+            currentAppVersionCode: value.versionCode.validate().toInt());
       } else if (isIOS &&
-          remoteConfigDataModel.iOS != null &&
-          remoteConfigDataModel.iOS!.versionCode.validate() !=
-              value.versionCode.validate()) {
-        forceUpdate(context);
+          getIntAsync(PROVIDER_APP_LATEST_VERSION).toInt() >
+              value.versionCode.validate().toInt()) {
+        forceUpdate(context,
+            currentAppVersionCode: value.versionCode.validate().toInt());
       }
     });
+     
   }
 }
 

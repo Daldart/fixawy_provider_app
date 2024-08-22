@@ -10,6 +10,10 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NewUpdateDialog extends StatelessWidget {
+  final bool canClose;
+
+  const NewUpdateDialog({super.key, this.canClose = true});
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -23,56 +27,61 @@ class NewUpdateDialog extends StatelessWidget {
             listAnimationType: ListAnimationType.FadeIn,
             children: [
               60.height,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(languages.lblNewUpdate, style: boldTextStyle(size: 20)),
-                  Text(isAndroid ? remoteConfigDataModel.android!.versionName.validate() : remoteConfigDataModel.iOS!.versionName.validate(), style: boldTextStyle()),
-                ],
-              ),
+              Text(languages.lblNewUpdate, style: boldTextStyle(size: 18)),
               8.height,
-              Text('${languages.lblAnUpdateTo}$APP_NAME ${languages.lblIsAvailableWouldYouLike}', style: secondaryTextStyle(size: 12), textAlign: TextAlign.left),
-              24.height,
-              UL(
-                children: remoteConfigDataModel.changeLogs!.map((e) {
-                  return Text(e.validate(), style: primaryTextStyle(size: 12));
-                }).toList(),
+              Text(
+                '${languages.lblAnUpdateTo} $APP_NAME is available. Go to Play Store and Download the New Version of the App.', //TODO String Translation
+                style: secondaryTextStyle(),
+                textAlign: TextAlign.left,
               ),
               24.height,
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   AppButton(
-                    child: Text(remoteConfigDataModel.isForceUpdate! ? languages.closeApp : languages.close, style: boldTextStyle(color: primaryColor)),
+                    text: canClose ? 'Later' : languages.closeApp, //TODO String Translation
+                    textStyle: boldTextStyle(color: primaryColor, size: 14),
                     shapeBorder: RoundedRectangleBorder(borderRadius: radius(), side: BorderSide(color: primaryColor)),
                     elevation: 0,
                     onTap: () async {
-                      if (remoteConfigDataModel.isForceUpdate!) {
-                        exit(0);
-                      } else {
+                      if (canClose) {
                         finish(context);
+                      } else {
+                        exit(0);
                       }
                     },
                   ).expand(),
-                  16.width,
+                  32.width,
                   AppButton(
-                    child: Text(languages.lblUpdate, style: boldTextStyle(color: white)),
+                    text: languages.lblUpdate,
+                    textStyle: boldTextStyle(color: Colors.white),
                     shapeBorder: RoundedRectangleBorder(borderRadius: radius()),
                     color: primaryColor,
                     elevation: 0,
                     onTap: () async {
                       getPackageName().then((value) {
-                        String package = '';
-                        if (isAndroid) package = value;
+                        if (isAndroid) {
+                          String package = '';
+                          package = value;
 
-                        commonLaunchUrl(
-                          isAndroid ? '${getSocialMediaLink(LinkProvider.PLAY_STORE)}$package' : PROVIDER_APPSTORE_URL,
-                          launchMode: LaunchMode.externalApplication,
-                        );
+                          commonLaunchUrl(
+                            '${getSocialMediaLink(LinkProvider.PLAY_STORE)}$package',
+                            launchMode: LaunchMode.externalApplication,
+                          );
 
-                        if (remoteConfigDataModel.isForceUpdate!) {
-                          exit(0);
-                        } else {
-                          finish(context);
+                          if (canClose) {
+                            finish(context);
+                          } else {
+                            exit(0);
+                          }
+                        } else if (isIOS) {
+                          commonLaunchUrl(APPSTORE_URL, launchMode: LaunchMode.externalApplication);
+                          if (canClose) {
+                            finish(context);
+                          } else {
+                            exit(0);
+                          }
                         }
                       });
                     },

@@ -221,6 +221,14 @@ abstract class Languages {
 
   String get lblUpdate;
 
+  String get lblOptionalUpdateNotify;
+
+  String get lblAnUpdateTo;
+
+  String get lblNewUpdate;
+
+  String get lblIsAvailableWouldYouLike;
+
   String get lblEdit;
 
   String get lblDelete;
@@ -533,13 +541,7 @@ abstract class Languages {
 
   String get lblService;
 
-  String get lblNewUpdate;
 
-  String get lblOptionalUpdateNotify;
-
-  String get lblAnUpdateTo;
-
-  String get lblIsAvailableWouldYouLike;
 
   String get lblAreYouSureYouWantToAssignThisServiceTo;
 

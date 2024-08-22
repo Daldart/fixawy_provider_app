@@ -67,8 +67,9 @@ class _HandymanDashboardScreenState extends State<HandymanDashboardScreen> {
     });
 
     await 3.seconds.delay;
-    showForceUpdateDialog(context);
-  }
+ if (getBoolAsync(FORCE_UPDATE_PROVIDER_APP)) {
+      showForceUpdateDialog(context);
+    }  }
 
   @override
   void setState(fn) {

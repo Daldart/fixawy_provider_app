@@ -65,8 +65,10 @@ class ProviderDashboardScreenState extends State<ProviderDashboardScreen> {
       setState(() {});
     });
 
-    await 3.seconds.delay;
-    showForceUpdateDialog(context);
+     await 3.seconds.delay;
+    if (getBoolAsync(FORCE_UPDATE_PROVIDER_APP)) {
+      showForceUpdateDialog(context);
+    }
   }
 
   @override

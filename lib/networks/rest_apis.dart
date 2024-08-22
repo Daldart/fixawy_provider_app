@@ -324,29 +324,33 @@ Future<ConfigurationResponse> configurationDashboard() async {
   setCurrencies(
       value: data.configurations, paymentSetting: data.paymentSettings);
 
-  data.configurations.validate().forEach((data) {
-    if (data.value.validate().isNotEmpty &&
-        data.key == ONESIGNAL_APP_ID_PROVIDER) {
-      compareValuesInSharedPreference(ONESIGNAL_APP_ID_PROVIDER, data.value);
-    } else if (data.value.validate().isNotEmpty &&
-        data.key == ONESIGNAL_REST_API_KEY_PROVIDER) {
-      compareValuesInSharedPreference(
-          ONESIGNAL_REST_API_KEY_PROVIDER, data.value);
-    } else if (data.value.validate().isNotEmpty &&
-        data.key == ONESIGNAL_CHANNEL_KEY_PROVIDER) {
-      compareValuesInSharedPreference(
-          ONESIGNAL_CHANNEL_KEY_PROVIDER, data.value);
-    } else if (data.value.validate().isNotEmpty &&
-        data.key == ONESIGNAL_APP_ID_USER) {
-      compareValuesInSharedPreference(ONESIGNAL_APP_ID_USER, data.value);
-    } else if (data.value.validate().isNotEmpty &&
-        data.key == ONESIGNAL_REST_API_KEY_USER) {
-      compareValuesInSharedPreference(ONESIGNAL_REST_API_KEY_USER, data.value);
-    } else if (data.value.validate().isNotEmpty &&
-        data.key == ONESIGNAL_CHANNEL_KEY_USER) {
-      compareValuesInSharedPreference(ONESIGNAL_CHANNEL_KEY_USER, data.value);
-    }
-  });
+ await setValue(FORCE_UPDATE_PROVIDER_APP, data.otherSettings!.forceUpdateProviderApp.getBoolInt());
+  await setValue(PROVIDER_APP_MINIMUM_VERSION, data.otherSettings!.providerAppMinimumVersion);
+  await setValue(PROVIDER_APP_LATEST_VERSION, data.otherSettings!.providerAppLatestVersion);
+
+  // data.configurations.validate().forEach((data) {
+  //   if (data.value.validate().isNotEmpty &&
+  //       data.key == ONESIGNAL_APP_ID_PROVIDER) {
+  //     compareValuesInSharedPreference(ONESIGNAL_APP_ID_PROVIDER, data.value);
+  //   } else if (data.value.validate().isNotEmpty &&
+  //       data.key == ONESIGNAL_REST_API_KEY_PROVIDER) {
+  //     compareValuesInSharedPreference(
+  //         ONESIGNAL_REST_API_KEY_PROVIDER, data.value);
+  //   } else if (data.value.validate().isNotEmpty &&
+  //       data.key == ONESIGNAL_CHANNEL_KEY_PROVIDER) {
+  //     compareValuesInSharedPreference(
+  //         ONESIGNAL_CHANNEL_KEY_PROVIDER, data.value);
+  //   } else if (data.value.validate().isNotEmpty &&
+  //       data.key == ONESIGNAL_APP_ID_USER) {
+  //     compareValuesInSharedPreference(ONESIGNAL_APP_ID_USER, data.value);
+  //   } else if (data.value.validate().isNotEmpty &&
+  //       data.key == ONESIGNAL_REST_API_KEY_USER) {
+  //     compareValuesInSharedPreference(ONESIGNAL_REST_API_KEY_USER, data.value);
+  //   } else if (data.value.validate().isNotEmpty &&
+  //       data.key == ONESIGNAL_CHANNEL_KEY_USER) {
+  //     compareValuesInSharedPreference(ONESIGNAL_CHANNEL_KEY_USER, data.value);
+  //   }
+  // });
 
   //saveOneSignalPlayerId();
 
@@ -548,6 +552,7 @@ void _performAdditionalProcessingHandyman(HandymanDashBoardResponse data) {
 
   if (appStore.isLoggedIn) {
     configurationDashboard();
+    
   }
 
   appStore.setLoading(false);

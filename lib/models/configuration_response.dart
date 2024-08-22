@@ -1,30 +1,167 @@
 import 'dart:convert';
 
+import 'package:nb_utils/nb_utils.dart';
+
 class ConfigurationResponse {
   List<Configurations>? configurations;
   List<PaymentSetting>? paymentSettings;
+  OtherSettings? otherSettings;
 
   ConfigurationResponse({
-    this.paymentSettings,
     this.configurations,
+    this.paymentSettings,
+    this.otherSettings,
   });
 
-  ConfigurationResponse.fromJson(Map<String, dynamic> json) {
-    configurations = json['configurations'] != null ? (json['configurations'] as List).map((i) => Configurations.fromJson(i)).toList() : null;
-    paymentSettings = json['payment_settings'] != null ? (json['payment_settings'] as List).map((i) => PaymentSetting.fromJson(i)).toList() : null;
+  factory ConfigurationResponse.fromJson(Map<String, dynamic> json) {
+    return ConfigurationResponse(
+      configurations: json['configurations'] != null
+          ? (json['configurations'] as List)
+              .map((i) => Configurations.fromJson(i))
+              .toList()
+          : null,
+      paymentSettings: json['payment_settings'] != null
+          ? (json['payment_settings'] as List)
+              .map((i) => PaymentSetting.fromJson(i))
+              .toList()
+          : null,
+      otherSettings: json['other_setting'] != null
+          ? OtherSettings.fromJson(json['other_setting'])
+          : null,
+    );
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
 
     if (this.configurations != null) {
-      data['configurations'] = this.configurations!.map((v) => v.toJson()).toList();
+      data['configurations'] =
+          this.configurations!.map((v) => v!.toJson()).toList();
     }
-
     if (this.paymentSettings != null) {
-      data['payment_settings'] = this.paymentSettings!.map((v) => v.toJson()).toList();
+      data['payment_settings'] =
+          this.paymentSettings!.map((v) => v.toJson()).toList();
+    }
+    if (this.otherSettings != null) {
+      data['other_setting'] = this.otherSettings;
     }
 
+    return data;
+  }
+}
+
+class OtherSettings {
+  int? appleLogin;
+  int? blog;
+  int? forceUpdateAdminApp;
+  int? forceUpdateProviderApp;
+  int? googleLogin;
+  int? maintenanceMode;
+  String? maintenanceModeSecretCode;
+  int? otpLogin;
+  int? postJobRequest;
+  int? socialLogin;
+  int? providerAppLatestVersion;
+  int? providerAppMinimumVersion;
+  bool? enableUserWallet;
+  bool? isAdvancedPaymentAllowed;
+
+  OtherSettings({
+    this.appleLogin,
+    this.blog,
+    this.forceUpdateAdminApp,
+    this.forceUpdateProviderApp,
+    this.googleLogin,
+    this.maintenanceMode,
+    this.maintenanceModeSecretCode,
+    this.otpLogin,
+    this.postJobRequest,
+    this.socialLogin,
+    this.providerAppLatestVersion,
+    this.providerAppMinimumVersion,
+    this.enableUserWallet = false,
+    this.isAdvancedPaymentAllowed,
+  });
+
+  factory OtherSettings.fromJson(Map<String, dynamic> json) {
+    return OtherSettings(
+      appleLogin: json['apple_login'],
+      blog: json['blog'],
+      forceUpdateAdminApp: json["force_update_admin_app"] is int
+          ? json["force_update_admin_app"]
+          : json["force_update_admin_app"] is String
+              ? json["force_update_admin_app"].toString().toInt(defaultValue: 0)
+              : 0,
+      forceUpdateProviderApp: json["force_update_provider_app"] is int
+          ? json["force_update_provider_app"]
+          : json["force_update_provider_app"] is String
+              ? json["force_update_provider_app"]
+                  .toString()
+                  .toInt(defaultValue: 0)
+              : 0,
+              
+      
+      googleLogin: json['google_login'],
+      maintenanceMode: json['maintenance_mode'],
+      maintenanceModeSecretCode: json['maintenance_mode_secret_code'] != null
+          ? json['maintenance_mode_secret_code']
+          : null,
+      otpLogin: json['otp_login'],
+      postJobRequest: json['post_job_request'],
+      socialLogin: json['social_login'],
+      providerAppLatestVersion: json["provider_app_latest_version"] is int
+          ? json["provider_app_latest_version"]
+          : json["provider_app_latest_version"] is String
+              ? json["provider_app_latest_version"]
+                  .toString()
+                  .toInt(defaultValue: 0)
+              : 6,
+      providerAppMinimumVersion: json["provider_app_minimum_version"] is int
+          ? json["provider_app_minimum_version"]
+          : json["provider_app_minimum_version"] is String
+              ? json["provider_app_minimum_version"]
+                  .toString()
+                  .toInt(defaultValue: 0)
+              :  6,
+      enableUserWallet: json["wallet"] is int
+          ? json["wallet"] == 1
+          : json["wallet"] is String
+              ? json["wallet"] == "1"
+              : false,
+      isAdvancedPaymentAllowed: json["advanced_payment_setting"] is int
+          ? json["advanced_payment_setting"] == 1
+          : json["advanced_payment_setting"] is String
+              ? json["advanced_payment_setting"] == "1"
+              : false,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['apple_login'] = this.appleLogin;
+    data['blog'] = this.blog;
+    data['force_update_admin_app'] = this.forceUpdateAdminApp;
+    data['force_update_provider_app'] = this.forceUpdateProviderApp;
+    data['google_login'] = this.googleLogin;
+    data['maintenance_mode'] = this.maintenanceMode;
+    data['otp_login'] = this.otpLogin;
+    data['post_job_request'] = this.postJobRequest;
+    data['social_login'] = this.socialLogin;
+    if (this.maintenanceModeSecretCode != null) {
+      data['maintenance_mode_secret_code'] = this.maintenanceModeSecretCode;
+    }
+    if (this.providerAppLatestVersion != null) {
+      data['provider_app_latest_version'] = this.providerAppLatestVersion;
+    }
+    if (this.providerAppMinimumVersion != null) {
+      data['provider_app_minimum_version'] = this.providerAppMinimumVersion;
+    }
+    if (this.enableUserWallet != null) {
+      data['wallet'] = this.enableUserWallet;
+    }
+    if (this.isAdvancedPaymentAllowed != null) {
+      data['advanced_payment_setting'] = this.isAdvancedPaymentAllowed;
+    }
     return data;
   }
 }

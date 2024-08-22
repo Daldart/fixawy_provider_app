@@ -314,6 +314,20 @@ class LanguageEn extends Languages {
 
   @override
   String get lblUpdate => 'Update';
+ 
+
+  @override
+  String get lblNewUpdate => "New Update";
+
+  @override
+  String get lblOptionalUpdateNotify => "Optional Update Notify";
+
+  @override
+  String get lblAnUpdateTo => "An Update to";
+
+  @override
+  String get lblIsAvailableWouldYouLike =>
+      "is available. Would you like to update?";
 
   @override
   String get lblEdit => 'Edit';
@@ -786,19 +800,7 @@ class LanguageEn extends Languages {
   @override
   String get lblService => "Service";
 
-  @override
-  String get lblNewUpdate => "New Update";
-
-  @override
-  String get lblOptionalUpdateNotify => "Optional Update Notify";
-
-  @override
-  String get lblAnUpdateTo => "An Update to ";
-
-  @override
-  String get lblIsAvailableWouldYouLike =>
-      "is available. Would you like to update?";
-
+  
   @override
   String get lblAreYouSureYouWantToAssignThisServiceTo =>
       "Are you sure you want to assign this service to";

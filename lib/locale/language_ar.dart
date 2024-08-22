@@ -313,6 +313,18 @@ class LanguageAr extends Languages {
   String get lblUpdate => 'تحديث';
 
   @override
+  String get lblNewUpdate => "تحديث جديد";
+
+  @override
+  String get lblOptionalUpdateNotify => "اشعار تحديث اختياري";
+
+  @override
+  String get lblAnUpdateTo => "تحديث ل";
+
+  @override
+  String get lblIsAvailableWouldYouLike => "متاح. هل ترغب في تحديث؟";
+
+  @override
   String get lblEdit => 'تحرير';
 
   @override
@@ -774,18 +786,7 @@ class LanguageAr extends Languages {
   @override
   String get lblService => "خدمة";
 
-  @override
-  String get lblNewUpdate => "تحديث جديد";
-
-  @override
-  String get lblOptionalUpdateNotify => "تحديث اختياري ";
-
-  @override
-  String get lblAnUpdateTo => "تحديث ل";
-
-  @override
-  String get lblIsAvailableWouldYouLike => "متاح. هل ترغب في تحديث؟";
-
+ 
   @override
   String get lblAreYouSureYouWantToAssignThisServiceTo =>
       "هل أنت متأكد أنك تريد تعيين هذه الخدمة";
