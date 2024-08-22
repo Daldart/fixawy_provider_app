@@ -9,6 +9,7 @@ import 'package:fixawy_provider/utils/constant.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../utils/model_keys.dart';
+import 'configuration_response.dart';
 
 class BookingListResponse {
   List<BookingData>? data;
@@ -43,6 +44,7 @@ class BookingData {
   int? id;
   String? address;
   int? customerId;
+  PaymentSetting? paymentType;
   int? serviceId;
   int? providerId;
   int? quantity;
@@ -129,6 +131,8 @@ class BookingData {
     this.customerName,
     this.date,
     this.description,
+        this.paymentType,
+
     this.discount,
     this.amount,
     this.durationDiff,
@@ -174,7 +178,11 @@ class BookingData {
   });
 
   factory BookingData.fromJson(Map<String, dynamic> json) {
+
     return BookingData(
+       paymentType: json['payment_type'] != null?
+          PaymentSetting.fromJson(json['payment_type'])
+          : PaymentSetting(id: 1,status: 1,title: "cash",type: "cash"),
       city: json['city'] ?? '',
       state: json['state'] ?? '',
       feeAmount: json['final_total_fee'] ?? 0,
@@ -252,6 +260,7 @@ class BookingData {
     data['customer_name'] = this.customerName;
     data['date'] = this.date;
     data['discount'] = this.discount;
+    data['payment_type']=this.paymentType?.toJson();
     data['amount'] = this.amount;
     data['duration_diff'] = this.durationDiff;
     data['id'] = this.id;

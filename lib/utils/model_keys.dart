@@ -4,12 +4,20 @@ class CommonKeys {
   static String id = 'id';
   static String address = 'address';
   static String serviceId = 'service_id';
+    static String dateTime = 'datetime';
+  static String txnId = "txn_id";
+  static String discount = 'discount';
+
   static String customerId = 'customer_id';
   static String providerId = 'provider_id';
   static String bookingId = 'booking_id';
   static String handymanId = 'handyman_id';
   static String userId = 'user_id';
   static String type = 'type';
+   static String paymentStatus = 'payment_status';
+      static String paymentMethod = 'payment_id';
+
+ 
 }
 
 class UserKeys {

@@ -2,7 +2,7 @@ import 'package:nb_utils/nb_utils.dart';
 
 /// DO NOT CHANGE THIS PACKAGE NAME
 var appPackageName =
-    isAndroid ? 'com.fixawy.providerapp' : 'com.fixawy.provider';
+    isAndroid ? 'com.fixawy.fixerapp' : 'com.fixawy.provider';
 
 //region Configs
 const DECIMAL_POINT = 2;
@@ -77,6 +77,7 @@ const BOOKING_TYPE_SERVICE = 'service';
 const BOOKING_SAVE_FORMAT = "yyyy-MM-dd kk:mm:ss";
 
 //region SharedPreferences Keys
+
 const IS_FIRST_TIME = 'IsFirstTime';
 const IS_LOGGED_IN = 'IS_LOGGED_IN';
 const IS_TESTER = 'IS_TESTER';
@@ -110,6 +111,7 @@ const IS_PLAN_SUBSCRIBE = 'IS_PLAN_SUBSCRIBE';
 const PLAN_TITLE = 'PLAN_TITLE';
 const PLAN_END_DATE = 'PLAN_END_DATE';
 const PLAN_IDENTIFIER = 'PLAN_IDENTIFIER';
+const String paymentType= 'payment_type';
 const PAYMENT_LIST = 'PAYMENT_LIST';
 const PRIVACY_POLICY = 'PRIVACY_POLICY';
 const TERM_CONDITIONS = 'TERM_CONDITIONS';
