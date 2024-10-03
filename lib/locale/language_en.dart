@@ -1831,4 +1831,7 @@ class LanguageEn extends Languages {
 
   @override
   String get payofdebt => 'Pay of the debt';
+  
+  @override
+  String get lblPaymentCash => 'Payment cash';
 }

@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "fixawy_provider_app",
+            "name": "fixawyuserapp",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "fixawy_provider_app (profile mode)",
+            "name": "fixawyuserapp (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "fixawy_provider_app (release mode)",
+            "name": "fixawyuserapp (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

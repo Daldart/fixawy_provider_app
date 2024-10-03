@@ -16,6 +16,8 @@ class CommonKeys {
   static String type = 'type';
    static String paymentStatus = 'payment_status';
       static String paymentMethod = 'payment_id';
+      static String paymentType = 'payment_type';
+
 
  
 }

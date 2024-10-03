@@ -1813,4 +1813,7 @@ class LanguageAr extends Languages {
   String get payofdebt => ' سداد المديونيه';
   @override
   String get debt => '  برجاء سداد المديونية';
+  
+  @override
+  String get lblPaymentCash => 'دفع نقدي';
 }

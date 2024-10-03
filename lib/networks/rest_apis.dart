@@ -1112,6 +1112,12 @@ Future<BaseResponseModel> updateHandymanAvailabilityApi(
 //endregion
 
 //region Payment API
+
+Future<BaseResponseModel> payCash(Map request) async {
+  return BaseResponseModel.fromJson(await handleResponse(
+      await buildHttpResponse('save-payment',
+          request: request, method: HttpMethodType.POST)));
+}
 Future<PaymentListResponse> getPaymentList(int page,
     {var perPage = PER_PAGE_ITEM}) async {
   return PaymentListResponse.fromJson(await handleResponse(

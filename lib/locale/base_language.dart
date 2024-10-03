@@ -361,6 +361,8 @@ abstract class Languages {
 
   String get lblConfirmPayment;
 
+  String get lblPaymentCash;
+
   String get lblDelivered;
 
   String get lblDay;
