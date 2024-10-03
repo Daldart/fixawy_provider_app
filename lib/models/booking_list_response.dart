@@ -44,7 +44,7 @@ class BookingData {
   int? id;
   String? address;
   int? customerId;
-  PaymentSetting? paymentType;
+  String? paymentType;
   int? serviceId;
   int? providerId;
   int? quantity;
@@ -180,9 +180,7 @@ class BookingData {
   factory BookingData.fromJson(Map<String, dynamic> json) {
 
     return BookingData(
-       paymentType: json['payment_type'] != null?
-          PaymentSetting.fromJson(json['payment_type'])
-          : PaymentSetting(id: 1,status: 1,title: "cash",type: "cash"),
+       paymentType: json['payment_type'] != null? json['payment_type']:"cash",
       city: json['city'] ?? '',
       state: json['state'] ?? '',
       feeAmount: json['final_total_fee'] ?? 0,
@@ -260,7 +258,7 @@ class BookingData {
     data['customer_name'] = this.customerName;
     data['date'] = this.date;
     data['discount'] = this.discount;
-    data['payment_type']=this.paymentType?.toJson();
+    data['payment_type']=this.paymentType;
     data['amount'] = this.amount;
     data['duration_diff'] = this.durationDiff;
     data['id'] = this.id;

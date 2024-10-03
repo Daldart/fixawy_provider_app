@@ -141,7 +141,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
   Future<void> confirmationRequestDialog(
       BuildContext context, String status, BookingDetailResponse res) async {
     if (status == BookingStatusKeys.complete &&
-        res.bookingDetail!.paymentType!.type == CASH) {
+        res.bookingDetail!.paymentType == CASH) {
       showInDialog(
         context,
         contentPadding: EdgeInsets.all(0),
@@ -236,37 +236,9 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
           ? SERVICE_PAYMENT_STATUS_ADVANCE_PAID
           : bookDetail.bookingDetail!.paymentStatus.validate();
     } else if (updatedStatus == BookingStatusKeys.complete) { 
-//        if (bookDetail.bookingDetail!.paymentStatus == null &&
-//           bookDetail.bookingDetail!.paymentType!.type == CASH) {
-//             paymentStatus= PENDING;
-//             paymentMethod= bookDetail.bookingDetail!.paymentType!.title;
-          
-//  Map request = {
 
-//       CommonKeys.bookingId: bookDetail.bookingDetail!.id.validate(),
-//       CommonKeys.customerId: bookDetail.customer!.id,
-//       CommonKeys.discount: bookDetail.service!.discount,
-
-//       BookingServiceKeys.totalAmount: bookDetail.bookingDetail!.totalAmount,
-//       CommonKeys.dateTime:
-//           DateFormat(BOOKING_SAVE_FORMAT).format(DateTime.now()),
-//       CommonKeys.txnId: "#${bookDetail.bookingDetail!.id!.validate()}",
-//       CommonKeys.paymentStatus: PENDING,
-//       CommonKeys.paymentMethod: bookDetail.bookingDetail!.paymentType!.title,
-      
-//     };
-//     paymentStatus= PENDING;
-
-// appStore.setLoading(true);
-//     pay(request).then((value) {
-//       appStore.setLoading(false);
-//        }).catchError((e) {
-//       toast(e.toString());
-//       appStore.setLoading(false);
-//     });
-//           }
      if (bookDetail.bookingDetail!.paymentStatus == PENDING &&
-          bookDetail.bookingDetail!.paymentType!.type == CASH) {
+          bookDetail.bookingDetail!.paymentType == CASH) {
         startDateTime = bookDetail.bookingDetail!.startAt.toString();
         endDateTime = bookDetail.bookingDetail!.endAt.toString();
         timeInterval = "0";
@@ -318,7 +290,6 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
       BookingUpdateKeys.reason: updateReason,
       BookingUpdateKeys.status: updatedStatus,
       BookingUpdateKeys.paymentStatus: paymentStatus,
-      CommonKeys.paymentMethod: paymentMethod ,
 
       CommonKeys.userId: bookDetail.providerData?.id
     };
@@ -1048,7 +1019,7 @@ class BookingDetailScreenState extends State<BookingDetailScreen> {
       // return Text(languages.lblWaitingForResponse, style: boldTextStyle()).center();
     } else if (res.bookingDetail!.status == BookingStatusKeys.complete) {
       log("paymentMethod: ${res.bookingDetail!.paymentMethod}");
-      if (res.bookingDetail!.paymentType!.type == CASH &&
+      if (res.bookingDetail!.paymentType! == CASH &&
            res.bookingDetail!.paymentStatus== PENDING) {
         showBottomActionBar = true;
         return AppButton(
