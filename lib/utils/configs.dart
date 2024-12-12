@@ -8,8 +8,8 @@ const primaryColor = Color(0xFFFFCC10);
 
 // const DOMAIN_URL = 'http://fixawy.daldart.com'; // Don't add slash at the end of
 const DOMAIN_URL = 'https://fixawy.com'; // Don't add slash at the end of
-//const BASE_URL = "$DOMAIN_URL/api/";
-const BASE_URL = "https://staging.fixawy.com/api/v1/";
+const BASE_URL = "$DOMAIN_URL/api/v1/";
+//const BASE_URL = "https://staging.fixawy.com/api/v1/";
 
 /// You can specify in Admin Panel, These will be used if you don't specify in Admin Panel
 const IOS_LINK_FOR_PARTNER = "https://apps.apple.com/in/app/handyman-provider-app/id1596025324";
